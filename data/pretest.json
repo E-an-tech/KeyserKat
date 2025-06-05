@@ -1,1 +1,12 @@
-#pretest.json comming soon stay awaiting for all the juicy Keyser content
+[
+    {
+        "question": "What is the unit of force?", 
+        "options":["Newton", "Jedi", "Meter", "Watt"],
+        "answer": "Newton"
+    },
+    {
+        "question": "What is mass measured in?", 
+        "options": ["Liters", "Kilograms", "Watts", "Isaac Newtons"],
+        "answer": "Kilograms"
+    }
+]
