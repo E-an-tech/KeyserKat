@@ -25,8 +25,12 @@ This app started as a prototype on **MIT App Inventor** and is now being rebuilt
 
 ## Technologies
 - MIT App Inventor (prototype)
-- Python 3.13
-- (Future plans) Finishing the app with the entire high school curriculum 
+- Python 3.10.16
+- Kivy
+- Anaconda 
+- VS Code
+- Github dev 
+- (Future plans) Finishing the app with the entire high school curriculum (based on the one found in the public school one of the Department of Education of Puerto Rico) 
 
 ## Roadmap
 
