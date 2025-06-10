@@ -158,7 +158,7 @@ class MainScreen(Screen):
         in_start_x = screen_width if direction == "left" else -self.clothes.width
         fixed_y = 260 # <- keep Y fixed at your manually placed value
 
-        Animation(x=310, duration=0.25, t='out_back').start(self.clothes)
+
         anim_out = Animation(x=out_target_x, duration=0.25)
 
         def on_out_complete(animation, widget):
