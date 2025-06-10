@@ -52,7 +52,7 @@ This app started as a prototype on **MIT App Inventor** and is now being rebuilt
 - **Classic animation principles**
 - **Our undying love for cats**
 - **Terminal**
-- **Matriz movie**
+- **Matrix movie**
 - **RPG**
 
 All early project code names and planning documents are in **Spanish**, as part of our developer tradition (like Nintendo’s “Project Dolphin”).
