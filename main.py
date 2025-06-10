@@ -25,13 +25,13 @@ class MainScreen(Screen):
         ]
 
         self.course_titles = [
-            "Statistics & Probability",
+            "Statistics and Probability",
             "Physics",
         ]
         self.start_x = 0
         self.courses = [
+            "Statistics and Probability",
             "Physics",
-            "Statistics & Probability",
             # Add more if needed
         ]
         self.current_index = 0
@@ -42,6 +42,7 @@ class MainScreen(Screen):
         self.title_label = Label(
             text=self.course_titles[self.clothes_index],  # Where the titles appear
             font_size="24sp",
+            font_name="assets/meow_font.otf",
             size_hint=(1, 0.1),
             pos_hint={"center_y": 0.92},
             halign="center",
