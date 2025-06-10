@@ -4,7 +4,7 @@ import json
 
 def load_preset(path="data/pretest.json"): 
     with open(path, "r") as 
-file: 
+file:
     return json.load(file)
 
 def grade_pretest(user_answers, correct answers):
