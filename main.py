@@ -38,9 +38,10 @@ from kivy.core.window import Window
 from kivy.uix.widget import Widget
 from kivy.uix.stencilview import StencilView
 from kivy.animation import Animation
+from kivy.graphics import Color, Rectangle
 
-class MirrorArea(StencilView):
-    pass
+
+
 
 
 class ClothesMirrorApp(App):
@@ -58,29 +59,28 @@ class ClothesMirrorApp(App):
         )
         layout.add_widget(mirror)
 
-        # Clipped area inside the mirror
-        clipped_area = MirrorArea(
-            size_hint=(0.9, 0.9),
-            pos_hint={"x": 0.05, "y": 0.17}
-        )
-        layout.add_widget(clipped_area)
-
-
-        # When you create the clothes Image widget, use it like this:
+        #
+        # Create the clothes image, start it at the center
         self.clothes = Image(
-            source=clothes_images[self.clothes_index],  # get image from your list
+            source=self.clothes_images[self.clothes_index],
             size_hint=(None, None),
             size=(200, 300),
-            pos_hint={"center_x": 0.5, "center_y": 0.5}
+            pos_hint={"center_x": 0.5, "center_y": 0.6}
         )
 
-        # Then add this Image inside the clipped_area (StencilView)
-        clipped_area.add_widget(self.clothes)
+        self.clipped_area.add_widget(self.clothes)
+        layout.add_widget(self.clipped_area)
 
         return layout
-
-
     
+    def on_size(self, *args):
+        # This ensures the clothes image is centered inside the clipped area
+        if self.clothes and self.clipped_area:
+            self.clothes.pos = (
+                (self.clipped_area.width - self.clothes.width) / 2,
+                0
+            )
+
 
 
 # Clothes/course overlays (transparent PNGs)
@@ -89,6 +89,8 @@ clothes_images = [
     "assets/clothes1.png",  # Physics
 ]
 
+class MirrorArea(StencilView):
+    pass
 
 class MainScreen(Screen):
     def __init__(self, **kwargs):
@@ -99,133 +101,97 @@ class MainScreen(Screen):
             "assets/clothes2.png",
             "assets/clothes1.png",
         ]
-
+ 
         self.course_titles = [
             "Statistics and Probability",
             "Physics",
         ]
-        self.start_x = 0
-        self.courses = [
-            "Statistics and Probability",
-            "Physics",
-            # Add more if needed
-        ]
-        self.current_index = 0
 
+        self.start_x = 0
 
         layout = FloatLayout()
 
         self.title_label = Label(
             text=self.course_titles[self.clothes_index],
             font_size="24sp",
-            font_name="MeowFonto",  # ✅ Use the name from LabelBase.register
+            font_name="MeowFonto",
             size_hint=(1, 0.1),
             pos_hint={"center_y": 0.92},
             halign="center",
             valign="middle"
         )
-
-    #But be warned: sometimes global default font doesn’t affect -
-    #"Button" or "TextInput" in all Kivy versions
-    #Its safer to manually set it for those if it doesn’t work.
-
-        self.title_label.bind(size=self.title_label.setter('text_size'))
         
-        # Optional mirror background
-        mirror = Image(
-            source="assets/mirror_bg.png",
-            size_hint=(0.9, 0.9),
-            pos_hint={"x": 0.05, "y": 0.17}
-        )
-
-        layout.add_widget(mirror)
+        self.title_label.bind(size=self.title_label.setter('text_size'))
         layout.add_widget(self.title_label)
 
+        # Mirror background
+        mirror = Image(source="assets/mirror_bg.png", size_hint=(0.9, 0.9), pos_hint={"x": 0.05, "y": 0.17})
+        layout.add_widget(mirror)
 
-        # Static cat in the center
+        # Cat static image
         cat = Image(source="assets/cat_static.png", size_hint=(0.5, 0.5), pos_hint={"center_x": 0.5, "center_y": 0.6})
         layout.add_widget(cat)
 
-        # Clothes overlay (this is what changes)
-        self.clothes = Image(source=clothes_images[self.clothes_index],
-                             size_hint=(0.5, 0.5), pos_hint={"center_x": 0.5, "center_y": 0.6})
-        layout.add_widget(self.clothes)
+        # ✅ Create a stencil mask for the clothes
+        self.clipped_area = MirrorArea(size_hint=(0.5, 0.5), pos_hint={"center_x": 0.5, "center_y": 0.6})
 
-        # Bottom button bar with fixed size and spacing
-        buttons = BoxLayout(
-            size_hint=(1, 0.15),
-            pos_hint={"x": 0, "y": 0},
-            orientation='horizontal',
-            padding=[20, 0, 20, 0]
-        )
+        with self.clipped_area.canvas.before:
+            Color(1, 0, 0, 0.3)
+            self.rect=Rectangle(size=self.clipped_area.size, pos=self.clipped_area.pos)
 
-        spacer1 = Widget(size_hint_x=1)
-        spacer2 = Widget(size_hint_x=1)
-        spacer3 = Widget(size_hint_x=1)
-        spacer4 = Widget(size_hint_x=1)
 
-        btn_settings = Button(
-            background_normal="assets/settings.png",
-            size_hint=(None, None),
-            size=(200, 200)
-        )
-        btn_crown = Button(
-            background_normal="assets/crown.png",
-            size_hint=(None, None),
-            size=(200, 200)
-        )
-        btn_support = Button(
-            background_normal="assets/support.png",
-            size_hint=(None, None),
-            size=(200, 200)
-        )
+        self.clothes = Image(source=self.clothes_images[self.clothes_index],
+                             size_hint=(None, None), size=(200, 300), pos=(0, 0))
+        self.clipped_area.add_widget(self.clothes)
+        layout.add_widget(self.clipped_area)
 
-        btn_settings.bind(on_press=self.go_to_settings)
-        btn_crown.bind(on_press=self.go_to_leaderboard)
-        btn_support.bind(on_press=self.go_to_support)
+        # Bottom buttons
+        buttons = BoxLayout(size_hint=(1, 0.15), pos_hint={"x": 0, "y": 0}, orientation='horizontal',
+                            padding=[20, 0, 20, 0])
 
-        buttons.add_widget(spacer1)
+        btn_settings = Button(background_normal="assets/settings.png", size_hint=(None, None), size=(200, 200))
+        btn_crown = Button(background_normal="assets/crown.png", size_hint=(None, None), size=(200, 200))
+        btn_support = Button(background_normal="assets/support.png", size_hint=(None, None), size=(200, 200))
+
+        for btn, callback in [
+            (btn_settings, self.go_to_settings),
+            (btn_crown, self.go_to_leaderboard),
+            (btn_support, self.go_to_support)
+        ]:
+            btn.bind(on_press=callback)
+
+        buttons.add_widget(Widget(size_hint_x=1))
         buttons.add_widget(btn_settings)
-        buttons.add_widget(spacer2)
+        buttons.add_widget(Widget(size_hint_x=1))
         buttons.add_widget(btn_crown)
-        buttons.add_widget(spacer3)
+        buttons.add_widget(Widget(size_hint_x=1))
         buttons.add_widget(btn_support)
-        buttons.add_widget(spacer4)
+        buttons.add_widget(Widget(size_hint_x=1))
 
         layout.add_widget(buttons)
         self.add_widget(layout)
 
     def switch_clothes(self, new_index, direction="left"):
-            if new_index == self.clothes_index:
-                return
+        if new_index == self.clothes_index:
+            return
 
-            screen_width = self.width
+        screen_width = self.width
+        out_target_x = -self.clothes.width if direction == "left" else screen_width
+        in_start_x = screen_width if direction == "left" else -self.clothes.width
+        center_x = (self.clipped_area.width - self.clothes.width) / 2
 
-            # Decide direction
-            out_target_x = -self.clothes.width if direction == "left" else screen_width
-            in_start_x = screen_width if direction == "left" else -self.clothes.width
-            center_x = (screen_width - self.clothes.width) / 2
+        anim_out = Animation(x=out_target_x, duration=0.25)
 
-            # Animate old clothes out
-            anim_out = Animation(x=out_target_x, duration=0.25)
+        def on_out_complete(animation, widget):
+            self.clothes.source = self.clothes_images[new_index]
+            self.title_label.text = self.course_titles[new_index]
+            self.clothes.x = in_start_x
+            Animation(x=center_x, duration=0.25).start(self.clothes)
+            self.clothes_index = new_index
 
-            def on_out_complete(animation, widget):
-                # Update image + label
-                self.clothes.source = self.clothes_images[new_index]
-                self.title_label.text = self.course_titles[new_index]
+        anim_out.bind(on_complete=on_out_complete)
+        anim_out.start(self.clothes)
 
-                # Move clothes offscreen to opposite side
-                self.clothes.x = in_start_x
-
-                # Animate new clothes in
-                anim_in = Animation(x=center_x, duration=0.25)
-                anim_in.start(self.clothes)
-
-                # Update index
-                self.clothes_index = new_index
-
-            anim_out.bind(on_complete=on_out_complete)
-            anim_out.start(self.clothes)
     def on_touch_down(self, touch):
         self.start_x = touch.x
         return super().on_touch_down(touch)
@@ -239,7 +205,6 @@ class MainScreen(Screen):
                 self.prev_clothes()
         return super().on_touch_up(touch)
 
-
     def next_clothes(self):
         new_index = (self.clothes_index + 1) % len(self.clothes_images)
         self.switch_clothes(new_index, direction="left")
@@ -247,8 +212,6 @@ class MainScreen(Screen):
     def prev_clothes(self):
         new_index = (self.clothes_index - 1) % len(self.clothes_images)
         self.switch_clothes(new_index, direction="right")
-
-
 
     def go_to_settings(self, instance):
         self.manager.current = "settings"
@@ -258,6 +221,11 @@ class MainScreen(Screen):
 
     def go_to_support(self, instance):
         self.manager.current = "support"
+
+    def update_rect(self, instance, value):
+        self.rect.pos = instance.pos
+        self.rect.size = instance.size
+
 
 class SettingsScreen(Screen):
     def __init__(self, **kwargs):
@@ -286,11 +254,15 @@ class LeaderboardScreen(Screen):
         btn_back = MeowButton(text="Go Back", size_hint=(None, None), size=(200, 50), pos_hint={"center_x": 0.5})
         btn_back.bind(on_press=self.go_back)
         layout.add_widget(btn_back)
-
+        self.bind(size=self.on_size)
         self.add_widget(layout)
 
     def go_back(self, instance):
         self.manager.current = "main"
+
+    def on_size(self, *args):
+        pass  # or put code to handle size changes here
+
 
 
 class SupportScreen(Screen):
