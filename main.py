@@ -11,28 +11,63 @@ from kivy.uix.widget import Widget
 from kivy.uix.stencilview import StencilView
 from kivy.animation import Animation
 from kivy.graphics import Color, Rectangle
+from kivy.uix.textinput import TextInput
 
-# Register your custom font
+
 LabelBase.register(
-    name="MeowFonto",
-    fn_regular="assets/meow_fonto.ttf"
+    name="SamulFont",
+    fn_regular="C:/Windows/Fonts/H2SA1M.TTF"  # or the exact name from Fonts folder
 )
+# Register your custom font
+#LabelBase.register(
+#    name="MeowFonto",
+#    fn_regular="assets/meow_fonto.ttf"
+#)
+#
+#Config.set('kivy', 'default_font', [
+#    'MeowFonto',
+#    'assets/meow_fonto.ttf',
+#    '', '', ''
+#])
 
-Config.set('kivy', 'default_font', [
-    'MeowFonto',
-    'assets/meow_fonto.ttf',
-    '', '', ''
-])
+#class Label(Label):
+#    def __init__(self, **kwargs):
+#        kwargs.setdefault('font_name', 'MeowFonto')
+#        super().__init__(**kwargs)
+#
+#class Button(Button):
+#    def __init__(self, **kwargs):
+#        kwargs.setdefault('font_name', 'MeowFonto')
+#        super().__init__(**kwargs)
 
-class MeowLabel(Label):
+class PreTestScreen(Screen):
     def __init__(self, **kwargs):
-        kwargs.setdefault('font_name', 'MeowFonto')
         super().__init__(**kwargs)
+        layout = BoxLayout(orientation='vertical', padding=50, spacing=20)
 
-class MeowButton(Button):
-    def __init__(self, **kwargs):
-        kwargs.setdefault('font_name', 'MeowFonto')
-        super().__init__(**kwargs)
+        layout.add_widget(Label(text="Pre-Test: Answer this question", font_name="SamulFont", font_size=30))
+
+        self.question_label = Label(text="What is 5 + 3?", font_name="SamulFont",font_size=40)
+        layout.add_widget(self.question_label)
+
+        self.answer_input = TextInput(multiline=False, size_hint=(None, None), size=(200, 40),
+                                        pos_hint={"center_x": 0.5})
+        layout.add_widget(self.answer_input)
+
+        btn_submit = Button(text="Submit", size_hint=(None, None), size=(200, 60), font_name="SamulFont", font_size=35,
+                                pos_hint={"center_x": 0.5})
+        btn_submit.bind(on_press=self.submit_answer)
+        layout.add_widget(btn_submit)
+
+        self.add_widget(layout)
+
+    def submit_answer(self, instance):
+        answer = self.answer_input.text.strip()
+        if answer == "8":
+            self.manager.current = "main"
+        else:
+            self.question_label.text = "Wrong! Try again: What is 5 + 3?"
+
 
 # A stencil widget to clip clothes inside mirror shape
 class MirrorArea(StencilView):
@@ -65,9 +100,10 @@ class MainScreen(Screen):
         layout.add_widget(self.mirror)
 
         # Title label at top center
-        self.title_label = MeowLabel(
+        self.title_label = Label(
             text=self.course_titles[self.clothes_index],
             font_size="23sp",
+            font_name="SamulFont",
             size_hint=(1, 0.1),
             pos_hint={"center_x": 0.5, "top": 0.97},
             halign="center",
@@ -194,9 +230,9 @@ class SettingsScreen(Screen):
         super().__init__(**kwargs)
         layout = BoxLayout(orientation='vertical', padding=50, spacing=20)
 
-        layout.add_widget(MeowLabel(text="Settings Page", font_size=24))
+        layout.add_widget(Label(text="Settings Page", font_name="SamulFont", font_size=50))
 
-        btn_back = MeowButton(text="Go Back", size_hint=(None, None), size=(200, 50), pos_hint={"center_x": 0.5})
+        btn_back = Button(text="Go Back", font_name="SamulFont", size_hint=(None, None), font_size=35, size=(200, 100), pos_hint={"center_x": 0.5})
         btn_back.bind(on_press=self.go_back)
         layout.add_widget(btn_back)
 
@@ -210,9 +246,9 @@ class LeaderboardScreen(Screen):
         super().__init__(**kwargs)
         layout = BoxLayout(orientation='vertical', padding=50, spacing=20)
 
-        layout.add_widget(MeowLabel(text="Leaderboard Page", font_size=24))
+        layout.add_widget(Label(text="Leaderboard Page", font_name="SamulFont", font_size=50))
 
-        btn_back = MeowButton(text="Go Back", size_hint=(None, None), size=(200, 50), pos_hint={"center_x": 0.5})
+        btn_back = Button(text="Go Back", font_name="SamulFont", size_hint=(None, None), font_size=35, size=(200, 100), pos_hint={"center_x": 0.5})
         btn_back.bind(on_press=self.go_back)
         layout.add_widget(btn_back)
 
@@ -226,9 +262,9 @@ class SupportScreen(Screen):
         super().__init__(**kwargs)
         layout = BoxLayout(orientation='vertical', padding=50, spacing=20)
 
-        layout.add_widget(MeowLabel(text="Support Us Page", font_size=24))
+        layout.add_widget(Label(text="Support Us Page", font_name="SamulFont", font_size=50))
 
-        btn_back = MeowButton(text="Go Back", size_hint=(None, None), size=(200, 50), pos_hint={"center_x": 0.5})
+        btn_back = Button(text="Go Back", font_name="SamulFont", size_hint=(None, None), font_size=35, size=(200, 100), pos_hint={"center_x": 0.5})
         btn_back.bind(on_press=self.go_back)
         layout.add_widget(btn_back)
 
@@ -240,10 +276,12 @@ class SupportScreen(Screen):
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
+        sm.add_widget(PreTestScreen(name="pretest")) 
         sm.add_widget(MainScreen(name="main"))
         sm.add_widget(SettingsScreen(name="settings"))
         sm.add_widget(LeaderboardScreen(name="leaderboard"))
         sm.add_widget(SupportScreen(name="support"))
+        sm.current = "pretest"
         return sm
 
 if __name__ == "__main__":
