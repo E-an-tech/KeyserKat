@@ -1,12 +1,333 @@
-[
+{
+  "Science and engineering and practices": {
+    "Application": [
+      {
+        "question": "You measure a cat’s teeth to be 1 cm, but your partner measures 1.3 cm. What is the percent error?",
+        "options": ["20%", "23%", "30%", "25%"],
+        "answer": "23%"
+      },
+      {
+        "question": "A thermometer reads 102°C instead of 100°C for boiling water. What type of error is this?",
+        "options": ["Random", "Human", "Systematic", "Accurate"],
+        "answer": "Systematic"
+      },
+      {
+        "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
+        "options": ["Quantitative", "Descriptive", "Qualitative", "Subjective"],
+        "answer": "Qualitative"
+      },
+      {
+        "question": "What is most likely to happen if a scale is not calibrated before use?",
+        "options": ["You get highly accurate readings", "You save time", "You get systematic errors", "The scale breaks"],
+        "answer": "You get systematic errors"
+      }
+    ],
+    "Theory": [
+      {
+        "question": "What does precision refer to?",
+        "options": ["How close measurements are to each other", "How close a measurement is to the true value", "How accurate the instrument is", "How fast you take a measurement"],
+        "answer": "How close measurements are to each other"
+      },
+      {
+        "question": "What is the function of a dependent variable?",
+        "options": ["It causes the change", "It is changed by the independent variable", "It is the control", "It is never measured"],
+        "answer": "It is changed by the independent variable"
+      },
+      {
+        "question": "Why are SI (International system of measurements) units used in physics?",
+        "options": ["They are based on English tradition", "They are easy to memorize", "They ensure universal understanding", "They change often"],
+        "answer": "They ensure universal understanding"
+      }
+    ],
+    "Analysis": [
+      {
+        "question": "Describe an example of human and systematic error occurring together.",
+        "answer_type": "open_ended"
+      },
+      {
+        "question": "Why is using a control group important in experiments?",
+        "answer_type": "open_ended"
+      },
+      {
+        "question": "Why is lab safety especially important in physics labs involving electricity?",
+        "answer_type": "open_ended"
+      }
+    ]
+  },
+"Kinematics of movement": {
+  "Application": [
     {
-        "question": "What is the unit of force?", 
-        "options":["Newton", "Jedi", "Meter", "Watt"],
-        "answer": "Newton"
+      "question": "A house cat accelerates from 2 m/s to 10 m/s in 2 seconds while chasing a toy across the living room floor. What is the cat’s acceleration?",
+      "options": ["3 m/s²", "4 m/s²", "5 m/s²", "6 m/s²"],
+      "answer": "4 m/s²"
     },
     {
-        "question": "What is mass measured in?", 
-        "options": ["Liters", "Kilograms", "Watts", "Isaac Newtons"],
-        "answer": "Kilograms"
+      "question": "A ball is thrown straight up at 20 m/s. What is the maximum height it reaches?",
+      "options": ["10 m", "20 m", "40 m", "100 m"],
+      "answer": "20 m"
+    },
+    {
+      "question": "A phone is thrown from a rooftop at 4 m/s at a 45° angle. What is its horizontal velocity component?",
+      "options": ["2.8 m/s", "4.0 m/s", "1.4 m/s", "3.5 m/s"],
+      "answer": "2.8 m/s"
+    },
+    {
+      "question": "A cow speeds up and slows down. What does this say about the cow’s acceleration?",
+      "options": ["It has no acceleration", "It has constant acceleration", "It has variable acceleration", "It moves at constant speed"],
+      "answer": "It has variable acceleration"
     }
-]
+  ],
+  "Theory": [
+    {
+      "question": "What does displacement measure?",
+      "options": ["The total distance traveled", "Change in position", "Speed over time", "Acceleration"],
+      "answer": "Change in position"
+    },
+    {
+      "question": "What does the area under a velocity-time graph represent?",
+      "options": ["Velocity", "Distance", "Acceleration", "Force"],
+      "answer": "Distance"
+    },
+    {
+      "question": "Which condition is required for constant velocity?",
+      "options": ["Constant acceleration", "Balanced forces", "Unbalanced forces", "Increasing speed"],
+      "answer": "Balanced forces"
+    }
+  ],
+  "Analysis": [
+    {
+      "question": "How can you determine acceleration using just a stopwatch and a meterstick?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "Explain why an object can have constant speed but changing velocity.",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "How would you describe circular motion using vectors?",
+      "answer_type": "open_ended"
+    }
+  ]
+},
+"Movement dynamics": {
+  "Application": [
+    {
+      "question": "A 5 kg metal cube is pushed with 20 N. What is its acceleration?",
+      "options": ["2 m/s²", "4 m/s²", "5 m/s²", "10 m/s²"],
+      "answer": "4 m/s²"
+    },
+    {
+      "question": "A sled is pulled on ice with a 30 N force. What is the net force if friction is 5 N?",
+      "options": ["35 N", "25 N", "5 N", "25 Keysers"],
+      "answer": "25 N"
+    },
+    {
+      "question": "A 10 kg box slides down a frictionless ramp. What forces are acting on it?",
+      "options": ["Only friction", "Only gravity", "Gravity and normal force", "Gravity and air resistance"],
+      "answer": "Gravity and normal force"
+    },
+    {
+      "question": "A person pushes a shopping cart with more force. What happens to its acceleration?",
+      "options": ["It stays the same", "It decreases", "It increases", "It becomes zero"],
+      "answer": "It increases"
+    }
+  ],
+  "Theory": [
+    {
+      "question": "What is Newton’s First Law also called?",
+      "options": ["Law of Gravity", "Law of Acceleration", "Law of Inertia", "Law of KeyserKat"],
+      "answer": "Law of Inertia"
+    },
+    {
+      "question": "How is mass different from weight?",
+      "options": ["Mass depends on gravity", "Weight is constant", "Mass is the same everywhere", "Weight is a measure of matter"],
+      "answer": "Mass is the same everywhere"
+    },
+    {
+      "question": "What does Newton's Second Law relate?",
+      "options": ["Velocity and time", "Force, mass, and acceleration", "Mass and gravity", "Speed and direction"],
+      "answer": "Force, mass, and acceleration"
+    }
+  ],
+  "Analysis": [
+    {
+      "question": "How do seat belts apply Newton’s First Law?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "Why doesn’t a larger force always mean more acceleration?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "How do you know if an object is in equilibrium?",
+      "answer_type": "open_ended"
+    }
+  ]
+},
+"Work and energy": {
+  "Application": [
+    {
+      "question": "You lift a 10 kg object 2 meters. How much work is done?",
+      "options": ["20 J", "100 Cats", "200 J", "400 J"],
+      "answer": "200 J"
+    },
+    {
+      "question": "A 500 kg car has 5,000 J of kinetic energy. How fast is it going?",
+      "options": ["2 m/s", "4.47 m/s", "4.5 m/s", "10 m/s"],
+      "answer": ["4.47 m/s","4.5 m/s"],
+      "multiple_answers": true
+    },
+    {
+      "question": "Two identical Keyser figurines are at different heights on a shelf. Which has more potential energy?",
+      "options": ["The one at the lower shelf", "They have the same", "The heavier one", "The one at the higher shelf"],
+      "answer": "The one at the higher shelf"
+    },
+    {
+      "question": "A spring with k = 150 N/m is compressed 0.2 m. What is the energy stored?",
+      "options": ["1.5 J", "3 J", "4.5 J", "6 J"],
+      "answer": "3 J"
+    }
+  ],
+  "Theory": [
+    {
+      "question": "What is the physics definition of work?",
+      "options": ["Effort done without motion", "Force applied over a distance", "Mass times acceleration", "Energy stored in a system"],
+      "answer": "Force applied over a distance"
+    },
+    {
+      "question": "What does the work-energy theorem state?",
+      "options": ["Work creates mass", "Energy is conserved", "Work equals change in energy", "Power equals force times distance"],
+      "answer": "Work equals change in energy"
+    },
+    {
+      "question": "Which factor affects kinetic energy most?",
+      "options": ["Mass", "Speed", "Height", "The Force"],
+      "answer": "Speed"
+    }
+  ]
+},
+  "Analysis": [
+    {
+      "question": "Explain energy changes in a rollercoaster ride.",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "Why is no work done when holding a heavy box still?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "How does a pendulum demonstrate energy conservation?",
+      "answer_type": "open-ended"
+    }
+  ],
+"Waves": {
+    "Application": [
+      {
+        "question": "A wave has frequency 5 Hz and wavelength 2 m. What is its speed?",
+        "options": ["5 m/s", "10 m/s", "2.5 m/s", "15 m/s"],
+        "answer": "10 m/s"
+      },
+      {
+        "question": "A sound wave travels through air and water. In which does it move faster?",
+        "options": ["Air", "Water", "Fire", "Earth"],
+        "answer": "Water"
+      },
+      {
+        "question": "A laser beam hits a mirror at 45°. What is the angle of reflection?",
+        "options": ["0°", "45°", "90°", "Depends on the surface"],
+        "answer": "45°"
+      },
+      {
+        "question": "A wave has a long wavelength. What can you say about its frequency?",
+        "options": ["High frequency", "Low frequency", "It’s loud", "It’s visible"],
+        "answer": "Low frequency"
+      }
+    ],
+    "Theory": [
+      {
+        "question": "What does frequency measure in a wave?",
+        "options": ["Height", "Length", "Speed", "Cycles per second"],
+        "answer": "Cycles per second"
+      },
+      {
+        "question": "How do transverse waves move particles?",
+        "options": ["Parallel to wave", "Circular motion", "Perpendicular to wave", "No movement"],
+        "answer": "Perpendicular to wave"
+      },
+      {
+        "question": "What does the Doppler effect explain?",
+        "options": ["Wave interference", "Color mixing", "Change in pitch due to motion", "Loudness of sound"],
+        "answer": "Change in pitch due to motion"
+      }
+    ],
+    "Analysis": [
+      {
+        "question": "Why can light travel through space but sound cannot?",
+        "answer_type": "open_ended"
+      },
+      {
+        "question": "How do noise-canceling headphones use wave interference?",
+        "answer_type": "open_ended"
+      },
+      {
+        "question": "How would you measure wave speed using classroom tools?",
+        "answer_type": "open_ended"
+      }
+    ]
+  },
+
+ "Energy transfer and transformation": {
+  "Application": [
+    {
+      "question": "A 9V battery is connected to a 3-ohm resistor. What is the current?",
+      "options": ["3 A", "0.33 A", "6 A", "9 A"],
+      "answer": "3 A"
+    },
+    {
+      "question": "In a parallel circuit with three bulbs, what happens to brightness?",
+      "options": ["It increases", "It decreases", "It stays the same", "It flickers"],
+      "answer": "It stays the same"
+    },
+    {
+      "question": "A magnet moves through a coil of wire. What is generated?",
+      "options": ["Heat", "Light", "Electric current", "Sound"],
+      "answer": "Electric current"
+    },
+    {
+      "question": "What happens when a circuit is open versus closed?",
+      "options": ["Current flows in open", "Current flows in closed", "Voltage stops in closed", "Light turns on in open"],
+      "answer": "Current flows in closed"
+    }
+  ],
+  "Theory": [
+    {
+      "question": "What does voltage measure?",
+      "options": ["Speed", "Energy per charge", "Flow of electrons", "Resistance"],
+      "answer": "Energy per charge"
+    },
+    {
+      "question": "How is resistance different from current?",
+      "options": ["It adds energy", "It blocks flow", "It increases speed", "It makes voltage"],
+      "answer": "It blocks flow"
+    },
+    {
+      "question": "What do batteries supply to a circuit?",
+      "options": ["Resistance", "Electrons", "Voltage", "Power"],
+      "answer": "Voltage"
+    }
+  ],
+  "Analysis": [
+    {
+      "question": "How does a hand-crank flashlight convert energy?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "Why do wires heat up when too much current flows?",
+      "answer_type": "open_ended"
+    },
+    {
+      "question": "How could you demonstrate electromagnetic induction?",
+      "answer_type": "open_ended"
+    }
+  ]
+}}
