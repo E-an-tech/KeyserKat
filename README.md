@@ -38,8 +38,9 @@ This app started as a prototype on **MIT App Inventor** and is now being rebuilt
 |-----------|--------|
 | Initial prototype in App Inventor | Done |
 | GitHub Repo setup | Done |
-| Rewrite in Python | In progress |
-| Account specific log in| Upcoming |
+| Rewrite in Python | Done |
+| Pre test for physics course | Upcoming | 
+| Account specific log in| Planned |
 | Add progress tracking |  Planned |
 | User competitivity | Planned | 
 | Implement animated Keyser |  Planned |
