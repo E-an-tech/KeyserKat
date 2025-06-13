@@ -6,7 +6,7 @@ import os
 with open("pretest_physics.json", "r") as f:
     pool = json.load(f)
 
-# File to store previously used question IDs (all their juicy data num num)
+# File to store previously used question IDs
 USED_QUESTIONS_FILE = "used_questions.json"
 
 # Helper to create a unique ID for each question
@@ -55,29 +55,46 @@ for unit in units:
                 used_ids.add(q_id)
                 current_counts[cat] += 1
                 break
-        break  # Move to next unit after finding a valid question
+        break
 
-    # Stop if all category targets are met
     if all(current_counts[c] == target_counts[c] for c in target_counts):
         break
 
-# Sanity check
+# Sanity check not enoungh meowney can keep me sane :D
 if len(selected_questions) < 6:
     print("Not enough meowsome questions found. Try resetting used questions.")
 else:
-    # Shuffle final list to randomize order
     random.shuffle(selected_questions)
 
-    # Display final quiz
-    print("\n Here's your randomized 6-question quiz:\n")
+    print("\n🎓 Here's your randomized 6-question quiz:\n")
+
+    user_answers = []
+
     for i, q in enumerate(selected_questions, 1):
-        print(f"Q{i}. [{q['unit']}] ({q['category']})")
+        print(f"Q{i}. ({q['category']})")
         print(q["question"])
         if "options" in q:
-            for opt in q["options"]:
-                print(f" - {opt}")
+            option_labels = ['A', 'B', 'C', 'D', 'E']
+            for label, opt in zip(option_labels, q["options"]):
+                print(f" {label}. {opt}")
+            answer = input("Your answer (A/B/C/D): ").strip().upper()
+        else:
+            answer = input("Your response: ").strip()
         print()
+        user_answers.append({
+            "question_id": q["id"],
+            "category": q["category"],
+            "user_answer": answer,
+            "unit_hidden": q["unit"],  # not shown but saved for backend or later analysis
+            "original_question": q["question"]
+        })
 
-    # Save used question IDs
+    # Save used questions
     with open(USED_QUESTIONS_FILE, "w") as f:
         json.dump(list(used_ids), f)
+
+    # Save user answers (optional)
+    with open("user_answers.json", "w") as f:
+        json.dump(user_answers, f, indent=2)
+
+    print("Keyser is now assesing your answers please wait patiently for the next step he likes to take his time.")
