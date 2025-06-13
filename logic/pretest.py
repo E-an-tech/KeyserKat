@@ -2,36 +2,32 @@ import json
 import random
 import os
 
-# Loads the queso physics questions
-with open("pretest_physics.json", "r") as f:
+# Load the question pool
+with open("pretest_physics 0.2 .json", "r") as f:
     pool = json.load(f)
 
-# File to store previously used question IDs
 USED_QUESTIONS_FILE = "used_questions.json"
 
-# Helper to create a unique ID for each question
 def make_id(unit, category, index):
     return f"{unit}|{category}|{index}"
 
-# Load used question IDs if they exist
+# Load previously used question IDs
 if os.path.exists(USED_QUESTIONS_FILE):
     with open(USED_QUESTIONS_FILE, "r") as f:
         used_ids = set(json.load(f))
 else:
     used_ids = set()
 
-# Target: 2 application, 2 theory, 2 analysis
+# Target question types
 target_counts = {"Application": 2, "Theory": 2, "Analysis": 2}
 current_counts = {"Application": 0, "Theory": 0, "Analysis": 0}
 
-# Track selected questions
 selected_questions = []
 
-# Shuffle units for variety
+# Shuffle units and categories
 units = list(pool.keys())
 random.shuffle(units)
 
-# First pass: try to select 1 question per unit while respecting the category limits
 for unit in units:
     categories = pool[unit]
     possible_cats = list(categories.keys())
@@ -60,41 +56,46 @@ for unit in units:
     if all(current_counts[c] == target_counts[c] for c in target_counts):
         break
 
-# Sanity check not enoungh meowney can keep me sane :D
+# Sanity check
 if len(selected_questions) < 6:
-    print("Not enough meowsome questions found. Try resetting used questions.")
+    print("Not enough meowsome questions found. Try restarting the quiz to give Keyser a chance to find the questions.")
+    exit()
 else:
     random.shuffle(selected_questions)
 
-    print("\n🎓 Here's your randomized 6-question quiz:\n")
+    print("\n Here's the KeyserKat approved physics pre-test \n")
 
     user_answers = []
 
-    for i, q in enumerate(selected_questions, 1):
-        print(f"Q{i}. ({q['category']})")
+    for q in selected_questions:
         print(q["question"])
         if "options" in q:
-            option_labels = ['A', 'B', 'C', 'D', 'E']
-            for label, opt in zip(option_labels, q["options"]):
-                print(f" {label}. {opt}")
-            answer = input("Your answer (A/B/C/D): ").strip().upper()
+            for opt in q["options"]:
+                print(f"- {opt}")
+            answer = input("Type your chosen answer (copy and paste it if you desire Keyser will not mind): ").strip()
         else:
-            answer = input("Your response: ").strip()
+            valid_options = [opt.strip().lower() for opt in q["options"]]
+while True:
+    answer = input("Type your chosen answer (copy it or type it fully): ").strip()
+    if answer.lower() in valid_options:
+        break
+    else:
+        print("Keyser never allowed you to choose that answer. How dare you! Try again...")
+
         print()
         user_answers.append({
             "question_id": q["id"],
-            "category": q["category"],
             "user_answer": answer,
-            "unit_hidden": q["unit"],  # not shown but saved for backend or later analysis
+            "unit_hidden": q["unit"],  # for tracking performance
             "original_question": q["question"]
         })
 
-    # Save used questions
+    # Save used question IDs
     with open(USED_QUESTIONS_FILE, "w") as f:
         json.dump(list(used_ids), f)
 
-    # Save user answers (optional)
+    # Save answers
     with open("user_answers.json", "w") as f:
         json.dump(user_answers, f, indent=2)
 
-    print("Keyser is now assesing your answers please wait patiently for the next step he likes to take his time.")
+    print("Keyser is now assessing your answers. Please wait patiently he likes to take his time.")
