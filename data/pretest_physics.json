@@ -204,8 +204,7 @@
       "options": ["Mass", "Speed", "Height", "The Force"],
       "answer": "Speed"
     }
-  ]
-},
+  ],
   "Analysis": [
     {
       "question": "Explain energy changes in a rollercoaster ride.",
@@ -219,7 +218,8 @@
       "question": "How does a pendulum demonstrate energy conservation?",
       "answer_type": "open-ended"
     }
-  ],
+  ]
+},
 "Waves": {
     "Application": [
       {
@@ -330,4 +330,5 @@
       "answer_type": "open_ended"
     }
   ]
-}}
+  }
+}
