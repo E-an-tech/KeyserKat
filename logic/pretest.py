@@ -3,7 +3,7 @@ import random
 import os
 
 # Load the question pool
-with open("pretest_physics 0.2 .json", "r") as f:
+with open("pretest_physics.json", "r") as f:
     pool = json.load(f)
 
 USED_QUESTIONS_FILE = "used_questions.json"
