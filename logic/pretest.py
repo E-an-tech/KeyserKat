@@ -2,16 +2,24 @@ import json
 import random
 import os
 
-# Load the question pool
-with open("pretest_physics.json", "r") as f:
-    pool = json.load(f)
+# Path setup 
+# Folder where this script (pretest.py) lives
+SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
 
-USED_QUESTIONS_FILE = "used_questions.json"
+# Full path to the JSON question pool  (../data/pretest_physics.json)
+JSON_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "data", "pretest_physics.json"))
+
+# Where to store the “used questions” file it shall go to the data folder meow meow
+USED_QUESTIONS_FILE = os.path.join(SCRIPT_DIR, "used_questions.json")
+
+# Load the question pool
+with open(JSON_PATH, "r", encoding="utf-8") as f:
+    pool = json.load(f)
 
 def make_id(unit, category, index):
     return f"{unit}|{category}|{index}"
 
-# Load previously used question IDs
+# …rest of your code stays exactly the same…
 if os.path.exists(USED_QUESTIONS_FILE):
     with open(USED_QUESTIONS_FILE, "r") as f:
         used_ids = set(json.load(f))
