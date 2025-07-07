@@ -1,38 +1,42 @@
+# main.py
 import json
 import random
 import os
+from kivy.app import App
+from kivy.uix.screenmanager import ScreenManager, Screen, SlideTransition
+from kivy.uix.boxlayout import BoxLayout
+from kivy.uix.label import Label
+from kivy.uix.button import Button
+from kivy.uix.textinput import TextInput
+from kivy.clock import Clock
+from kivy.uix.popup import Popup
 
-# Path setup 
-# Folder where this script (pretest.py) lives
+
+
+# === File setup ===
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-
-# Full path to the JSON question pool  (../data/pretest_physics.json)
 JSON_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "data", "pretest_physics.json"))
-
-# Where to store the “used questions” file it shall go to the data folder meow meow
 USED_QUESTIONS_FILE = os.path.join(SCRIPT_DIR, "used_questions.json")
 
-# Load the question pool
+# === Load question pool ===
 with open(JSON_PATH, "r", encoding="utf-8") as f:
     pool = json.load(f)
 
 def make_id(unit, category, index):
     return f"{unit}|{category}|{index}"
 
-# …rest of your code stays exactly the same…
+# === Used question tracking ===
 if os.path.exists(USED_QUESTIONS_FILE):
     with open(USED_QUESTIONS_FILE, "r") as f:
         used_ids = set(json.load(f))
 else:
     used_ids = set()
 
-# Target question types
+# === Select Questions ===
 target_counts = {"Application": 2, "Theory": 2, "Analysis": 2}
 current_counts = {"Application": 0, "Theory": 0, "Analysis": 0}
-
 selected_questions = []
 
-# Shuffle units and categories
 units = list(pool.keys())
 random.shuffle(units)
 
@@ -60,50 +64,145 @@ for unit in units:
                 current_counts[cat] += 1
                 break
         break
-
     if all(current_counts[c] == target_counts[c] for c in target_counts):
         break
 
-# Sanity check
 if len(selected_questions) < 6:
-    print("Not enough meowsome questions found. Try restarting the quiz to give Keyser a chance to find the questions.")
-    exit()
-else:
-    random.shuffle(selected_questions)
+    raise Exception("Not enough questions. Restart the app.")
 
-    print("\n Here's the KeyserKat approved physics pre-test \n")
+random.shuffle(selected_questions)
 
-    user_answers = []
 
-    for q in selected_questions:
-        print(q["question"])
-        if "options" in q:
-            for opt in q["options"]:
-                print(f"- {opt}")
-            answer = input("Type your chosen answer (copy and paste it if you desire Keyser will not mind): ").strip()
+# === Kivy Screens ===
+
+
+class QuestionScreen(Screen):
+    def __init__(self, question_data, index, **kwargs):
+        super().__init__(**kwargs)
+        self.question_data = question_data
+        self.index = index
+        self.selected_answer = None
+
+        layout = BoxLayout(orientation="vertical", spacing=10, padding=20)
+        layout.add_widget(Label(text=question_data["question"], font_size=18))
+
+        if "options" in question_data:
+            # Create a button for each option
+            for opt in question_data["options"]:
+                btn = Button(text=opt, size_hint_y=None, height=40)
+                btn.bind(on_release=self.option_selected)
+                layout.add_widget(btn)
         else:
-            valid_options = [opt.strip().lower() for opt in q["options"]]
-while True:
-    answer = input("Type your chosen answer (copy it or type it fully): ").strip()
-    if answer.lower() in valid_options:
-        break
-    else:
-        print("Keyser never allowed you to choose that answer. How dare you! Try again...")
+            self.text_input = TextInput(hint_text="Type your answer", multiline=False, size_hint_y=None, height=40)
+            layout.add_widget(self.text_input)
+            btn = Button(text="Submit", size_hint_y=None, height=40)
+            btn.bind(on_release=self.written_submit)
+            layout.add_widget(btn)
 
-        print()
-        user_answers.append({
+        self.add_widget(layout)
+
+    def option_selected(self, instance):
+        self.selected_answer = instance.text.strip()
+        self.submit_answer()
+
+    def written_submit(self, _):
+        self.selected_answer = self.text_input.text.strip()
+        self.submit_answer()
+
+    def submit_answer(self):
+        q = self.question_data
+        user_input = self.selected_answer
+        correct = False
+
+        # Check multiple-choice
+        if "options" in q:
+            if isinstance(q["answer"], list):
+                correct = user_input.lower() in [a.lower() for a in q["answer"]]
+            else:
+                correct = user_input.lower() == q["answer"].lower()
+        # Check open-ended with keywords
+        elif isinstance(q.get("answer"), list):
+            for keyword in q["answer"]:
+                if keyword.strip().lower() in user_input.lower():
+                    correct = True
+                    break
+
+        # Save answer
+        app = App.get_running_app()
+        app.answers.append({
             "question_id": q["id"],
-            "user_answer": answer,
-            "unit_hidden": q["unit"],  # for tracking performance
+            "user_answer": user_input,
+            "correct": correct,
+            "unit_hidden": q["unit"],
             "original_question": q["question"]
         })
 
-    # Save used question IDs
-    with open(USED_QUESTIONS_FILE, "w") as f:
-        json.dump(list(used_ids), f)
+        # Show popup result
+        popup = Popup(
+            title="Answer Result",
+            content=Label(text="Correct!" if correct else "Wrong!"),
+            size_hint=(None, None),
+            size=(300, 200)
+        )
+        popup.open()
 
-    # Save answers
-    with open("user_answers.json", "w") as f:
-        json.dump(user_answers, f, indent=2)
+        # Close popup & go to next question after 1.5s
+        def next_screen_callback(dt):
+            popup.dismiss()
+            if self.index + 1 < len(app.questions):
+                app.sm.current = f"question_{self.index+1}"
+            else:
+                app.sm.current = "done"
 
-    print("Keyser is now assessing your answers. Please wait patiently he likes to take his time.")
+        Clock.schedule_once(next_screen_callback, 1.5)
+
+
+class DoneScreen(Screen):
+    def __init__(self, **kwargs):
+        super().__init__(**kwargs)
+        self.layout = BoxLayout(orientation="vertical", padding=20, spacing=10)
+        self.add_widget(self.layout)
+
+    def on_enter(self):
+        self.layout.clear_widgets()
+
+        app = App.get_running_app()
+        correct_count = sum(1 for a in app.answers if a["correct"])
+        total = len(app.answers)
+
+        self.layout.add_widget(Label(
+            text=f"You scored {correct_count} out of {total}",
+            font_size=20
+        ))
+
+        save_btn = Button(text="Save Answers", size_hint_y=None, height=50)
+        save_btn.bind(on_release=self.save_answers)
+        self.layout.add_widget(save_btn)
+
+    def save_answers(self, _):
+        app = App.get_running_app()
+        with open(USED_QUESTIONS_FILE, "w") as f:
+            json.dump(list(used_ids), f)
+        with open("user_answers.json", "w") as f:
+            json.dump(app.answers, f, indent=2)
+
+        self.layout.add_widget(Label(text="Answers saved! Keyser is proud."))
+
+
+
+class PretestApp(App):
+    def build(self):
+        self.answers = []
+        self.questions = selected_questions
+        self.sm = ScreenManager(transition=SlideTransition())
+
+        for i, q in enumerate(self.questions):
+            screen = QuestionScreen(q, i, name=f"question_{i}")
+            self.sm.add_widget(screen)
+
+        self.sm.add_widget(DoneScreen(name="done"))
+        return self.sm
+
+
+if __name__ == "__main__":
+    PretestApp().run()
