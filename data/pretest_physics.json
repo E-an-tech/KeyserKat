@@ -45,29 +45,77 @@
         "answer_type": "open_ended",
           "keywords": {"systematic": [ "calibration", "zero error", "offset", "bias", "faulty", "tool", "drift", "battery", "malfunction", "instrument error", "sensor error", "scale error", "wear and tear", "consistent error" ],
           "human": [ "misread", "forgot", "late", "parallax", "mistake","eye level", "manual", "misalignment", "rushed", "recording error", "incorrect setup", "wrong button", "started too early", "stopped too late" ], 
-          "context": [ "stopwatch", "voltmeter", "timing", "experiment", "acceleration","gravity", "measurement", "reaction time", "setup", "data", "trial", "reading", "recording", "motion sensor", "force sensor" ]
-}
+          "context": [ "stopwatch", "voltmeter", "timing", "experiment", "acceleration","gravity", "measurement", "reaction time", "setup", "data", "trial", "reading", "recording", "motion sensor", "force sensor" ] } 
+        
       },
-      {
-        "question": "Why is using a control group important in physics experiments?",
-        "answer_type": "open_ended",
-        "keywords": {
-    "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged",
-      "fixed variable", "not manipulated", "isolated", "neutral", "constant"],
-    "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias",
-      "test variable", "cause and effect", "effectiveness", "results clarity",
-      "repeatable", "scientific method", "controlled conditions"],
-    "context": [ "experiment", "variable", "independent", "dependent", "physics lab",
-      "trial", "measurement", "group", "setup", "data collection" ]
-  }
-}
-
+      {"question": "Why is using a control group important in physics experiments?",  
+        "answer_type": "open_ended",  
+       "keywords": {
+       "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable",  "not manipulated", "isolated", "neutral", "constant", "stays the same", "meant to compare", "non-variable", "non-experimental"],
+        "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "effectiveness", "results clarity", "repeatable","scientific method", "controlled conditions", "reduces uncertainty", "increases confidence", "better interpretation", "experimental integrity"],
+        "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "group", "setup", "data collection", "observations", "hypothesis testing", "quantitative", "comparison group", "experimental design", "real vs control", "treatment group"]}
       },
       {
         "question": "Why is lab safety especially important in physics labs involving electricity?",
-        "answer_type": "open_ended"
+        "answer_type": "open_ended",
+        "keywords": {
+        "risk": [ "shock", "electrocution", "burns", "short circuit", "fire", "injury", "current", "voltage", "overload", "malfunction", "wet hands", "exposed wires", "sparks", "hazard", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn" ],
+        "safety_measures": [  "insulated gloves", "dry hands", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "circuit breakers", "clear workspace", "proper handling", "double check wiring", "label circuits", "disconnect power", "use low voltage", "work in pairs", "fire extinguisher nearby"],
+        "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
+        }
       }
-    ]
+  {
+       "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
+        "answer_type" : "open_ended"
+      "keywords": {
+      "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
+      "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
+      "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
+}
+  },
+  {
+    "question": "Why is using a control group important in experiments?",
+    "answer_type": "open_ended",
+   "keywords":{
+  "purpose": [
+    "baseline", "comparison", "reference", "standard", "unchanged",
+    "fixed variable", "not manipulated", "isolated", "neutral", "constant",
+    "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"
+  ],
+  "benefit": [
+    "validity", "accuracy", "reliable", "fair test", "eliminate bias",
+    "test variable", "cause and effect", "clarity of results", "repeatable",
+    "scientific method", "controlled conditions", "reduce confounding",
+    "clear outcomes", "improves confidence", "evidence-based", "separates variables"
+  ],
+  "context": [
+    "experiment", "variable", "independent", "dependent", "physics lab",
+    "trial", "measurement", "control group", "treatment group", "setup",
+    "data collection", "comparison group", "testing", "outcome", "observation",
+    "scientific study", "investigation", "procedure", "data analysis", "research"
+  ]
+  },
+  {
+    "question": "Why is lab safety especially important in physics labs involving electricity?",
+    "answer": ["shock", "injury", "electric", "burn", "hazard", "safety", "danger"],
+    "answer_type": "open_ended",
+    "keywords": {
+  "hazards": [
+    "electric shock", "burn", "fire", "short circuit", "electrocution",
+    "current", "voltage", "overload", "explosion", "arc flash",
+    "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge"
+  ],
+  "safety_measures": [
+    "insulation", "safety gear", "rubber gloves", "goggles", "lab coat",
+    "grounding", "disconnect power", "safety protocol", "safety training",
+    "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker"
+  ],
+  "importance": [
+    "prevent injury", "protect students", "risk reduction", "accident prevention",
+    "serious consequences", "health hazard", "awareness", "responsibility",
+    "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"
+  ]
+}
   },
 "Kinematics of movement": {
   "Application": [
@@ -190,8 +238,7 @@
       "question": "A 500 kg car has 5,000 J of kinetic energy. How fast is it going?",
       "options": ["2 m/s", "4.47 m/s", "4.5 m/s", "10 m/s"],
       "answer": ["4.47 m/s","4.5 m/s"],
-      "multiple_answers": true
-    },
+      },
     {
       "question": "Two identical Keyser figurines are at different heights on a shelf. Which has more potential energy?",
       "options": ["The one at the lower shelf", "They have the same", "The heavier one", "The one at the higher shelf"],
@@ -231,7 +278,7 @@
     },
     {
       "question": "How does a pendulum demonstrate energy conservation?",
-      "answer_type": "open-ended"
+      "answer_type": "open_ended"
     }
   ]
 },
