@@ -106,4 +106,4 @@ while True:
     with open("user_answers.json", "w") as f:
         json.dump(user_answers, f, indent=2)
 
-    print("Keyser is now assessing your answers. Please wait patiently he likes to take his time.")
+    print("Keyser is now thinking about your answers. Please wait patiently he likes to take his time.")

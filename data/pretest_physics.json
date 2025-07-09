@@ -43,11 +43,25 @@
       {
         "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
         "answer_type": "open_ended",
-        "keywords":[""]
+          "keywords": {"systematic": [ "calibration", "zero error", "offset", "bias", "faulty", "tool", "drift", "battery", "malfunction", "instrument error", "sensor error", "scale error", "wear and tear", "consistent error" ],
+          "human": [ "misread", "forgot", "late", "parallax", "mistake","eye level", "manual", "misalignment", "rushed", "recording error", "incorrect setup", "wrong button", "started too early", "stopped too late" ], 
+          "context": [ "stopwatch", "voltmeter", "timing", "experiment", "acceleration","gravity", "measurement", "reaction time", "setup", "data", "trial", "reading", "recording", "motion sensor", "force sensor" ]
+}
       },
       {
-        "question": "Why is using a control group important in experiments?",
-        "answer_type": "open_ended"
+        "question": "Why is using a control group important in physics experiments?",
+        "answer_type": "open_ended",
+        "keywords": {
+    "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged",
+      "fixed variable", "not manipulated", "isolated", "neutral", "constant"],
+    "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias",
+      "test variable", "cause and effect", "effectiveness", "results clarity",
+      "repeatable", "scientific method", "controlled conditions"],
+    "context": [ "experiment", "variable", "independent", "dependent", "physics lab",
+      "trial", "measurement", "group", "setup", "data collection" ]
+  }
+}
+
       },
       {
         "question": "Why is lab safety especially important in physics labs involving electricity?",
