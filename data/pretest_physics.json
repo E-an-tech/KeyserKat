@@ -67,7 +67,7 @@
        "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "clarity of results", "repeatable", "scientific method", "controlled conditions", "reduce confounding", "clear outcomes", "improves confidence", "evidence-based", "separates variables"],
        "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "control group", "treatment group", "setup", "data collection", "comparison group", "testing", "outcome", "observation", "scientific study", "investigation", "procedure", "data analysis", "research"]
   
-          } 
+        } 
      }
   ]
 },
@@ -149,7 +149,8 @@
             "physics_terms": ["centripetal force", "centripetal acceleration", "velocity vector", "acceleration vector", "radius", "tangential velocity", "radial vector",  "angular velocity", "nonlinear motion", "uniform circular motion",  "net force", "instantaneous velocity", "vector diagram", "scalar vs vector",  "direction of force", "orthogonal components", "rotational motion",  "Δv", "vector angle", "component vectors"],
             "context": [ "fan blade spinning", "car driving in a circle", "roller coaster loop", "ball tied to a string spinning",  "bike turning in a circle", "merry-go-round", "satellite orbiting Earth", "child swinging a lasso", "pendulum at the peak", "toy car on a circular track", "motorbike making circles in a parking lot",  "spinning a bucket of water without spilling", "fan in a classroom",  "go-kart driving in a tight loop at a fun park",  "water bottle tied to a string swung overhead", "bike turning around a basketball court",  "students using spinning platforms in science lab", "car turning through roundabout near plaza", "watching ride spin at a local carnival"]
         }
-      ]
+      }
+   ]
 },
 "Movement dynamics": {
   "Application": [
@@ -194,34 +195,32 @@
   "Analysis": [
     {
       "question": "How do seat belts apply Newton’s First Law?",
-      "answer_type": "open_ended"
-      "keywords": {
-      "concept": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law",  "first law", "law of inertia", "resistance to change", "mass", "force", "momentum",  "velocity", "acceleration", "net force", "frame of reference" ],
-      "seatbelt_function": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum","reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force"],
-      "example_context": [ "car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration" , "crash"],
-    "importance": [ "protect occupant", "increase safety", "real-life application", "prevent harm", "demonstrates inertia", "applies physics", "understand force", "safety mechanism", "physics principle", "law application", "everyday example", "minimize injuries", "safety feature" ]
+        "answer_type": "open_ended"
+          ,"keywords": {
+            "concept": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law",  "first law", "law of inertia", "resistance to change", "mass", "force", "momentum",  "velocity", "acceleration", "net force", "frame of reference" ],
+            "seatbelt_function": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum","reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force"],
+            "example_context": [ "car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration" , "crash"],
+           "importance": [ "protect occupant", "increase safety", "real-life application", "prevent harm", "demonstrates inertia", "applies physics", "understand force", "safety mechanism", "physics principle", "law application", "everyday example", "minimize injuries", "safety feature" ]
 }
     },
     {
       "question": "Why doesn’t a larger force always mean more acceleration?",
-      "answer_type": "open_ended"
-      "keywords": {
-      "core_concepts": [ "Newton's Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "opposing forces", "resultant force", "friction", "air resistance", "direction", "magnitude", "interaction", "system"],
-      "mass_dependency": ["heavier", "lighter", "object", "greater mass", "smaller mass", "mass increases", "massive object", "proportional", "inversely proportional", "mass effect", "more inertia", "resistance to acceleration", "harder to move", "slower response" ],
-      "force_context": [ "applied force", "external force", "net external force", "engine", "push", "pull", "contact", "balanced", "unbalanced", "force pair", "reaction", "input force", "effort", "action-reaction", "action reaction", "action_reaction"  ],
-     "everyday_examples": [ "pushing a car", "tug of war", "truck vs bike", "sled with cargo", "object on ice", "uphill", "downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing a cooler full of ice on sand at the beach", "pushing the shopping cart", "riding a horse up a muddy trail", "moving a gas canister during a blackout", "launching fireworks with different weights", "Trying to accelerate a fully loaded truck on a hill", "pushing a heavy bbq grill over uneven cement", "pushing a heavy BBQ grill over uneven cement" "trying to drive fast through potholes with a full car", "running with a heavy backpack", "running with a heavy purse","carrying heavy sound equipment, "trying to run fast on slippery tiles"
-  ]
+        "answer_type": "open_ended"
+          ,"keywords": {
+            "core_concepts": [ "Newton's Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "opposing forces", "resultant force", "friction", "air resistance", "direction", "magnitude", "interaction", "system"],
+            "mass_dependency": ["heavier", "lighter", "object", "greater mass", "smaller mass", "mass increases", "massive object", "proportional", "inversely proportional", "mass effect", "more inertia", "resistance to acceleration", "harder to move", "slower response" ],
+            "force_context": [ "applied force", "external force", "net external force", "engine", "push", "pull", "contact", "balanced", "unbalanced", "force pair", "reaction", "input force", "effort", "action-reaction", "action reaction", "action_reaction"  ],
+            "everyday_examples": [ "pushing a car", "tug of war", "truck vs bike", "sled with cargo", "object on ice", "uphill", "downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing a cooler full of ice on sand at the beach", "pushing the shopping cart", "riding a horse up a muddy trail", "moving a gas canister during a blackout", "launching fireworks with different weights", "Trying to accelerate a fully loaded truck on a hill", "pushing a heavy bbq grill over uneven cement", "pushing a heavy BBQ grill over uneven cement" "trying to drive fast through potholes with a full car", "running with a heavy backpack", "running with a heavy purse","carrying heavy sound equipment" ]
 }
     },
 {
-  "question": "How do you know if an object is in equilibrium?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "balanced forces", "net force zero", "no acceleration", "constant velocity", "rest", "static", "dynamic", "Newton's First Law", "Newton's Second Law", "no net torque", "sum of forces", "ΣF = 0", "Στ = 0", "stability", "steady", "unchanging motion"
-    ],
-    "observation": [ "not moving", "motionless", "moves at constant speed", "straight line motion", "no rotation", "stationary", "no change in direction", "no tilting", "no wobble", "no spinning", "not accelerating", "consistent position", "uniform motion", "zero angular acceleration", "stays still"],
-    "examples": [ "book on table", "person standing still", "picture hanging straight", "balancing scale", "parked car", "ceiling fan off", "bridge with no sway", "tightrope walker balanced", "object suspended by rope", "box on ramp with friction", "shelf holding weight", "seesaw balanced", "floating object level",
-      "coquí sitting on a leaf", "frog sitting on a leaf", "mofongo plate resting on a table", "food plate resting on a table", "plate resting on a table", "flagpole standing upright with no wind", "bottle of water on a bench", "speaker on top of a concrete fence", "plátano bunch hanging still from a hook", "platain bunch hanging still from a hook",  "motorbike parked on level ground", "coconut on the ground under a palm tree"
+     "question": "How do you know if an object is in equilibrium?",
+        "answer_type": "open_ended",
+          "keywords": {
+            "concept": [ "balanced forces", "net force zero", "no acceleration", "constant velocity", "rest", "static", "dynamic", "Newton's First Law", "Newton's Second Law", "no net torque", "sum of forces", "ΣF = 0", "Στ = 0", "stability", "steady", "unchanging motion"],
+            "observation": [ "not moving", "motionless", "moves at constant speed", "straight line motion", "no rotation", "stationary", "no change in direction", "no tilting", "no wobble", "no spinning", "not accelerating", "consistent position", "uniform motion", "zero angular acceleration", "stays still"],
+            "examples": [ "book on table", "person standing still", "picture hanging straight", "balancing scale", "parked car", "ceiling fan off", "bridge with no sway", "tightrope walker balanced", "object suspended by rope", "box on ramp with friction", "shelf holding weight", "seesaw balanced", "floating object level","coquí sitting on a leaf", "frog sitting on a leaf", "mofongo plate resting on a table", "food plate resting on a table", "plate resting on a table", "flagpole standing upright with no wind", "bottle of water on a bench", "speaker on top of a concrete fence", "plátano bunch hanging still from a hook", "platain bunch hanging still from a hook",  "motorbike parked on level ground", "coconut on the ground under a palm tree"]
+      }
     }
   ]
 },
