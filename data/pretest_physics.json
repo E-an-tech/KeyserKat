@@ -42,39 +42,37 @@
     "Analysis": [ 
      {
        "question": "Why is lab safety especially important in physics labs involving electricity?"
-       "answer_type": "open_ended"
-       "keywords": {
-    "hazards": [ "electric shock", "burn", "fire", "short circuit", "electrocution",  "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard" ],
-    "safety_measures": [ "insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker",  "insulated gloves", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "clear workspace", "double check wiring", "label circuits",  "use low voltage", "work in pairs", "fire extinguisher nearby"
-    ],
-    "importance": [  "prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "serious consequences", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"
-    ],
-    "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"
-    ]
-  }
-},
+        ,"answer_type": "open_ended"
+        ,"keywords": {
+          "hazards": [ "electric shock", "burn", "fire", "short circuit", "electrocution",  "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard" ],
+          "safety_measures": [ "insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker",  "insulated gloves", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "clear workspace", "double check wiring", "label circuits",  "use low voltage", "work in pairs", "fire extinguisher nearby"],
+          "importance": [  "prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "serious consequences", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"],
+          "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
+                    }
+    },
   {
        "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
         "answer_type" : "open_ended"
-      "keywords": {
-      "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
-      "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
-      "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
-}
+        ,"keywords": {
+          "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
+          "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
+          "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
+                    }
   },
   {
     "question": "Why is using a control group important in experiments?",
-    "answer_type": "open_ended",
-   "keywords":{
-  "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable", "not manipulated", "isolated", "neutral", "constant", "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"
-  ],
-  "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "clarity of results", "repeatable", "scientific method", "controlled conditions", "reduce confounding", "clear outcomes", "improves confidence", "evidence-based", "separates variables"
-  ],
-  "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "control group", "treatment group", "setup", "data collection", "comparison group", "testing", "outcome", "observation", "scientific study", "investigation", "procedure", "data analysis", "research"
+      "answer_type": "open_ended",
+      "keywords":{
+        "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable", "not manipulated", "isolated", "neutral", "constant", "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"],
+       "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "clarity of results", "repeatable", "scientific method", "controlled conditions", "reduce confounding", "clear outcomes", "improves confidence", "evidence-based", "separates variables"],
+       "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "control group", "treatment group", "setup", "data collection", "comparison group", "testing", "outcome", "observation", "scientific study", "investigation", "procedure", "data analysis", "research"]
+  
+          } 
+     }
   ]
-  }
-  },
-"Kinematics of movement": {
+},
+
+"Kinematics of movement": { 
   "Application": [
     {
       "question": "A house cat accelerates from 2 m/s to 10 m/s in 2 seconds while chasing a toy across the living room floor. What is the cat’s acceleration?",
@@ -116,64 +114,42 @@
   ],
   "Analysis": [
     {
-      {
       "question": "How can you determine acceleration using just a stopwatch and a meterstick?",
-      "answer_type": "open_ended",
-      "keywords": {
-      "method": [ "measure", "distance", "time", "interval", "start", "end", "timing", "initial", "final", "position", "seconds", "meters", "marking", "record", "track", "motion", "uniform", "change", "repeat", "stopwatch", "reading", "observation", "timing technique", "position change", "time gap", "procedure", "setup" ],
-    "formula": [ "acceleration", "velocity", "initial velocity", "final velocity", "displacement", "v = d/t", "v = Δx/Δt", "a = Δv/t", "a = (v - u)/t", "rate of change", "slope", "linear", "graph", "quadratic", "uniform acceleration", "constant acceleration",  "average velocity", "instantaneous velocity", "equation", "kinematics"],
-    "context": [  "rolling ball", "toy car", "inclined plane", "bike ramp", "driveway slope", "slope", "hill", "hallway floor", "school steps", "parking lot", "phone timer", "measuring tape", "wooden board ramp", "marked floor tiles", "metal ramp", "plastic bin slide", "ball down stair edge", "bottle roll on tile", "carpet edge resistance",  "flat surface push", "refrigerator magnet slide", "gravity", "small hill", "garage entrance", "basketball court line markings", "chalk line",  "two-person timing", "classroom floor", "phone plus notebook setup", "timing"]
-  }
+        "answer_type": "open_ended",
+          "keywords": {
+            "method": [ "measure", "distance", "time", "interval", "start", "end", "timing", "initial", "final", "position", "seconds", "meters", "marking", "record", "track", "motion", "uniform", "change", "repeat", "stopwatch", "reading", "observation", "timing technique", "position change", "time gap", "procedure", "setup" ],
+            "formula": [ "acceleration", "velocity", "initial velocity", "final velocity", "displacement", "v = d/t", "v = Δx/Δt", "a = Δv/t", "a = (v - u)/t", "rate of change", "slope", "linear", "graph", "quadratic", "uniform acceleration", "constant acceleration",  "average velocity", "instantaneous velocity", "equation", "kinematics"],
+            "context": [  "rolling ball", "toy car", "inclined plane", "bike ramp", "driveway slope", "slope", "hill", "hallway floor", "school steps", "parking lot", "phone timer", "measuring tape", "wooden board ramp", "marked floor tiles", "metal ramp", "plastic bin slide", "ball down stair edge", "bottle roll on tile", "carpet edge resistance",  "flat surface push", "refrigerator magnet slide", "gravity", "small hill", "garage entrance", "basketball court line markings", "chalk line",  "two-person timing", "classroom floor", "phone plus notebook setup", "timing"]
 }
 },
-    {
    {
-  "question": "Explain why an object can have constant speed but changing velocity.",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [
-      "direction", "change in direction", "velocity", "vector", "speed", "scalar", 
-      "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", 
-      "circular motion", "curve", "straight line", "directional change", "angle", 
-      "path", "trajectory", "magnitude", "orientation"
-    ],
-    "physics_terms": [
-      "centripetal acceleration", "uniform circular motion", "vector quantity", 
-      "scalar quantity", "displacement", "constant speed", "changing velocity", 
-      "velocity vector", "rate of change", "directional velocity", "speed vs velocity", 
-      "kinematics", "frame of reference", "Δv", "nonlinear path"
-    ],
-    "context": [
-      "car turning a corner", "car driving around a roundabout", "bike on a curved road", 
-      "student walking around a track", "RC car in circles", "running laps in gym", 
-      "merry-go-round", "rotating ride at fair", "school hallway U-turn", 
-      "racing game car in curve", "bike around plaza", "soccer player on curve run", 
-      "drone flying in a circle", "go-kart track", "rollerblades turning corner", 
-      "shopping cart around store aisle", "bus taking a turn", "parking lot loop", 
-      "concrete basketball court curve", "bicycle turning in schoolyard"
-    ]
+    "question": "Explain why an object can have constant speed but changing velocity.",
+      "answer_type": "open_ended",
+        "keywords": {
+          "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
+          "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"],
+          "context": [ "car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run", "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard"]
   }
     },
     {
-  "question": "Explain why an object can have constant speed but changing velocity.",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
-    "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"
-    ],
-    "context": ["car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run",   "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard", "U-turn"
+    "question": "Explain why an object can have constant speed but changing velocity.",
+      "answer_type": "open_ended",
+        "keywords": {
+          "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
+          "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"],
+          "context": ["car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run",   "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard", "U-turn"
     ]
   }
-}
+},
     {
-  "question": "How would you describe circular motion using vectors?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "vector", "magnitude", "direction", "changing direction", "constant speed", "acceleration", "velocity", "perpendicular", "curved path", "rotation",  "change in velocity", "inward", "force direction", "angular", "circular path",  "position change", "displacement", "motion path", "center-directed",  "dynamic change"],
-    "physics_terms": ["centripetal force", "centripetal acceleration", "velocity vector", "acceleration vector", "radius", "tangential velocity", "radial vector",  "angular velocity", "nonlinear motion", "uniform circular motion",  "net force", "instantaneous velocity", "vector diagram", "scalar vs vector",  "direction of force", "orthogonal components", "rotational motion",  "Δv", "vector angle", "component vectors"],
-    "context": [ "fan blade spinning", "car driving in a circle", "roller coaster loop", "ball tied to a string spinning",  "bike turning in a circle", "merry-go-round", "satellite orbiting Earth", "child swinging a lasso", "pendulum at the peak", "toy car on a circular track", "motorbike making circles in a parking lot",  "spinning a bucket of water without spilling", "fan in a classroom",  "go-kart driving in a tight loop at a fun park",  "water bottle tied to a string swung overhead", "bike turning around a basketball court",  "students using spinning platforms in science lab", "car turning through roundabout near plaza", "watching ride spin at a local carnival"
-    }
-  ]
+      "question": "How would you describe circular motion using vectors?",
+        "answer_type": "open_ended",
+          "keywords": {
+            "concept": [ "vector", "magnitude", "direction", "changing direction", "constant speed", "acceleration", "velocity", "perpendicular", "curved path", "rotation",  "change in velocity", "inward", "force direction", "angular", "circular path",  "position change", "displacement", "motion path", "center-directed",  "dynamic change"],
+            "physics_terms": ["centripetal force", "centripetal acceleration", "velocity vector", "acceleration vector", "radius", "tangential velocity", "radial vector",  "angular velocity", "nonlinear motion", "uniform circular motion",  "net force", "instantaneous velocity", "vector diagram", "scalar vs vector",  "direction of force", "orthogonal components", "rotational motion",  "Δv", "vector angle", "component vectors"],
+            "context": [ "fan blade spinning", "car driving in a circle", "roller coaster loop", "ball tied to a string spinning",  "bike turning in a circle", "merry-go-round", "satellite orbiting Earth", "child swinging a lasso", "pendulum at the peak", "toy car on a circular track", "motorbike making circles in a parking lot",  "spinning a bucket of water without spilling", "fan in a classroom",  "go-kart driving in a tight loop at a fun park",  "water bottle tied to a string swung overhead", "bike turning around a basketball court",  "students using spinning platforms in science lab", "car turning through roundabout near plaza", "watching ride spin at a local carnival"]
+        }
+      ]
 },
 "Movement dynamics": {
   "Application": [
