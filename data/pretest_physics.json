@@ -39,31 +39,20 @@
         "answer": "They ensure universal understanding"
       }
     ],
-    "Analysis": [
-      {
-        "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
-        "answer_type": "open_ended",
-          "keywords": {"systematic": [ "calibration", "zero error", "offset", "bias", "faulty", "tool", "drift", "battery", "malfunction", "instrument error", "sensor error", "scale error", "wear and tear", "consistent error" ],
-          "human": [ "misread", "forgot", "late", "parallax", "mistake","eye level", "manual", "misalignment", "rushed", "recording error", "incorrect setup", "wrong button", "started too early", "stopped too late" ], 
-          "context": [ "stopwatch", "voltmeter", "timing", "experiment", "acceleration","gravity", "measurement", "reaction time", "setup", "data", "trial", "reading", "recording", "motion sensor", "force sensor" ] } 
-        
-      },
-      {"question": "Why is using a control group important in physics experiments?",  
-        "answer_type": "open_ended",  
+    "Analysis": [ 
+     {
+       "question": "Why is lab safety especially important in physics labs involving electricity?"
+       "answer_type": "open_ended"
        "keywords": {
-       "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable",  "not manipulated", "isolated", "neutral", "constant", "stays the same", "meant to compare", "non-variable", "non-experimental"],
-        "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "effectiveness", "results clarity", "repeatable","scientific method", "controlled conditions", "reduces uncertainty", "increases confidence", "better interpretation", "experimental integrity"],
-        "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "group", "setup", "data collection", "observations", "hypothesis testing", "quantitative", "comparison group", "experimental design", "real vs control", "treatment group"]}
-      },
-      {
-        "question": "Why is lab safety especially important in physics labs involving electricity?",
-        "answer_type": "open_ended",
-        "keywords": {
-        "risk": [ "shock", "electrocution", "burns", "short circuit", "fire", "injury", "current", "voltage", "overload", "malfunction", "wet hands", "exposed wires", "sparks", "hazard", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn" ],
-        "safety_measures": [  "insulated gloves", "dry hands", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "circuit breakers", "clear workspace", "proper handling", "double check wiring", "label circuits", "disconnect power", "use low voltage", "work in pairs", "fire extinguisher nearby"],
-        "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
-        }
-      }
+    "hazards": [ "electric shock", "burn", "fire", "short circuit", "electrocution",  "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard" ],
+    "safety_measures": [ "insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker",  "insulated gloves", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "clear workspace", "double check wiring", "label circuits",  "use low voltage", "work in pairs", "fire extinguisher nearby"
+    ],
+    "importance": [  "prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "serious consequences", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"
+    ],
+    "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"
+    ]
+  }
+},
   {
        "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
         "answer_type" : "open_ended"
@@ -77,45 +66,13 @@
     "question": "Why is using a control group important in experiments?",
     "answer_type": "open_ended",
    "keywords":{
-  "purpose": [
-    "baseline", "comparison", "reference", "standard", "unchanged",
-    "fixed variable", "not manipulated", "isolated", "neutral", "constant",
-    "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"
+  "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable", "not manipulated", "isolated", "neutral", "constant", "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"
   ],
-  "benefit": [
-    "validity", "accuracy", "reliable", "fair test", "eliminate bias",
-    "test variable", "cause and effect", "clarity of results", "repeatable",
-    "scientific method", "controlled conditions", "reduce confounding",
-    "clear outcomes", "improves confidence", "evidence-based", "separates variables"
+  "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "clarity of results", "repeatable", "scientific method", "controlled conditions", "reduce confounding", "clear outcomes", "improves confidence", "evidence-based", "separates variables"
   ],
-  "context": [
-    "experiment", "variable", "independent", "dependent", "physics lab",
-    "trial", "measurement", "control group", "treatment group", "setup",
-    "data collection", "comparison group", "testing", "outcome", "observation",
-    "scientific study", "investigation", "procedure", "data analysis", "research"
+  "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "control group", "treatment group", "setup", "data collection", "comparison group", "testing", "outcome", "observation", "scientific study", "investigation", "procedure", "data analysis", "research"
   ]
-  },
-  {
-    "question": "Why is lab safety especially important in physics labs involving electricity?",
-    "answer": ["shock", "injury", "electric", "burn", "hazard", "safety", "danger"],
-    "answer_type": "open_ended",
-    "keywords": {
-  "hazards": [
-    "electric shock", "burn", "fire", "short circuit", "electrocution",
-    "current", "voltage", "overload", "explosion", "arc flash",
-    "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge"
-  ],
-  "safety_measures": [
-    "insulation", "safety gear", "rubber gloves", "goggles", "lab coat",
-    "grounding", "disconnect power", "safety protocol", "safety training",
-    "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker"
-  ],
-  "importance": [
-    "prevent injury", "protect students", "risk reduction", "accident prevention",
-    "serious consequences", "health hazard", "awareness", "responsibility",
-    "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"
-  ]
-}
+  }
   },
 "Kinematics of movement": {
   "Application": [
@@ -159,16 +116,62 @@
   ],
   "Analysis": [
     {
+      {
       "question": "How can you determine acceleration using just a stopwatch and a meterstick?",
-      "answer_type": "open_ended"
+      "answer_type": "open_ended",
+      "keywords": {
+      "method": [ "measure", "distance", "time", "interval", "start", "end", "timing", "initial", "final", "position", "seconds", "meters", "marking", "record", "track", "motion", "uniform", "change", "repeat", "stopwatch", "reading", "observation", "timing technique", "position change", "time gap", "procedure", "setup" ],
+    "formula": [ "acceleration", "velocity", "initial velocity", "final velocity", "displacement", "v = d/t", "v = Δx/Δt", "a = Δv/t", "a = (v - u)/t", "rate of change", "slope", "linear", "graph", "quadratic", "uniform acceleration", "constant acceleration",  "average velocity", "instantaneous velocity", "equation", "kinematics"],
+    "context": [  "rolling ball", "toy car", "inclined plane", "bike ramp", "driveway slope", "slope", "hill", "hallway floor", "school steps", "parking lot", "phone timer", "measuring tape", "wooden board ramp", "marked floor tiles", "metal ramp", "plastic bin slide", "ball down stair edge", "bottle roll on tile", "carpet edge resistance",  "flat surface push", "refrigerator magnet slide", "gravity", "small hill", "garage entrance", "basketball court line markings", "chalk line",  "two-person timing", "classroom floor", "phone plus notebook setup", "timing"]
+  }
+}
+},
+    {
+   {
+  "question": "Explain why an object can have constant speed but changing velocity.",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [
+      "direction", "change in direction", "velocity", "vector", "speed", "scalar", 
+      "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", 
+      "circular motion", "curve", "straight line", "directional change", "angle", 
+      "path", "trajectory", "magnitude", "orientation"
+    ],
+    "physics_terms": [
+      "centripetal acceleration", "uniform circular motion", "vector quantity", 
+      "scalar quantity", "displacement", "constant speed", "changing velocity", 
+      "velocity vector", "rate of change", "directional velocity", "speed vs velocity", 
+      "kinematics", "frame of reference", "Δv", "nonlinear path"
+    ],
+    "context": [
+      "car turning a corner", "car driving around a roundabout", "bike on a curved road", 
+      "student walking around a track", "RC car in circles", "running laps in gym", 
+      "merry-go-round", "rotating ride at fair", "school hallway U-turn", 
+      "racing game car in curve", "bike around plaza", "soccer player on curve run", 
+      "drone flying in a circle", "go-kart track", "rollerblades turning corner", 
+      "shopping cart around store aisle", "bus taking a turn", "parking lot loop", 
+      "concrete basketball court curve", "bicycle turning in schoolyard"
+    ]
+  }
     },
     {
-      "question": "Explain why an object can have constant speed but changing velocity.",
-      "answer_type": "open_ended"
-    },
+  "question": "Explain why an object can have constant speed but changing velocity.",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
+    "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"
+    ],
+    "context": ["car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run",   "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard", "U-turn"
+    ]
+  }
+}
     {
-      "question": "How would you describe circular motion using vectors?",
-      "answer_type": "open_ended"
+  "question": "How would you describe circular motion using vectors?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "vector", "magnitude", "direction", "changing direction", "constant speed", "acceleration", "velocity", "perpendicular", "curved path", "rotation",  "change in velocity", "inward", "force direction", "angular", "circular path",  "position change", "displacement", "motion path", "center-directed",  "dynamic change"],
+    "physics_terms": ["centripetal force", "centripetal acceleration", "velocity vector", "acceleration vector", "radius", "tangential velocity", "radial vector",  "angular velocity", "nonlinear motion", "uniform circular motion",  "net force", "instantaneous velocity", "vector diagram", "scalar vs vector",  "direction of force", "orthogonal components", "rotational motion",  "Δv", "vector angle", "component vectors"],
+    "context": [ "fan blade spinning", "car driving in a circle", "roller coaster loop", "ball tied to a string spinning",  "bike turning in a circle", "merry-go-round", "satellite orbiting Earth", "child swinging a lasso", "pendulum at the peak", "toy car on a circular track", "motorbike making circles in a parking lot",  "spinning a bucket of water without spilling", "fan in a classroom",  "go-kart driving in a tight loop at a fun park",  "water bottle tied to a string swung overhead", "bike turning around a basketball court",  "students using spinning platforms in science lab", "car turning through roundabout near plaza", "watching ride spin at a local carnival"
     }
   ]
 },
@@ -216,14 +219,33 @@
     {
       "question": "How do seat belts apply Newton’s First Law?",
       "answer_type": "open_ended"
+      "keywords": {
+      "concept": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law",  "first law", "law of inertia", "resistance to change", "mass", "force", "momentum",  "velocity", "acceleration", "net force", "frame of reference" ],
+      "seatbelt_function": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum","reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force"],
+      "example_context": [ "car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration" , "crash"],
+    "importance": [ "protect occupant", "increase safety", "real-life application", "prevent harm", "demonstrates inertia", "applies physics", "understand force", "safety mechanism", "physics principle", "law application", "everyday example", "minimize injuries", "safety feature" ]
+}
     },
     {
       "question": "Why doesn’t a larger force always mean more acceleration?",
       "answer_type": "open_ended"
+      "keywords": {
+      "core_concepts": [ "Newton's Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "opposing forces", "resultant force", "friction", "air resistance", "direction", "magnitude", "interaction", "system"],
+      "mass_dependency": ["heavier", "lighter", "object", "greater mass", "smaller mass", "mass increases", "massive object", "proportional", "inversely proportional", "mass effect", "more inertia", "resistance to acceleration", "harder to move", "slower response" ],
+      "force_context": [ "applied force", "external force", "net external force", "engine", "push", "pull", "contact", "balanced", "unbalanced", "force pair", "reaction", "input force", "effort", "action-reaction", "action reaction", "action_reaction"  ],
+     "everyday_examples": [ "pushing a car", "tug of war", "truck vs bike", "sled with cargo", "object on ice", "uphill", "downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing a cooler full of ice on sand at the beach", "pushing the shopping cart", "riding a horse up a muddy trail", "moving a gas canister during a blackout", "launching fireworks with different weights", "Trying to accelerate a fully loaded truck on a hill", "pushing a heavy bbq grill over uneven cement", "pushing a heavy BBQ grill over uneven cement" "trying to drive fast through potholes with a full car", "running with a heavy backpack", "running with a heavy purse","carrying heavy sound equipment, "trying to run fast on slippery tiles"
+  ]
+}
     },
-    {
-      "question": "How do you know if an object is in equilibrium?",
-      "answer_type": "open_ended"
+{
+  "question": "How do you know if an object is in equilibrium?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "balanced forces", "net force zero", "no acceleration", "constant velocity", "rest", "static", "dynamic", "Newton's First Law", "Newton's Second Law", "no net torque", "sum of forces", "ΣF = 0", "Στ = 0", "stability", "steady", "unchanging motion"
+    ],
+    "observation": [ "not moving", "motionless", "moves at constant speed", "straight line motion", "no rotation", "stationary", "no change in direction", "no tilting", "no wobble", "no spinning", "not accelerating", "consistent position", "uniform motion", "zero angular acceleration", "stays still"],
+    "examples": [ "book on table", "person standing still", "picture hanging straight", "balancing scale", "parked car", "ceiling fan off", "bridge with no sway", "tightrope walker balanced", "object suspended by rope", "box on ramp with friction", "shelf holding weight", "seesaw balanced", "floating object level",
+      "coquí sitting on a leaf", "frog sitting on a leaf", "mofongo plate resting on a table", "food plate resting on a table", "plate resting on a table", "flagpole standing upright with no wind", "bottle of water on a bench", "speaker on top of a concrete fence", "plátano bunch hanging still from a hook", "platain bunch hanging still from a hook",  "motorbike parked on level ground", "coconut on the ground under a palm tree"
     }
   ]
 },
@@ -380,17 +402,35 @@
   ],
   "Analysis": [
     {
-      "question": "How does a hand-crank flashlight convert energy?",
-      "answer_type": "open_ended"
-    },
-    {
-      "question": "Why do wires heat up when too much current flows?",
-      "answer_type": "open_ended"
-    },
-    {
-      "question": "How could you demonstrate electromagnetic induction?",
-      "answer_type": "open_ended"
-    }
-  ]
+  "question": "How does a hand-crank flashlight convert energy?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "energy", "conversion", "mechanical", "electrical", "light",  "input", "output", "transform", "generate", "transfer", "stored energy", "kinetic energy", "manual", "hand-powered",  "motion", "movement", "energy flow", "effort", "energy transfer", "energy transformation"],
+    "physics_terms": [ "mechanical energy", "electrical energy", "light energy",  "electromagnetic induction", "generator", "crank",  "dynamo", "LED", "rotational motion", "alternator", "coil", "magnet", "current", "voltage", "resistance", "charge", "conservation of energy", "circuit", "electrons", "batteryless" ],
+    "context": [ "emergency flashlight", "flashlight used during blackout", "camping light", "hand crank radio-light combo", "using light during hurricane season", "power outage", "student experiment with generator", "hand crank charging during storm", "flashlight in survival kit", "home kit for emergencies", "students using hand crank during school blackout", "crank light", "hand-crank flashlight", "no electricity", "camping", "unstable stable power", ]
   }
 }
+    },
+    {
+  "question": "Why do wires heat up when too much current flows?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "current", "electricity", "flow", "resistance", "friction", "electrical energy", "heat", "thermal", "temperature", "conversion", "energy loss", "power", "Joule heating", "Ohm’s Law", "conduction", "electrons", "charge flow", "voltage", "potential difference","circuit", "load", "short circuit", "insulation", "material properties", "material"],
+    "physics_terms": [ "resistive heating", "I²R loss", "Ohmic heating", "conductor", "wire gauge", "current density", "thermal runaway",  "electrical resistance", "overload", "electrical fault", "power dissipation", "melting point", "circuit breaker", "fuse",  "conductivity", "electrical load", "excess current",  "copper wire", "insulated wire", "ampacity"],
+    "context": [ "charging too many devices at once", "extension cord overheating", "using high-wattage appliances", "old wiring in homes",  "power strip used incorrectly", "Christmas lights left on too long", "air conditioner sharing outlet with fridge",  "fan and TV on the same overloaded power bar",  "melting plug after a storm surge",  "damaged wiring causing sparks", "old home with outdated wiring", "overloading outlets", "using generator and plugging in too many things", 
+      "neighborhood blackout caused by faulty wires", "material properties","basic wiring"]
+    }
+   },
+    {
+  "question": "How could you demonstrate electromagnetic induction with materials found at home?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "concept": [ "magnet", "coil", "wire", "loop", "electricity", "motion", "magnetic field", "voltage", "induced current", "electromagnetism", "Faraday", "flux", "change in flux",  "electromagnetic induction", "generator", "alternating current", "circuit", "energy", "force", "field lines", "movement", "rotation", "interaction", "electromotive force", "emf"
+    ],
+    "materials_context": [  "copper wire", "iron nail", "LED bulb", "multimeter", "neodymium magnet", "refrigerator magnet", "cardboard tube", "screwdriver", "plasti spool", "old speaker coil", "AA battery for testing", "tape", "scissors", "aluminum foil", "cardboard base", "light bulb", "doorbell wire", "old phone charger cable",  "recycled electronics", "paper clips"
+    ],
+    "activity_context": [ "moving a magnet through a coil", "waving magnet near wire loop",  "spinning a coil near a magnet", "dropping a magnet through copper tube",  "shaking coil and magnet flashlight", "homemade generator from fan",  "bike light generator", "wire-wrapped nail as electromagnet", "building a simple dynamo", "testing with multimeter to see voltage spike", "flashlight powered by cranking", "soda can and magnet", "hand-powered light", "science fair", "recycling fans", repurposed appliance motor"]
+        }
+      }
+    }
+  ]
