@@ -114,33 +114,65 @@ class QuestionScreen(Screen):
         user_input = self.selected_answer
         correct = False
 
-        # Check multiple-choice
-        if "options" in q:
-            if isinstance(q["answer"], list):
-                correct = user_input.lower() in [a.lower() for a in q["answer"]]
-            else:
-                correct = user_input.lower() == q["answer"].lower()
-        # Check open-ended with keywords
-        elif isinstance(q.get("answer"), list):
-            for keyword in q["answer"]:
-                if keyword.strip().lower() in user_input.lower():
-                    correct = True
-                    break
+       # Determine score
+score = 0  # default
+
+#In here it assumes if the question has no answer type it's multiple choice
+if question.get("answer_type", "multiple_choice") == "multiple_choice":  
+    correct = question["answer"].strip().lower()
+    if answer.strip().lower() == correct:
+        print("Correct!")
+        score = 1
+    else:
+        print(f"Incorrect! The correct answer was: {question['answer']}")
+# Open ended questions can get 4 different scores a perfect where it matches all the keywords
+# An insanely good score if it matches 1 keyword per category plus some extras (it add 0.33 to the overall score)
+# An ok score where it gets 2/3 required keywords in total
+# A depressing score if it gets 1/3 required keywords in total
+# And ofc straight up they should press iteraktiv if they get a 0/3 **minimum** keywords
+elif question["answer_type"] == "open_ended":
+    keywords = question.get("keywords", {})
+    answer_lower = answer.lower()
+    matched_categories = 0
+    matched_keywords_total = 0
+    all_categories_matched = True
+
+    for category in keywords:
+        matched_keywords = [kw for kw in keywords[category] if kw in answer_lower]
+        if matched_keywords:
+            matched_categories += 1
+            matched_keywords_total += len(matched_keywords)
+        else:
+            all_categories_matched = False
+
+    if matched_categories == 3:
+        # Full point (1) + bonus per extra keyword it maxes out at 1 though 
+        score = min(1.0, matched_keywords_total * 0.33)
+        print("Purrfect!")
+    elif matched_categories == 2:
+        score = 0.66
+        print("Good effort! 2/3 of the way")
+    elif matched_categories == 1:
+        score = 0.33
+        print("You got 1/3 of the way. Keep trying!")
+    else:
+        score = 0.0
+        print("Keyser believes in you! (0/3 right)")
 
         # Save answer
         app = App.get_running_app()
-        app.answers.append({
-            "question_id": q["id"],
+        app.answers.append 
+        ({ "question_id": q["id"],
             "user_answer": user_input,
             "correct": correct,
             "unit_hidden": q["unit"],
             "original_question": q["question"]
-        })
+            "score" : score })
 
         # Show popup result
         popup = Popup(
             title="Answer Result",
-            content=Label(text="Correct!" if correct else "Wrong!"),
+            content=Label(text="Purrfect!" if correct else "Incorrect!"),
             size_hint=(None, None),
             size=(300, 200)
         )
@@ -155,7 +187,7 @@ class QuestionScreen(Screen):
                 app.sm.current = "done"
 
     print("Keyser is now thinking about your answers. Please wait patiently he likes to take his time.")
-        Clock.schedule_once(next_screen_callback, 1.5)
+    Clock.schedule_once(next_screen_callback, 1.5)
 
 
 class DoneScreen(Screen):
