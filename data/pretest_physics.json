@@ -40,23 +40,22 @@
       }
     ],
     "Analysis": [ 
-     {
-       "question": "Why is lab safety especially important in physics labs involving electricity?"
-        ,"answer_type": "open_ended"
-        ,"keywords": {
-          "hazards": [ "electric shock", "burn", "fire", "short circuit", "electrocution",  "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard" ],
-          "safety_measures": [ "insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker",  "insulated gloves", "no water", "check equipment", "follow instructions",  "power off", "rubber soles", "avoid metal", "report damage", "supervision",  "safety goggles", "clear workspace", "double check wiring", "label circuits",  "use low voltage", "work in pairs", "fire extinguisher nearby"],
-          "importance": [  "prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "serious consequences", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first"],
-          "context": [ "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
-                    }
-    },
+    {
+     "question": "Why is lab safety especially important in physics labs involving electricity?",
+       "answer_type": "open_ended",
+        "keywords": {
+         "risks_and_hazards": ["electric shock", "burn", "fire", "short circuit", "electrocution", "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard"],
+         "safety_measures_and_protocols": ["insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker", "insulated gloves", "no water", "check equipment", "follow instructions", "power off", "rubber soles", "avoid metal", "report damage", "supervision", "safety goggles", "clear workspace", "double check wiring", "label circuits", "use low voltage", "work in pairs", "fire extinguisher nearby"],
+         "importance_and_context": ["prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first", "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
+  }
+},
   {
        "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
-        "answer_type" : "open_ended"
-        ,"keywords": {
-          "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
-          "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
-          "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
+          "answer_type" : "open_ended"
+            ,"keywords": {
+             "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
+             "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
+              "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
                     }
   },
   {
@@ -128,19 +127,9 @@
         "keywords": {
           "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
           "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"],
-          "context": [ "car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run", "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard"]
+          "context": [ "car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "merry go round" , "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run", "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard"]
   }
     },
-    {
-    "question": "Explain why an object can have constant speed but changing velocity.",
-      "answer_type": "open_ended",
-        "keywords": {
-          "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
-          "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"],
-          "context": ["car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run",   "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard", "U-turn"
-    ]
-  }
-},
     {
       "question": "How would you describe circular motion using vectors?",
         "answer_type": "open_ended",
@@ -193,26 +182,24 @@
     }
   ],
   "Analysis": [
+   {
+  "question": "How do seat belts apply Newton’s First Law?",
+    "answer_type": "open_ended",
+      "keywords": {
+        "law_and_concepts": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law", "first law", "law of inertia", "resistance to change", "mass", "force", "momentum", "velocity", "acceleration", "net force", "frame of reference", "demonstrates inertia", "applies physics", "understand force", "physics principle", "law application"],
+        "seatbelt_mechanics": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum", "reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force", "protect occupant", "increase safety", "safety mechanism", "minimize injuries", "safety feature"],
+        "real_world_context": ["car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration", "real-life application", "everyday example"]
+  }
+},
     {
-      "question": "How do seat belts apply Newton’s First Law?",
-        "answer_type": "open_ended"
-          ,"keywords": {
-            "concept": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law",  "first law", "law of inertia", "resistance to change", "mass", "force", "momentum",  "velocity", "acceleration", "net force", "frame of reference" ],
-            "seatbelt_function": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum","reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force"],
-            "example_context": [ "car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration" , "crash"],
-           "importance": [ "protect occupant", "increase safety", "real-life application", "prevent harm", "demonstrates inertia", "applies physics", "understand force", "safety mechanism", "physics principle", "law application", "everyday example", "minimize injuries", "safety feature" ]
-}
-    },
-    {
-      "question": "Why doesn’t a larger force always mean more acceleration?",
-        "answer_type": "open_ended"
-          ,"keywords": {
-            "core_concepts": [ "Newton's Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "opposing forces", "resultant force", "friction", "air resistance", "direction", "magnitude", "interaction", "system"],
-            "mass_dependency": ["heavier", "lighter", "object", "greater mass", "smaller mass", "mass increases", "massive object", "proportional", "inversely proportional", "mass effect", "more inertia", "resistance to acceleration", "harder to move", "slower response" ],
-            "force_context": [ "applied force", "external force", "net external force", "engine", "push", "pull", "contact", "balanced", "unbalanced", "force pair", "reaction", "input force", "effort", "action-reaction", "action reaction", "action_reaction"  ],
-            "everyday_examples": [ "pushing a car", "tug of war", "truck vs bike", "sled with cargo", "object on ice", "uphill", "downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing a cooler full of ice on sand at the beach", "pushing the shopping cart", "riding a horse up a muddy trail", "moving a gas canister during a blackout", "launching fireworks with different weights", "Trying to accelerate a fully loaded truck on a hill", "pushing a heavy bbq grill over uneven cement", "pushing a heavy BBQ grill over uneven cement" "trying to drive fast through potholes with a full car", "running with a heavy backpack", "running with a heavy purse","carrying heavy sound equipment" ]
-}
-    },
+  "question": "Why doesn’t a larger force always mean more acceleration?",
+    "answer_type": "open_ended",
+     "keywords": {
+        "core_physics_concepts": ["Newton’s Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "resultant force", "opposing forces", "friction", "air resistance", "direction of force", "magnitude of force", "balanced forces", "unbalanced forces", "interaction between forces", "system dynamics", "force pairs", "reaction force", "action-reaction", "action reaction", "action_reaction"],
+        "mass_and_acceleration_relationship": ["heavier object", "lighter object", "greater mass", "smaller mass", "mass increases", "massive object", "more inertia", "resistance to acceleration", "harder to move", "slow acceleration", "mass effect on acceleration", "inversely proportional", "proportional relationship", "mass matters", "mass resists change", "acceleration depends on mass", "more mass less acceleration"],
+        "real_world_examples_and_context": ["pushing a car", "tug of war", "truck versus bike", "sled carrying cargo", "object sliding on ice", "going uphill", "going downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing cooler full of ice on sand", "pushing shopping cart", "riding horse up muddy trail", "moving gas canister during blackout", "launching fireworks with different weights", "trying to accelerate fully loaded truck on hill", "pushing heavy grill on uneven cement", "driving fast through potholes with full car", "running with heavy backpack", "running with heavy purse", "carrying heavy sound equipment"]
+  }
+},
 {
      "question": "How do you know if an object is in equilibrium?",
         "answer_type": "open_ended",
@@ -234,7 +221,7 @@
     {
       "question": "A 500 kg car has 5,000 J of kinetic energy. How fast is it going?",
       "options": ["2 m/s", "4.47 m/s", "4.5 m/s", "10 m/s"],
-      "answer": ["4.47 m/s","4.5 m/s"],
+      "answer": ["4.47 m/s","4.5 m/s"]
       },
     {
       "question": "Two identical Keyser figurines are at different heights on a shelf. Which has more potential energy?",
@@ -265,18 +252,33 @@
     }
   ],
   "Analysis": [
-    {
-      "question": "Explain energy changes in a rollercoaster ride.",
-      "answer_type": "open_ended" 
-    },
-    {
-      "question": "Why is no work done when holding a heavy box still?",
-      "answer_type": "open_ended"
-    },
-    {
-      "question": "How does a pendulum demonstrate energy conservation?",
-      "answer_type": "open_ended"
-    }
+   {
+  "question": "Explain what kind of energy changes can occur at the start of a rollercoaster ride.",
+    "answer_type": "open_ended",
+      "keywords": {
+       "energy_forms": ["potential energy", "gravitational potential energy", "GPE", "kinetic energy", "KE", "motion energy", "mechanical energy", "stored energy", "initial energy", "converted energy", "energy transformation", "energy transfer", "transfer of energy", "energy shift", "type of energy", "changing energy", "transition from PE to KE", "PE becomes KE", "energy moves", "gravity causes motion"],
+        "phrasings_and_equivalents": ["energy builds up", "energy stored at the top", "energy released", "energy goes from potential to kinetic", "one type of energy becomes another", "conversion from stored to motion", "change in energy type", "starts as potential", "becomes kinetic", "loses height gains speed", "gravity pulls it down", "gravity causes acceleration", "PE = mgh", "PE equals mass times gravity times height", "PE = mass x g x h", "KE = 1/2 mv^2", "KE = one half mass velocity squared", "kinetic energy formula", "potential energy equation", "mass height gravity", "velocity squared", "half mass v squared"],
+        "context": ["rollercoaster on a track", "going down a slope", "going down a hill", "starting from rest", "releasing the brakes", "hill at the start", "first big drop", "at the top of the ride", "car at the peak", "starting climb", "initial descent", "slow climb then sudden speed", "ride launches", "initial incline", "top of the hill", "free fall moment", "riders feel weightless", "coaster gains momentum", "pushing down fast", "speed increases", "slows at the top", "riding a coaster at a theme park", "waiting at the top of the hill", "visiting a fair", "engineering design challenge with a loop", "building a small model", "stomach drop on descent", "coaster model", "ride with steep climb", "pushing a toy car down a ramp", "observing a gravity-powered marble track", "rollercoaster in a cardboard setup", "video of a ride in a steep hill park", "driving down a hilly road at high speed"]
+  }
+},
+ {
+  "question": "Why is no work done when holding a heavy box still?",
+    "answer_type": "open_ended",
+      "keywords": {
+        "physics_concepts": ["no displacement", "zero displacement", "displacement is zero", "no movement", "not moving", "stationary", "static", "object is still", "rest position", "distance equals zero", "distance = 0", "W = Fd", "work = force times distance", "force without motion", "no work done", "holding not lifting", "constant position", "not accelerating", "net work is zero", "zero joules", "no mechanical work", "work requires motion", "distance matters in work", "work definition in physics"],
+        "common_phrasings": ["just holding it", "standing still", "holding without lifting", "box doesn’t move", "no energy used", "using effort but no motion", "holding still", "force applied but no movement", "not going anywhere", "still in hands", "supporting the weight", "pushing against gravity", "no distance traveled", "static force", "doing nothing physically", "staying still", "not walking", "box stays in place"],
+        "contextual_and_clarifications": ["holding groceries in place", "carrying a backpack without walking", "waiting with a box at a bus stop", "standing in line holding heavy items", "person standing with weights", "worker holding a toolbox", "lifting then stopping mid-air", "lifting then stopping mid air", "lifting then stopping mid_air", "paused in an elevator holding items", "keeping a large bag steady", "waiting for help carrying furniture", "feels like effort", "muscles are tired", "energy used but no work", "still feels hard", "body feels strain", "internal energy used", "no work in physics terms", "work ≠ effort", "effort doesn’t equal work", "no mechanical displacement", "work in everyday sense ≠ physics", "you get tired but no work is done", "confused because of energy use", "muscle strain ≠ mechanical work"]
+  }
+},
+   {
+  "question": "How does a pendulum demonstrate energy conservation?",
+    "answer_type": "open_ended",
+      "keywords": {
+        "concept": ["energy conservation", "conservation of energy", "mechanical energy", "PE + KE", "energy stays constant", "no energy lost", "energy not created or destroyed", "total energy is the same", "law of conservation", "constant total energy", "PE turns into KE", "KE turns into PE", "energy transfers between forms", "energy shifts back and forth", "energy remains the same", "gravitational potential and kinetic", "interchanging energies", "energy doesn't disappear", "PE = KE", "energy transformation"],
+        "phrasings": ["potential becomes kinetic", "kinetic becomes potential", "swinging back and forth", "highest point has PE", "lowest point has KE", "energy moves between types", "motion shows energy change", "no net energy loss", "pendulum transforms energy", "slows down then speeds up", "uses gravity", "gravity pulls the bob", "repeating swing shows conservation", "start as potential", "ends as kinetic", "back and forth conversion", "swing starts high", "swing reaches low point", "repeatable energy shift", "motion powered by energy change"],
+        "context": ["swing set", "pendulum clock", "swinging necklace", "science fair demo", "string with key", "makeshift pendulum", "hanging fan pull", "crane load swinging", "chandelier swaying", "shoelace and weight", "tree tire swing", "tied object swinging", "metronome", "school lab setup", "doorstop pendulum", "backpack on a string", "ceiling fan chain", "hanging ornament swing", "fishing line weight", "physics class experiment"]
+  }
+}
   ]
 },
 "Waves": {
@@ -320,18 +322,33 @@
       }
     ],
     "Analysis": [
+ {
+  "question": "Why can light travel through the vacuum of space, but sound cannot? Explain using the nature of their wave types.",
+    "answer_type": "open_ended",
+      "keywords": {
+       "wave_and_medium_concepts": ["mechanical wave", "electromagnetic wave", "transverse wave", "longitudinal wave", "wave type", "light wave", "sound wave", "compression", "rarefaction", "oscillation", "energy transfer", "medium-dependent", "medium dependent", "medium independent", "medium-independent", "requires a medium", "does not require a medium", "needs a medium", "needs particles", "molecular interaction", "molecule vibration", "collision between molecules", "can move through vacuum", "cannot move through vacuum", "vacuum transmission", "no air needed", "space allows light", "vibration propagation", "needs matter to move"],
+       "examples_and_context": ["outer space", "vacuum of space", "astronaut using radio", "radio signal through vacuum", "walkie talkies with no signal", "fireworks show see first hear later", "thunder and lightning delay", "emergency radio alert", "TV satellite dish receiving signal", "satellite sends data", "moon landing communication", "sunlight hits solar panel", "spacewalk with helmet radio", "rocket launches silently in vacuum", "explosion with no sound in space", "stars emit light", "watching fireworks silently behind glass", "blackout while using radios", "seeing lightning before hearing thunder", "eclipse blocking light not sound"],
+        "misconceptions_and_clarifications": ["sound travels in vacuum", "space explosion makes sound", "sound and light need air", "light cannot travel without air", "radio is sound not light", "sound and light behave the same", "both waves need medium", "no medium no wave", "sound moves faster than light", "vacuum blocks light", "radio waves are audible", "space is silent because sound can't travel", "light needs a medium", "people hear sound in space", "radio works like sound waves", "astronauts hear explosions", "electromagnetic wave is the same as sound", "mechanical wave doesn't need air", "vibrations travel through vacuum", "you can hear in space"]
+  }
+},
       {
-        "question": "Why can light travel through space but sound cannot?",
-        "answer_type": "open_ended"
-      },
+  "question": "How do noise-canceling headphones use wave interference?",
+    "answer_type": "open_ended",
+      "keywords": {
+        "wave_concepts": ["interference", "destructive interference", "constructive interference", "wave cancellation", "cancelling sound", "opposite waves", "out of phase", "waves out of sync", "same frequency opposite phase", "inverse sound waves", "cancel out", "sound waves overlap", "sound wave interaction", "wave reduction", "phase shift", "interference pattern", "amplitude reduction", "equal amplitude opposite phase", "inverted waveform", "phase difference", "superposition of waves"],
+       "technology_mechanism": ["microphone detects sound", "mic picks up noise", "creates opposite wave", "generates inverse signal", "produces reverse waveform", "built-in microphones", "sends opposite signal", "anti-noise signal", "circuitry generates cancellation", "built-in processor", "sound wave duplication with inversion", "emits canceling sound", "headphones detect and cancel", "noise reduction technology", "audio processing chip", "real-time cancellation", "headset electronics", "active noise canceling", "ANC system", "cancels background noise"],
+        "real_world_examples": ["airplane engine noise", "loud bus ride", "train commute", "noisy café", "crowded classroom", "open office", "vacuum cleaner", "construction noise", "working in a loud space", "loud space" ,"listening while flying", "studying in noisy home", "canceling traffic noise", "block out noise", "focus in public space", "tuning out chatter", "wearing headphones in noisy environment", "muting background sounds", "using headphones at a construction site", "wearing ANC while mowing the lawn", "noise-canceling during a car ride" , "noise canceling during a car ride"]
+  }
+},
       {
-        "question": "How do noise-canceling headphones use wave interference?",
-        "answer_type": "open_ended"
-      },
-      {
-        "question": "How would you measure wave speed using classroom tools?",
-        "answer_type": "open_ended"
-      }
+  "question": "How would you measure wave speed using classroom tools?",
+  "answer_type": "open_ended",
+  "keywords": {
+    "core_equations_and_terms": ["wave speed", "speed = frequency × wavelength", "v = fλ", "velocity equals frequency times wavelength", "speed formula", "f lambda", "v equals f times lambda", "wave equation", "measuring frequency", "measuring wavelength", "time", "distance", "speed calculation", "frequency", "wavelength", "period", "crest to crest", "trough to trough", "cycle per second", "wave cycle", "hertz", "meters per second"],
+    "methods_and_procedures": ["use a rope", "slinky demonstration", "count wave crests", "stopwatch timing", "ruler measurement", "track one full wave", "measure wave distance", "mark wave peaks", "count oscillations", "timing waves", "track motion over time", "record number of waves", "generate waves", "wave pulse", "student creates wave", "observe standing wave", "tabletop setup", "tie string to wall", "measure from rest point", "time multiple cycles"],
+    "contextual_examples": ["lab setup with slinky", "string tied to wall", "water waves in a tray", "shaking a rope", "ripple tank", "pendulum causing waves", "tuning fork in water", "sound wave lab", "student activity", "measuring rope waves", "slinky stretched on floor", "wave demo in class", "handheld wave generation", "classroom experiment", "small ripple tank", "measuring ripple travel", "group project with rope", "observing waves in class", "physics lab equipment", "visualizing waves using basic tools"]
+  }
+}
     ]
   },
 
@@ -377,35 +394,32 @@
   ],
   "Analysis": [
     {
-  "question": "How does a hand-crank flashlight convert energy?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "energy", "conversion", "mechanical", "electrical", "light",  "input", "output", "transform", "generate", "transfer", "stored energy", "kinetic energy", "manual", "hand-powered",  "motion", "movement", "energy flow", "effort", "energy transfer", "energy transformation"],
-    "physics_terms": [ "mechanical energy", "electrical energy", "light energy",  "electromagnetic induction", "generator", "crank",  "dynamo", "LED", "rotational motion", "alternator", "coil", "magnet", "current", "voltage", "resistance", "charge", "conservation of energy", "circuit", "electrons", "batteryless" ],
-    "context": [ "emergency flashlight", "flashlight used during blackout", "camping light", "hand crank radio-light combo", "using light during hurricane season", "power outage", "student experiment with generator", "hand crank charging during storm", "flashlight in survival kit", "home kit for emergencies", "students using hand crank during school blackout", "crank light", "hand-crank flashlight", "no electricity", "camping", "unstable stable power", ]
-  }
-}
+    "question": "How does a hand-crank flashlight convert energy?",
+      "answer_type": "open_ended",
+       "keywords": {
+        "concept": [ "energy", "conversion", "mechanical", "electrical", "light",  "input", "output", "transform", "generate", "transfer", "stored energy", "kinetic energy", "manual", "hand-powered",  "motion", "movement", "energy flow", "effort", "energy transfer", "energy transformation"],
+        "physics_terms": [ "mechanical energy", "electrical energy", "light energy",  "electromagnetic induction", "generator", "crank",  "dynamo", "LED", "rotational motion", "alternator", "coil", "magnet", "current", "voltage", "resistance", "charge", "conservation of energy", "circuit", "electrons", "batteryless" ],
+        "context": [ "emergency flashlight", "flashlight used during blackout", "camping light", "hand crank radio-light combo", "using light during hurricane season", "power outage", "student experiment with generator", "hand crank charging during storm", "flashlight in survival kit", "home kit for emergencies", "students using hand crank during school blackout", "crank light", "hand-crank flashlight", "no electricity", "camping", "unstable stable power" ]
+       }
     },
-    {
-  "question": "Why do wires heat up when too much current flows?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "current", "electricity", "flow", "resistance", "friction", "electrical energy", "heat", "thermal", "temperature", "conversion", "energy loss", "power", "Joule heating", "Ohm’s Law", "conduction", "electrons", "charge flow", "voltage", "potential difference","circuit", "load", "short circuit", "insulation", "material properties", "material"],
-    "physics_terms": [ "resistive heating", "I²R loss", "Ohmic heating", "conductor", "wire gauge", "current density", "thermal runaway",  "electrical resistance", "overload", "electrical fault", "power dissipation", "melting point", "circuit breaker", "fuse",  "conductivity", "electrical load", "excess current",  "copper wire", "insulated wire", "ampacity"],
-    "context": [ "charging too many devices at once", "extension cord overheating", "using high-wattage appliances", "old wiring in homes",  "power strip used incorrectly", "Christmas lights left on too long", "air conditioner sharing outlet with fridge",  "fan and TV on the same overloaded power bar",  "melting plug after a storm surge",  "damaged wiring causing sparks", "old home with outdated wiring", "overloading outlets", "using generator and plugging in too many things", 
-      "neighborhood blackout caused by faulty wires", "material properties","basic wiring"]
+  {
+    "question": "Why do wires heat up when too much current flows?",
+      "answer_type": "open_ended",
+        "keywords": {
+         "concept": [ "current", "electricity", "flow", "resistance", "friction", "electrical energy", "heat", "thermal", "temperature", "conversion", "energy loss", "power", "Joule heating", "Ohm’s Law", "conduction", "electrons", "charge flow", "voltage", "potential difference","circuit", "load", "short circuit", "insulation", "material properties", "material"],
+         "physics_terms": [ "resistive heating", "I²R loss", "Ohmic heating", "conductor", "wire gauge", "current density", "thermal runaway",  "electrical resistance", "overload", "electrical fault", "power dissipation", "melting point", "circuit breaker", "fuse",  "conductivity", "electrical load", "excess current",  "copper wire", "insulated wire", "ampacity"],
+         "context": [ "charging too many devices at once", "extension cord overheating", "using high-wattage appliances", "old wiring in homes",  "power strip used incorrectly", "Christmas lights left on too long", "air conditioner sharing outlet with fridge",  "fan and TV on the same overloaded power bar",  "melting plug after a storm surge",  "damaged wiring causing sparks", "old home with outdated wiring", "overloading outlets", "using generator and plugging in too many things", "blackout caused by faulty wires", "material properties","basic wiring"]
     }
    },
-    {
+{
   "question": "How could you demonstrate electromagnetic induction with materials found at home?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "concept": [ "magnet", "coil", "wire", "loop", "electricity", "motion", "magnetic field", "voltage", "induced current", "electromagnetism", "Faraday", "flux", "change in flux",  "electromagnetic induction", "generator", "alternating current", "circuit", "energy", "force", "field lines", "movement", "rotation", "interaction", "electromotive force", "emf"
-    ],
-    "materials_context": [  "copper wire", "iron nail", "LED bulb", "multimeter", "neodymium magnet", "refrigerator magnet", "cardboard tube", "screwdriver", "plasti spool", "old speaker coil", "AA battery for testing", "tape", "scissors", "aluminum foil", "cardboard base", "light bulb", "doorbell wire", "old phone charger cable",  "recycled electronics", "paper clips"
-    ],
-    "activity_context": [ "moving a magnet through a coil", "waving magnet near wire loop",  "spinning a coil near a magnet", "dropping a magnet through copper tube",  "shaking coil and magnet flashlight", "homemade generator from fan",  "bike light generator", "wire-wrapped nail as electromagnet", "building a simple dynamo", "testing with multimeter to see voltage spike", "flashlight powered by cranking", "soda can and magnet", "hand-powered light", "science fair", "recycling fans", repurposed appliance motor"]
-        }
+    "answer_type": "open_ended",
+     "keywords": {
+        "concept": [ "magnet", "coil", "wire", "loop", "electricity", "motion", "magnetic field", "voltage", "induced current", "electromagnetism", "Faraday", "flux", "change in flux",  "electromagnetic induction", "generator", "alternating current", "circuit", "energy", "force", "field lines", "movement", "rotation", "interaction", "electromotive force", "emf" ],
+        "materials_context": [  "copper wire", "iron nail", "LED bulb", "multimeter", "neodymium magnet", "refrigerator magnet", "cardboard tube", "screwdriver", "plasti spool", "old speaker coil", "AA battery for testing", "tape", "scissors", "aluminum foil", "cardboard base", "light bulb", "doorbell wire", "old phone charger cable",  "recycled electronics", "paper clips" ],
+        "activity_context": [ "moving a magnet through a coil", "waving magnet near wire loop",  "spinning a coil near a magnet", "dropping a magnet through copper tube",  "shaking coil and magnet flashlight", "homemade generator from fan",  "bike light generator", "wire-wrapped nail as electromagnet", "building a simple dynamo", "testing with multimeter to see voltage spike", "flashlight powered by cranking", "soda can and magnet", "hand-powered light", "science fair", "recycling fans", "repurposed motor", "repurposed appliance motor"]
       }
-    }
-  ]
+     }
+   ]
+  }
+}
