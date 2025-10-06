@@ -65,25 +65,14 @@ Version Control: GitHub Dev
 ---
 
 🧱 Engineering Goals
-
-1. Personalized Lessons – Adaptive lessons based on user progress.
-
-
-2. Modular Structure – Dynamic unit framework for scalable content.
-
-
-3. Intuitiveness – Simple UI requiring minimal written instructions.
-
-
-4. Gamification – Improve engagement through visual and interactive rewards.
-
-
-5. Progress Tracking – Motivate students via visible advancement.
-
-
-6. Multiple Review Strategies – Combine Pomodoro and flashcard learning.
-
-
+1. Personalized lessons for the students
+2. Intuitive and easy to start using
+3. Gamification elements to optimize user retention
+4. Progress tracking
+5. Multiple learning strategies
+    - Including Pomodoro
+    - Flashcards
+6. Ten (10) minutes Stability, without requiring developer intervention
 
 
 ---
@@ -92,16 +81,17 @@ Version Control: GitHub Dev
 
 Date / Milestone Description Status
 
-Sept 30, 2025 Functional and up-to-date Physics pretest completed. 🔜 In progress
-Oct 5, 2025 Full recollection of curriculum materials and lesson contents. 🔜 Planned
-Oct 12, 2025 Pretest fully integrated and running within the KeyserKat app. 🔜 Planned
-Oct 19, 2025 Core Physics unit (hardest topic) functional and tested. 🔜 Planned
-Oct 26, 2025 Developer testing for bugs and daily use stability. 🔜 Planned
-Nov 2–8, 2025 Recruit ~30 twelfth-grade students for user testing. 🔜 Planned
-Nov 22, 2025 Complete human testing; collect feedback surveys. 🔜 Planned
-Nov 22–29, 2025 Analyze test data; brainstorm improvements for next version. 🔜 Planned
-Dec 1–6, 2025 Finalize project report and prepare presentation. 🔜 Planned
-Future Goals (2026+) Add personalized AI, full 12th-grade curriculum, and animated Keyser. ⏳ Long-term
+Sep 30 to Oct 4, 2025 ...... Completion of a working and up-to-date pretest for the physics course.  .....................🔜 *In progress*
+Oct 5  to 11,    2025 ...... Recollection of all application content for the curriculum.  ................................🔜 Planned
+Oct 12 to 18,    2025 ...... Integration of the pretest into the KeyserKat application.  .................................🔜 Planned
+Oct 19 to 25,    2025 ...... Development and implementation of the main course unit. .....................................🔜 Planned
+Oct 26 to Nov 1, 2025 ...... Internal developer testing for bugs and daily-use stability. ................................🔜 Planned
+Nov 2  to 8,     2025 ...... Recruitment of approximately 30 volunteer 12th-grade students (across schools if possible) ..🔜 Planned
+Nov 22,          2025 ...... Completion of human testing; volunteers submit questionnaires on their experience. ..........🔜 Planned
+Nov 22 to 29,    2025 ...... Data analysis and brainstorming improvements for the next version. ..........................🔜 Planned
+Dec 1  to 6,     2025 ...... Design and finalization of the project’s final report. ......................................🔜 Planned
+
+Future Goals     2026+...... Add personalized AI, full 12th-grade curriculum, and animated Keyser. .......................⏳ Long-term
 
 
 
@@ -131,6 +121,8 @@ RPG mechanics – Structured progression and reward loops.
 
 All early project code names and planning documents are in Spanish — part of our creative tradition (similar to Nintendo’s Project Dolphin).
 
+
+---
 
 Mentors
 
