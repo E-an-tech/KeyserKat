@@ -1,0 +1,44 @@
+[
+  {
+    "question_id": "Science and engineering and practices|Theory|2",
+    "user_answer": "They ensure universal understanding",
+    "correct": true,
+    "unit_hidden": "Science and engineering and practices",
+    "original_question": "Why are SI (International system of measurements) units used in physics?"
+  },
+  {
+    "question_id": "Work and energy|Analysis|1",
+    "user_answer": "static",
+    "correct": false,
+    "unit_hidden": "Work and energy",
+    "original_question": "Why is no work done when holding a heavy box still?"
+  },
+  {
+    "question_id": "Waves|Analysis|2",
+    "user_answer": "being a bat or a beluga whale",
+    "correct": false,
+    "unit_hidden": "Waves",
+    "original_question": "How would you measure wave speed using classroom tools?"
+  },
+  {
+    "question_id": "Movement dynamics|Application|3",
+    "user_answer": "It increases",
+    "correct": true,
+    "unit_hidden": "Movement dynamics",
+    "original_question": "A person pushes a shopping cart with more force. What happens to its acceleration?"
+  },
+  {
+    "question_id": "Energy transfer and transformation|Theory|1",
+    "user_answer": "It blocks flow",
+    "correct": true,
+    "unit_hidden": "Energy transfer and transformation",
+    "original_question": "How is resistance different from current?"
+  },
+  {
+    "question_id": "Kinematics of movement|Application|0",
+    "user_answer": "4 m/s\u00b2",
+    "correct": true,
+    "unit_hidden": "Kinematics of movement",
+    "original_question": "A house cat accelerates from 2 m/s to 10 m/s in 2 seconds while chasing a toy across the living room floor. What is the cat\u2019s acceleration?"
+  }
+]
