@@ -1,9 +1,11 @@
+
+**KeyserKat**
+
 The only learning app you’ll ever need!
 
 
 ---
-
-🧩 Project Origin
+Background
 
 KeyserKat was born in GeoGebra as a perfectly symmetrical, straight-line cat. Inspired by educational platforms like Khan Academy for accessible teaching, Duolingo for gamification and user retention, and video games like Mario Galaxy for intuitive design, it evolved into a concept meant to help students(especially 12th graders) learn on their own terms.
 
@@ -11,8 +13,7 @@ Originally prototyped in MIT App Inventor, KeyserKat is now being rebuilt in Pyt
 
 
 ---
-
-🎯 Core Philosophy
+Core Philosophy
 
 Geometric World: Every visual element follows geometric design principles.
 
@@ -27,8 +28,7 @@ Guava: A conceptual side character still in early development.
 
 
 ---
-
-⚙️ Features (In Progress)
+Features (In Progress)
 
 Personalized lessons adapting to each student’s performance.
 
@@ -45,8 +45,7 @@ Physics curriculum aligned with the Department of Education of Puerto Rico.
 
 
 ---
-
-💻 Technologies
+Technologies
 
 Prototype: MIT App Inventor
 
@@ -63,8 +62,8 @@ Version Control: GitHub Dev
 
 
 ---
+Engineering Goals
 
-🧱 Engineering Goals
 1. Personalized lessons for the students
 2. Intuitive and easy to start using
 3. Gamification elements to optimize user retention
@@ -76,8 +75,7 @@ Version Control: GitHub Dev
 
 
 ---
-
-📅 Roadmap
+Roadmap
 
 Date / Milestone Description Status
 
@@ -96,8 +94,7 @@ Future Goals     2026+...... Add personalized AI, full 12th-grade curriculum, an
 
 
 ---
-
-🌟 Inspirations
+Inspirations
 
 Khan Academy – Free, high-quality education.
 
@@ -107,30 +104,21 @@ Mario Galaxy – Visual design and intuitive interaction.
 
 Classic animation principles – Personality in movement.
 
-Cats – Because every great idea needs one.
+Cats – Because why not? They're cute.
 
 Matrix aesthetics – Digital visual inspiration.
 
 RPG mechanics – Structured progression and reward loops.
 
-
-
----
-
-💬 Developer Notes
-
-All early project code names and planning documents are in Spanish — part of our creative tradition (similar to Nintendo’s Project Dolphin).
-
+Monochrome/Bicolor aesthetic - Easier to customize and expand.
 
 ---
 
-Mentors
+Developer Notes
 
-Natcha León as our physics mentor
-Uknown programming mentor
-
+All early project code names and planning documents are in Spanish part of our creative tradition (similar to Nintendo’s Project Dolphin). For example Keyser = Queso
 
 ---
 
-Made with hope, ambition, and a lot of meowney 🐾
-By two friends building the future of learning — one paw at a time.
+Made with hope, ambition, and a not a lot of meowney.
+By two friends building the future of learning one meow at a time.
