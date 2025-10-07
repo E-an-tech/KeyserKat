@@ -1,11 +1,11 @@
 
-**KeyserKat**
+#**KeyserKat**
 
 The only learning app you’ll ever need!
 
 
 ---
-Background
+##Background
 
 KeyserKat was born in GeoGebra as a perfectly symmetrical, straight-line cat. Inspired by educational platforms like Khan Academy for accessible teaching, Duolingo for gamification and user retention, and video games like Mario Galaxy for intuitive design, it evolved into a concept meant to help students(especially 12th graders) learn on their own terms.
 
@@ -13,7 +13,7 @@ Originally prototyped in MIT App Inventor, KeyserKat is now being rebuilt in Pyt
 
 
 ---
-Core Philosophy
+##Core Philosophy
 
 Geometric World: Every visual element follows geometric design principles.
 
@@ -28,7 +28,7 @@ Guava: A conceptual side character still in early development.
 
 
 ---
-Features (In Progress)
+##Features (In Progress)
 
 Personalized lessons adapting to each student’s performance.
 
@@ -45,7 +45,7 @@ Physics curriculum aligned with the Department of Education of Puerto Rico.
 
 
 ---
-Technologies
+##Technologies
 
 Prototype: MIT App Inventor
 
@@ -62,7 +62,7 @@ Version Control: GitHub Dev
 
 
 ---
-Engineering Goals
+##Engineering Goals
 
 1. Personalized lessons for the students
 2. Intuitive and easy to start using
@@ -75,7 +75,7 @@ Engineering Goals
 
 
 ---
-Roadmap
+##Roadmap
 
 Date / Milestone Description Status
 
@@ -89,12 +89,12 @@ Nov 22,          2025 ...... Completion of human testing; volunteers submit ques
 Nov 22 to 29,    2025 ...... Data analysis and brainstorming improvements for the next version. ..........................🔜 Planned
 Dec 1  to 6,     2025 ...... Design and finalization of the project’s final report. ......................................🔜 Planned
 
-Future Goals     2026+...... Add personalized AI, full 12th-grade curriculum, and animated Keyser. .......................⏳ Long-term
+Future Goals     2026+...... Add personalized AI, full 12th-grade curriculum, and animated Keyser. ....................... Long-term
 
 
 
 ---
-Inspirations
+##Inspirations
 
 Khan Academy – Free, high-quality education.
 
@@ -114,11 +114,11 @@ Monochrome/Bicolor aesthetic - Easier to customize and expand.
 
 ---
 
-Developer Notes
+##Developer Notes
 
 All early project code names and planning documents are in Spanish part of our creative tradition (similar to Nintendo’s Project Dolphin). For example Keyser = Queso
 
 ---
 
-Made with hope, ambition, and a not a lot of meowney.
-By two friends building the future of learning one meow at a time.
+###**Made with hope, ambition, and a not a lot of meowney.
+By two friends building the future of learning one meow at a time.**
