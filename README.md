@@ -120,5 +120,5 @@ All early project code names and planning documents are in Spanish part of our c
 
 ---
 
-### **Made with hope, ambition, and a not a lot of meowney.
-By two friends building the future of learning one meow at a time.**
+#### Made with hope, ambition, and  not a lot of meowney.
+By two friends building the future of learning one meow at a time.
