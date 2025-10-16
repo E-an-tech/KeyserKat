@@ -12,6 +12,10 @@ from kivy.uix.stencilview import StencilView
 from kivy.animation import Animation
 from kivy.graphics import StencilPush, StencilUse, StencilUnUse, StencilPop, Rectangle
 from kivy.uix.textinput import TextInput
+from kivy.graphics import Color, Rectangle
+from kivy.core.window import Window
+
+
 
 # Force portrait mode
 Config.set('graphics', 'width', '400')
@@ -66,11 +70,30 @@ class MainScreen(Screen):
 
         layout = FloatLayout()
 
+        # Transparent red rectangle (animation boundary)
+        with layout.canvas.after:
+            Color(1, 0, 0, 0.3)  # red with transparency
+            self.transition_box = Rectangle()
+
+        # Function to center and resize rectangle
+        def update_box(*args):
+            box_width = Window.width * 0.595   # same ratio as cat container
+            box_height = Window.height * 0.35
+            box_x = (Window.width - box_width) / 2
+            box_y = (Window.height - box_height) / 2
+            self.transition_box.pos = (box_x, box_y)
+            self.transition_box.size = (box_width, box_height)
+
+        # Initial and responsive update
+        update_box()
+        Window.bind(size=update_box)
+
+
         # Mirror background
         self.mirror = Image(
             source="assets/mirror_bg.png",
-            size_hint=(0.9, 0.6),
-            pos_hint={"center_x": 0.5, "center_y": 0.55}
+            size_hint=(1, 0.9),
+            pos_hint={"center_x": 0.5, "center_y": 0.50}
         )
         layout.add_widget(self.mirror)
 
@@ -89,8 +112,8 @@ class MainScreen(Screen):
 
         # Container for cat + clothes (relative to mirror)
         self.cat_container = FloatLayout(
-            size_hint=(0.35, 0.35),  # same as mirror
-            pos_hint={"center_x": 0.5, "center_y": 0.52}
+            size_hint=(0.55, 0.55),  # same as mirror
+            pos_hint={"center_x": 0.5, "center_y": 0.5}
         )
 
         # Cat image (bottom layer)
@@ -125,9 +148,9 @@ class MainScreen(Screen):
             spacing=10
         )
 
-        btn_settings = Button(background_normal="assets/settings.png", size_hint=(None, None), size=(100, 100))
-        btn_crown    = Button(background_normal="assets/crown.png", size_hint=(None, None), size=(100, 100))
-        btn_support  = Button(background_normal="assets/support.png", size_hint=(None, None), size=(100, 100))
+        btn_settings = Button(background_normal="assets/settings.png", size_hint=(None, None), size=(110, 110))
+        btn_crown    = Button(background_normal="assets/crown.png", size_hint=(None, None), size=(110, 110))
+        btn_support  = Button(background_normal="assets/support.png", size_hint=(None, None), size=(110, 110))
 
         btn_settings.bind(on_press=self.go_to_settings)
         btn_crown.bind(on_press=self.go_to_leaderboard)
@@ -160,12 +183,14 @@ class MainScreen(Screen):
         return super().on_touch_up(touch)
 
     # Clothes switching
-    def switch_clothes(self, new_index):
+    def switch_clothes(self, new_index, direction="left"):
         if new_index == self.clothes_index:
             return
         self.clothes.source = self.clothes_images[new_index]
         self.title_label.text = self.course_titles[new_index]
         self.clothes_index = new_index
+
+
 
     def next_clothes(self):
         new_index = (self.clothes_index + 1) % len(self.clothes_images)
@@ -184,6 +209,9 @@ class MainScreen(Screen):
 
     def go_to_support(self, instance):
         self.manager.current = "support"
+
+
+
 
 
 
