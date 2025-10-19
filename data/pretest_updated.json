@@ -1,0 +1,7 @@
+{
+  "Science and engineering and practices": {
+    [   "question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? 
+       Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula \left(\First\ equation:\ Δy=v_{iy}t+\frac{1}{2}gt^2\ \ \ \ \ \ Second\ equation:\ v=\frac{d}{t}\right)",
+        "options":[ "0.41s;2.0m", "0.23s;\ 5.3m", "0.64s;\ 3.2m", "0.37s;\ 2.3m" ],
+        "answer": "0.64s;\ 3.2m" ],
+    [   "question": ""]]}
