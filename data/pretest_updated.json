@@ -1,5 +1,6 @@
 {
-  "Science and engineering and practices": [],
+  "Science and engineering and practices": [
+     ],
 
   "Kinematics of movement": [
     {
@@ -51,9 +52,172 @@
       "answer": "v = 49.6 m/s, a_c = 82.0 m/s^2"
     }
   ],
+
   "Work and energy": [
      {
-      "question": ""
-     }
-  ]
+  "question": "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)",
+  "options": [ "Chemical energy from the cyclist’s body",
+  "Thermal energy from friction",
+  "Elastic potential energy from the tires",
+  "Electrical energy from the bike’s components"
+  ],
+  "answer": "Chemical energy from the cyclist’s body"
+     },
+     {
+  "question": "Identify and explain the differences between the types of energy represented in the following illustrations: (A) Soccer players in action, (B) An Olympic diver before jumping, (C) A compressed spring inside a pen.",
+  "options": [
+    "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy",
+    "A: Elastic potential energy, B: Kinetic energy, C: Chemical energy",
+    "A: Gravitational potential energy, B: Elastic potential energy, C: Kinetic energy",
+    "A: Thermal energy, B: Chemical energy, C: Magnetic energy"
+  ],
+  "answer": "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy"
+    },
+    {
+  "question": "In a crash test, a red car with a mass of 2.80 x 10^3 kg is moving at 14.5 m/s and comes to a stop after colliding with a stationary car anchored to the ground. Calculate the change in the car's kinetic energy using ΔKE = KEf - KEi, where KE = (1/2)mv^2.",
+  "options": [
+    "ΔKE = -2.9 x 10^5 J",
+    "ΔKE = 40.6 J",
+    "ΔKE = -20.3 J",
+    "ΔKE = 8.1 x 10^3 J"
+  ],
+  "answer": "ΔKE = -2.9 x 10^5 J"
+   },
+   {
+  "question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
+  "options": [
+    "P = 1.6 x 10^2 watts",
+    "P = 4.8 x 10^2 watts",
+    "P = 6.6 x 10^3 watts",
+    "P = 3.2 x 10^1 watts"
+  ],
+  "answer": "P = 1.6 x 10^2 watts"
+   }
+  ],
+
+  "Waves": [
+      {
+  "question": "In an electron microscope, electrons are accelerated through a potential difference of 2.0 x 10^5 V, reaching a maximum velocity of 2.7 x 10^8 m/s. Calculate the de Broglie wavelength of the electron. (Use h = 6.63 x 10^-34 J·s and m = 9.1 x 10^-31 kg, λ = h/mv.)",
+  "options": [
+    "λ = 2.7 x 10^-12 m",
+    "λ = 1.8 x 10^-25 m",
+    "λ = 2.2 x 10^-72 m",
+    "λ = 3.7 x 10^-9 m"
+  ],
+  "answer": "λ = 2.7 x 10^-12 m"
+    },
+    {
+  "question": "Photocells, like those found in solar panels and calculators, work using the photoelectric effect, which describes a material's ability to generate electricity when exposed to light. If the threshold frequency for silicon is 3.2 x 10^13 Hz, calculate the maximum wavelength (λ) that can produce the photoelectric effect. (Use c = λ·f, where c = 3.0 x 10^8 m/s.)",
+  "options": [
+    "λ = 8.25 x 10^-6 m",
+    "λ = 9.2 x 10^-5 m",
+    "λ = 9.4 x 10^-6 m",
+    "λ = 3.6 x 10^-15 m"
+  ],
+  "answer": "λ = 9.4 x 10^-6 m"
+   },
+   {
+  "question": "SONAR (Sound Navigation and Ranging) technology determines the position of underwater objects by sending sound waves that reflect off surfaces and return to the source. On which wave property is SONAR primarily based?",
+  "options": [
+    "Reflection",
+    "Refraction",
+    "Diffraction",
+    "Interference"
+  ],
+  "answer": "Reflection"
+   },
+   {
+  "question": "A SONAR system on a research ship emits a signal with a frequency of 1.50 x 10^5 Hz and a wavelength of 2.70 mm. Calculate the speed of the wave as it travels through the water. (Use v = f·λ.)",
+  "options": [
+    "v = 4.05 x 10^2 m/s",
+    "v = 5.6 x 10^5 m/s",
+    "v = 8.0 x 10^6 m/s",
+    "v = 6.7 x 10^-2 m/s"
+  ],
+  "answer": "v = 4.05 x 10^2 m/s"
+   },
+   {
+  "question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
+  "options": [
+    "(a) Constructive interference, (b) Destructive interference",
+    "(a) Destructive interference, (b) Constructive interference",
+    "(a) Node, (b) Antinode",
+    "(a) Cancellation, (b) Reflection"
+  ],
+  "answer": "(a) Constructive interference, (b) Destructive interference"
+   }
+],
+
+  "Energy transfer and transformation": [
+  {
+    "question": "It refers to the rate at which electric charges pass through a conductor over a period of time.",
+    "options": [
+      "Electric current, SI unit: Ampere",
+      "Electric charge, SI unit: Ampere",
+      "Electric potential, SI unit: Volt",
+      "Electric field, SI unit: Volt"
+    ],
+    "answer": "Electric current, SI unit: Ampere"
+  },
+  {
+    "question": "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge.",
+    "options": [
+      "Electric current, SI unit: Ampere",
+      "Electric charge, SI unit: Ampere",
+      "Electric potential, SI unit: Volt",
+      "Electric field, SI unit: Volt"
+    ],
+    "answer": "Electric potential, SI unit: Volt"
+  },
+  {
+    "question": "In the following circuit, which of the statements is correct?",
+    "options": [
+      "Each resistor has a voltage drop equal to the total voltage of the entire circuit.",
+      "The total voltage drop for the entire circuit equals the sum of voltage drops across all resistors.",
+      "Each resistor is connected in such a way that there is only one path for current to pass.",
+      "If one of the resistors is removed, the current will stop flowing."
+    ],
+    "answer": "The total voltage drop for the entire circuit equals the sum of voltage drops across all resistors."
+  },
+  {
+    "question": "The diagram shows the electrical circuit that powers a car's front headlights. This circuit is designed so that each lamp receives its full share of power. The headlights are connected in what type of circuit?",
+    "options": [
+      "Series circuit",
+      "Parallel circuit",
+      "Combined circuits",
+      "Alternating current circuit"
+    ],
+    "answer": "Parallel circuit"
+  },
+  {
+    "question": "What force keeps satellites in orbit around Earth?",
+    "options": [
+      "Orbital period",
+      "Weightlessness",
+      "Gravitational force",
+      "Inertial mass"
+    ],
+    "answer": "Gravitational force"
+  },
+  {
+    "question": "According to Newton’s Law of Universal Gravitation, the gravitational force between two objects ________ if the distance between them is doubled.",
+    "options": [
+      "Quadruples",
+      "Doubles",
+      "Reduces to half",
+      "Reduces to one-fourth"
+    ],
+    "answer": "Reduces to one-fourth"
+  },
+  {
+    "question": "Analyze Newton’s Law of Universal Gravitation. If the planet Mars had triple its current mass while keeping the same size, would the value of G (gravitational constant) change?",
+    "options": [
+      "No, G is a universal constant and does not change with mass.",
+      "Yes, G would triple because mass increases.",
+      "Yes, G would decrease since the distance remains the same.",
+      "No, G would only change if the radius of Mars changed."
+    ],
+    "answer": "No, G is a universal constant and does not change with mass."
+  }
+ ]
 }
