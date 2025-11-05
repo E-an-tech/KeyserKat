@@ -1,6 +1,41 @@
 {
   "Science and engineering and practices": [
-     ],
+    {
+      "question": "You measure a cat’s teeth to be 1 cm, but your partner measures 1.3 cm. What is the percent error?",
+      "options": ["20%", "23%", "30%", "25%"],
+      "answer": "23%"
+    },
+    {
+      "question": "A thermometer reads 102°C instead of 100°C for boiling water. What type of error is this?",
+      "options": ["Random", "Human", "Systematic", "Accurate"],
+      "answer": "Systematic"
+    },
+    {
+      "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
+      "options": ["Quantitative", "Descriptive", "Qualitative", "Subjective"],
+      "answer": "Qualitative"
+    },
+    {
+      "question": "What is most likely to happen if a scale is not calibrated before use?",
+      "options": ["You get highly accurate readings", "You save time", "You get systematic errors", "The scale breaks"],
+      "answer": "You get systematic errors"
+    },
+    {
+      "question": "What does precision refer to?",
+      "options": ["How close measurements are to each other", "How close a measurement is to the true value", "How accurate the instrument is", "How fast you take a measurement"],
+      "answer": "How close measurements are to each other"
+    },
+    {
+      "question": "What is the function of a dependent variable?",
+      "options": ["It causes the change", "It is changed by the independent variable", "It is the control", "It is never measured"],
+      "answer": "It is changed by the independent variable"
+    },
+    {
+      "question": "Why are SI (International system of measurements) units used in physics?",
+      "options": ["They are based on English tradition", "They are easy to memorize", "They ensure universal understanding", "They change often"],
+      "answer": "They ensure universal understanding"
+    } 
+  ],
 
   "Kinematics of movement": [
     {
