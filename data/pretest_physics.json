@@ -1,425 +1,258 @@
 {
-  "Science and engineering and practices": {
-    "Application": [
-      {
-        "question": "You measure a cat’s teeth to be 1 cm, but your partner measures 1.3 cm. What is the percent error?",
-        "options": ["20%", "23%", "30%", "25%"],
-        "answer": "23%"
-      },
-      {
-        "question": "A thermometer reads 102°C instead of 100°C for boiling water. What type of error is this?",
-        "options": ["Random", "Human", "Systematic", "Accurate"],
-        "answer": "Systematic"
-      },
-      {
-        "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
-        "options": ["Quantitative", "Descriptive", "Qualitative", "Subjective"],
-        "answer": "Qualitative"
-      },
-      {
-        "question": "What is most likely to happen if a scale is not calibrated before use?",
-        "options": ["You get highly accurate readings", "You save time", "You get systematic errors", "The scale breaks"],
-        "answer": "You get systematic errors"
-      }
-    ],
-    "Theory": [
-      {
-        "question": "What does precision refer to?",
-        "options": ["How close measurements are to each other", "How close a measurement is to the true value", "How accurate the instrument is", "How fast you take a measurement"],
-        "answer": "How close measurements are to each other"
-      },
-      {
-        "question": "What is the function of a dependent variable?",
-        "options": ["It causes the change", "It is changed by the independent variable", "It is the control", "It is never measured"],
-        "answer": "It is changed by the independent variable"
-      },
-      {
-        "question": "Why are SI (International system of measurements) units used in physics?",
-        "options": ["They are based on English tradition", "They are easy to memorize", "They ensure universal understanding", "They change often"],
-        "answer": "They ensure universal understanding"
-      }
-    ],
-    "Analysis": [ 
+  "Science and engineering and practices": [
     {
-     "question": "Why is lab safety especially important in physics labs involving electricity?",
-       "answer_type": "open_ended",
-        "keywords": {
-         "risks_and_hazards": ["electric shock", "burn", "fire", "short circuit", "electrocution", "current", "voltage", "overload", "explosion", "arc flash", "damaged wires", "exposed wires", "wet surfaces", "metal contact", "static discharge", "malfunction", "sparks", "fatal", "danger", "serious consequences", "accident", "electric arc", "resistance burn", "wet hands", "injury", "hazard"],
-         "safety_measures_and_protocols": ["insulation", "safety gear", "rubber gloves", "goggles", "lab coat", "grounding", "disconnect power", "safety protocol", "safety training", "turn off equipment", "check connections", "dry hands", "proper handling", "circuit breaker", "insulated gloves", "no water", "check equipment", "follow instructions", "power off", "rubber soles", "avoid metal", "report damage", "supervision", "safety goggles", "clear workspace", "double check wiring", "label circuits", "use low voltage", "work in pairs", "fire extinguisher nearby"],
-         "importance_and_context": ["prevent injury", "protect students", "protect oneself", "protection", "risk reduction", "accident prevention", "health hazard", "awareness", "responsibility", "safe environment", "emergency readiness", "avoid danger", "life-threatening", "safety first", "physics lab", "electricity", "electrical components", "voltage source", "circuit", "experiment", "students", "equipment", "safety rules", "lab procedure", "electrical setup", "lab activity", "hands-on experiment", "classroom lab", "controlled environment", "voltage measurement", "current flow", "breadboard", "power supply", "practical task"]
-  }
-},
-  {
-       "question": "In a physics lab, describe a situation where a human mistake and a systematic tool error happen at the same time.",
-          "answer_type" : "open_ended"
-            ,"keywords": {
-             "systematic": [ "calibration", "zero error", "offset", "bias", "drift", "faulty tool", "instrument defect", "incorrect scale", "sensor error", "consistent error", "battery issue", "tool malfunction", "fixed error", "manufacturing defect"],
-             "human": [ "mistake", "parallax", "misread", "manual error", "rushed", "forgot", "didn't double-check", "wrong setting", "late reaction", "inattention", "eye level", "incorrect operation", "reading angle", "estimated", "careless" ],
-              "context": ["measurement", "voltmeter", "stopwatch", "timer", "scale", "physics lab", "experiment", "timing", "tool", "reading", "data", "acceleration", "gravity", "lab setup", "force", "velocity", "distance", "recording", "conditions"]
-                    }
-  },
-  {
-    "question": "Why is using a control group important in experiments?",
-      "answer_type": "open_ended",
-      "keywords":{
-        "purpose": [ "baseline", "comparison", "reference", "standard", "unchanged", "fixed variable", "not manipulated", "isolated", "neutral", "constant", "unchanged group", "no treatment", "unchanged condition", "benchmark", "starting point"],
-       "benefit": [ "validity", "accuracy", "reliable", "fair test", "eliminate bias", "test variable", "cause and effect", "clarity of results", "repeatable", "scientific method", "controlled conditions", "reduce confounding", "clear outcomes", "improves confidence", "evidence-based", "separates variables"],
-       "context": [ "experiment", "variable", "independent", "dependent", "physics lab", "trial", "measurement", "control group", "treatment group", "setup", "data collection", "comparison group", "testing", "outcome", "observation", "scientific study", "investigation", "procedure", "data analysis", "research"]
-  
-        } 
-     }
-  ]
-},
+      "question": "You measure a cat’s teeth to be 1 cm, but your partner measures 1.3 cm. What is the percent error?",
+      "options": ["20%", "23%", "30%", "25%"],
+      "answer": "23%"
+    },
+    {
+      "question": "A thermometer reads 102°C instead of 100°C for boiling water. What type of error is this?",
+      "options": ["Random", "Human", "Systematic", "Accurate"],
+      "answer": "Systematic"
+    },
+    {
+      "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
+      "options": ["Quantitative", "Descriptive", "Qualitative", "Subjective"],
+      "answer": "Qualitative"
+    },
+    {
+      "question": "What is most likely to happen if a scale is not calibrated before use?",
+      "options": ["You get highly accurate readings", "You save time", "You get systematic errors", "The scale breaks"],
+      "answer": "You get systematic errors"
+    },
+    {
+      "question": "What does precision refer to?",
+      "options": ["How close measurements are to each other", "How close a measurement is to the true value", "How accurate the instrument is", "How fast you take a measurement"],
+      "answer": "How close measurements are to each other"
+    },
+    {
+      "question": "What is the function of a dependent variable?",
+      "options": ["It causes the change", "It is changed by the independent variable", "It is the control", "It is never measured"],
+      "answer": "It is changed by the independent variable"
+    },
+    {
+      "question": "Why are SI (International system of measurements) units used in physics?",
+      "options": ["They are based on English tradition", "They are easy to memorize", "They ensure universal understanding", "They change often"],
+      "answer": "They ensure universal understanding"
+    } 
+  ],
 
-"Kinematics of movement": { 
-  "Application": [
+  "Kinematics of movement": [
     {
-      "question": "A house cat accelerates from 2 m/s to 10 m/s in 2 seconds while chasing a toy across the living room floor. What is the cat’s acceleration?",
-      "options": ["3 m/s²", "4 m/s²", "5 m/s²", "6 m/s²"],
-      "answer": "4 m/s²"
+      "question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
+      "options": ["0.41s; 2.0m", "0.23s; 5.3m", "0.64s; 3.2m", "0.37s; 2.3m"],
+      "answer": "0.64s; 3.2m"
     },
     {
-      "question": "A ball is thrown straight up at 20 m/s. What is the maximum height it reaches?",
-      "options": ["10 m", "20 m", "40 m", "100 m"],
-      "answer": "20 m"
-    },
-    {
-      "question": "A phone is thrown from a rooftop at 4 m/s at a 45° angle. What is its horizontal velocity component?",
-      "options": ["2.8 m/s", "4.0 m/s", "1.4 m/s", "3.5 m/s"],
-      "answer": "2.8 m/s"
-    },
-    {
-      "question": "A cow speeds up and slows down. What does this say about the cow’s acceleration?",
-      "options": ["It has no acceleration", "It has constant acceleration", "It has variable acceleration", "It moves at constant speed"],
-      "answer": "It has variable acceleration"
+      "question": "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey.",
+      "options": ["25 meters east of the starting position", "55 meters west of the starting position", "0 meters east of the starting point", "2 meters west of the starting point"],
+      "answer": "2 meters west of the starting point"
     }
   ],
-  "Theory": [
-    {
-      "question": "What does displacement measure?",
-      "options": ["The total distance traveled", "Change in position", "Speed over time", "Acceleration"],
-      "answer": "Change in position"
-    },
-    {
-      "question": "What does the area under a velocity-time graph represent?",
-      "options": ["Velocity", "Distance", "Acceleration", "Force"],
-      "answer": "Distance"
-    },
-    {
-      "question": "Which condition is required for constant velocity?",
-      "options": ["Constant acceleration", "Balanced forces", "Unbalanced forces", "Increasing speed"],
-      "answer": "Balanced forces"
-    }
-  ],
-  "Analysis": [
-    {
-      "question": "How can you determine acceleration using just a stopwatch and a meterstick?",
-        "answer_type": "open_ended",
-          "keywords": {
-            "method": [ "measure", "distance", "time", "interval", "start", "end", "timing", "initial", "final", "position", "seconds", "meters", "marking", "record", "track", "motion", "uniform", "change", "repeat", "stopwatch", "reading", "observation", "timing technique", "position change", "time gap", "procedure", "setup" ],
-            "formula": [ "acceleration", "velocity", "initial velocity", "final velocity", "displacement", "v = d/t", "v = Δx/Δt", "a = Δv/t", "a = (v - u)/t", "rate of change", "slope", "linear", "graph", "quadratic", "uniform acceleration", "constant acceleration",  "average velocity", "instantaneous velocity", "equation", "kinematics"],
-            "context": [  "rolling ball", "toy car", "inclined plane", "bike ramp", "driveway slope", "slope", "hill", "hallway floor", "school steps", "parking lot", "phone timer", "measuring tape", "wooden board ramp", "marked floor tiles", "metal ramp", "plastic bin slide", "ball down stair edge", "bottle roll on tile", "carpet edge resistance",  "flat surface push", "refrigerator magnet slide", "gravity", "small hill", "garage entrance", "basketball court line markings", "chalk line",  "two-person timing", "classroom floor", "phone plus notebook setup", "timing"]
-}
-},
-   {
-    "question": "Explain why an object can have constant speed but changing velocity.",
-      "answer_type": "open_ended",
-        "keywords": {
-          "concept": [ "direction", "change in direction", "velocity", "vector", "speed", "scalar", "motion", "uniform speed", "non-uniform velocity", "acceleration", "turning", "circular motion", "curve", "straight line", "directional change", "angle", "path", "trajectory", "magnitude", "orientation"],
-          "physics_terms": [ "centripetal acceleration", "uniform circular motion", "vector quantity", "scalar quantity", "displacement", "constant speed", "changing velocity", "velocity vector", "rate of change", "directional velocity", "speed vs velocity", "kinematics", "frame of reference", "Δv", "nonlinear path"],
-          "context": [ "car turning a corner", "car driving around a roundabout", "bike on a curved road", "student walking around a track", "RC car in circles", "running laps in gym", "merry-go-round", "merry go round" , "rotating ride at fair", "school hallway U-turn", "racing game car in curve", "bike around plaza", "soccer player on curve run", "drone flying in a circle", "go-kart track", "rollerblades turning corner", "shopping cart around store aisle", "bus taking a turn", "parking lot loop", "concrete basketball court curve", "bicycle turning in schoolyard"]
-  }
-    },
-    {
-      "question": "How would you describe circular motion using vectors?",
-        "answer_type": "open_ended",
-          "keywords": {
-            "concept": [ "vector", "magnitude", "direction", "changing direction", "constant speed", "acceleration", "velocity", "perpendicular", "curved path", "rotation",  "change in velocity", "inward", "force direction", "angular", "circular path",  "position change", "displacement", "motion path", "center-directed",  "dynamic change"],
-            "physics_terms": ["centripetal force", "centripetal acceleration", "velocity vector", "acceleration vector", "radius", "tangential velocity", "radial vector",  "angular velocity", "nonlinear motion", "uniform circular motion",  "net force", "instantaneous velocity", "vector diagram", "scalar vs vector",  "direction of force", "orthogonal components", "rotational motion",  "Δv", "vector angle", "component vectors"],
-            "context": [ "fan blade spinning", "car driving in a circle", "roller coaster loop", "ball tied to a string spinning",  "bike turning in a circle", "merry-go-round", "satellite orbiting Earth", "child swinging a lasso", "pendulum at the peak", "toy car on a circular track", "motorbike making circles in a parking lot",  "spinning a bucket of water without spilling", "fan in a classroom",  "go-kart driving in a tight loop at a fun park",  "water bottle tied to a string swung overhead", "bike turning around a basketball court",  "students using spinning platforms in science lab", "car turning through roundabout near plaza", "watching ride spin at a local carnival"]
-        }
-      }
-   ]
-},
-"Movement dynamics": {
-  "Application": [
-    {
-      "question": "A 5 kg metal cube is pushed with 20 N. What is its acceleration?",
-      "options": ["2 m/s²", "4 m/s²", "5 m/s²", "10 m/s²"],
-      "answer": "4 m/s²"
-    },
-    {
-      "question": "A sled is pulled on ice with a 30 N force. What is the net force if friction is 5 N?",
-      "options": ["35 N", "25 N", "5 N", "25 Keysers"],
-      "answer": "25 N"
-    },
-    {
-      "question": "A 10 kg box slides down a frictionless ramp. What forces are acting on it?",
-      "options": ["Only friction", "Only gravity", "Gravity and normal force", "Gravity and air resistance"],
-      "answer": "Gravity and normal force"
-    },
-    {
-      "question": "A person pushes a shopping cart with more force. What happens to its acceleration?",
-      "options": ["It stays the same", "It decreases", "It increases", "It becomes zero"],
-      "answer": "It increases"
-    }
-  ],
-  "Theory": [
-    {
-      "question": "What is Newton’s First Law also called?",
-      "options": ["Law of Gravity", "Law of Acceleration", "Law of Inertia", "Law of KeyserKat"],
-      "answer": "Law of Inertia"
-    },
-    {
-      "question": "How is mass different from weight?",
-      "options": ["Mass depends on gravity", "Weight is constant", "Mass is the same everywhere", "Weight is a measure of matter"],
-      "answer": "Mass is the same everywhere"
-    },
-    {
-      "question": "What does Newton's Second Law relate?",
-      "options": ["Velocity and time", "Force, mass, and acceleration", "Mass and gravity", "Speed and direction"],
-      "answer": "Force, mass, and acceleration"
-    }
-  ],
-  "Analysis": [
-   {
-  "question": "How do seat belts apply Newton’s First Law?",
-    "answer_type": "open_ended",
-      "keywords": {
-        "law_and_concepts": ["inertia", "motion", "rest", "unbalanced force", "constant velocity", "Newton's First Law", "first law", "law of inertia", "resistance to change", "mass", "force", "momentum", "velocity", "acceleration", "net force", "frame of reference", "demonstrates inertia", "applies physics", "understand force", "physics principle", "law application"],
-        "seatbelt_mechanics": ["restrain", "prevent movement", "stop", "secure", "hold body", "safety", "slow down", "prevent injury", "counteract inertia", "reduce momentum", "reduce impact", "limit motion", "apply force", "prevent ejection", "restraining force", "protect occupant", "increase safety", "safety mechanism", "minimize injuries", "safety feature"],
-        "real_world_context": ["car crash", "collision", "passenger", "vehicle", "sudden stop", "braking", "front seat", "crumple zone", "airbag", "slamming brakes", "seatbelt system", "driver", "passenger body", "moving car", "deceleration", "real-life application", "everyday example"]
-  }
-},
-    {
-  "question": "Why doesn’t a larger force always mean more acceleration?",
-    "answer_type": "open_ended",
-     "keywords": {
-        "core_physics_concepts": ["Newton’s Second Law", "second law", "F=ma", "force", "acceleration", "mass", "inertia", "net force", "resultant force", "opposing forces", "friction", "air resistance", "direction of force", "magnitude of force", "balanced forces", "unbalanced forces", "interaction between forces", "system dynamics", "force pairs", "reaction force", "action-reaction", "action reaction", "action_reaction"],
-        "mass_and_acceleration_relationship": ["heavier object", "lighter object", "greater mass", "smaller mass", "mass increases", "massive object", "more inertia", "resistance to acceleration", "harder to move", "slow acceleration", "mass effect on acceleration", "inversely proportional", "proportional relationship", "mass matters", "mass resists change", "acceleration depends on mass", "more mass less acceleration"],
-        "real_world_examples_and_context": ["pushing a car", "tug of war", "truck versus bike", "sled carrying cargo", "object sliding on ice", "going uphill", "going downhill", "slow start", "massive truck", "ball rolling", "rocket launch", "gravitational pull", "spacecraft inertia", "pushing cooler full of ice on sand", "pushing shopping cart", "riding horse up muddy trail", "moving gas canister during blackout", "launching fireworks with different weights", "trying to accelerate fully loaded truck on hill", "pushing heavy grill on uneven cement", "driving fast through potholes with full car", "running with heavy backpack", "running with heavy purse", "carrying heavy sound equipment"]
-  }
-},
-{
-     "question": "How do you know if an object is in equilibrium?",
-        "answer_type": "open_ended",
-          "keywords": {
-            "concept": [ "balanced forces", "net force zero", "no acceleration", "constant velocity", "rest", "static", "dynamic", "Newton's First Law", "Newton's Second Law", "no net torque", "sum of forces", "ΣF = 0", "Στ = 0", "stability", "steady", "unchanging motion"],
-            "observation": [ "not moving", "motionless", "moves at constant speed", "straight line motion", "no rotation", "stationary", "no change in direction", "no tilting", "no wobble", "no spinning", "not accelerating", "consistent position", "uniform motion", "zero angular acceleration", "stays still"],
-            "examples": [ "book on table", "person standing still", "picture hanging straight", "balancing scale", "parked car", "ceiling fan off", "bridge with no sway", "tightrope walker balanced", "object suspended by rope", "box on ramp with friction", "shelf holding weight", "seesaw balanced", "floating object level","coquí sitting on a leaf", "frog sitting on a leaf", "mofongo plate resting on a table", "food plate resting on a table", "plate resting on a table", "flagpole standing upright with no wind", "bottle of water on a bench", "speaker on top of a concrete fence", "plátano bunch hanging still from a hook", "platain bunch hanging still from a hook",  "motorbike parked on level ground", "coconut on the ground under a palm tree"]
-      }
-    }
-  ]
-},
-"Work and energy": {
-  "Application": [
-    {
-      "question": "You lift a 10 kg object 2 meters. How much work is done?",
-      "options": ["20 J", "100 Cats", "200 J", "400 J"],
-      "answer": "200 J"
-    },
-    {
-      "question": "A 500 kg car has 5,000 J of kinetic energy. How fast is it going?",
-      "options": ["2 m/s", "4.47 m/s", "4.5 m/s", "10 m/s"],
-      "answer": ["4.47 m/s","4.5 m/s"]
-      },
-    {
-      "question": "Two identical Keyser figurines are at different heights on a shelf. Which has more potential energy?",
-      "options": ["The one at the lower shelf", "They have the same", "The heavier one", "The one at the higher shelf"],
-      "answer": "The one at the higher shelf"
-    },
-    {
-      "question": "A spring with k = 150 N/m is compressed 0.2 m. What is the energy stored?",
-      "options": ["1.5 J", "3 J", "4.5 J", "6 J"],
-      "answer": "3 J"
-    }
-  ],
-  "Theory": [
-    {
-      "question": "What is the physics definition of work?",
-      "options": ["Effort done without motion", "Force applied over a distance", "Mass times acceleration", "Energy stored in a system"],
-      "answer": "Force applied over a distance"
-    },
-    {
-      "question": "What does the work-energy theorem state?",
-      "options": ["Work creates mass", "Energy is conserved", "Work equals change in energy", "Power equals force times distance"],
-      "answer": "Work equals change in energy"
-    },
-    {
-      "question": "Which factor affects kinetic energy most?",
-      "options": ["Mass", "Speed", "Height", "The Force"],
-      "answer": "Speed"
-    }
-  ],
-  "Analysis": [
-   {
-  "question": "Explain what kind of energy changes can occur at the start of a rollercoaster ride.",
-    "answer_type": "open_ended",
-      "keywords": {
-       "energy_forms": ["potential energy", "gravitational potential energy", "GPE", "kinetic energy", "KE", "motion energy", "mechanical energy", "stored energy", "initial energy", "converted energy", "energy transformation", "energy transfer", "transfer of energy", "energy shift", "type of energy", "changing energy", "transition from PE to KE", "PE becomes KE", "energy moves", "gravity causes motion"],
-        "phrasings_and_equivalents": ["energy builds up", "energy stored at the top", "energy released", "energy goes from potential to kinetic", "one type of energy becomes another", "conversion from stored to motion", "change in energy type", "starts as potential", "becomes kinetic", "loses height gains speed", "gravity pulls it down", "gravity causes acceleration", "PE = mgh", "PE equals mass times gravity times height", "PE = mass x g x h", "KE = 1/2 mv^2", "KE = one half mass velocity squared", "kinetic energy formula", "potential energy equation", "mass height gravity", "velocity squared", "half mass v squared"],
-        "context": ["rollercoaster on a track", "going down a slope", "going down a hill", "starting from rest", "releasing the brakes", "hill at the start", "first big drop", "at the top of the ride", "car at the peak", "starting climb", "initial descent", "slow climb then sudden speed", "ride launches", "initial incline", "top of the hill", "free fall moment", "riders feel weightless", "coaster gains momentum", "pushing down fast", "speed increases", "slows at the top", "riding a coaster at a theme park", "waiting at the top of the hill", "visiting a fair", "engineering design challenge with a loop", "building a small model", "stomach drop on descent", "coaster model", "ride with steep climb", "pushing a toy car down a ramp", "observing a gravity-powered marble track", "rollercoaster in a cardboard setup", "video of a ride in a steep hill park", "driving down a hilly road at high speed"]
-  }
-},
- {
-  "question": "Why is no work done when holding a heavy box still?",
-    "answer_type": "open_ended",
-      "keywords": {
-        "physics_concepts": ["no displacement", "zero displacement", "displacement is zero", "no movement", "not moving", "stationary", "static", "object is still", "rest position", "distance equals zero", "distance = 0", "W = Fd", "work = force times distance", "force without motion", "no work done", "holding not lifting", "constant position", "not accelerating", "net work is zero", "zero joules", "no mechanical work", "work requires motion", "distance matters in work", "work definition in physics"],
-        "common_phrasings": ["just holding it", "standing still", "holding without lifting", "box doesn’t move", "no energy used", "using effort but no motion", "holding still", "force applied but no movement", "not going anywhere", "still in hands", "supporting the weight", "pushing against gravity", "no distance traveled", "static force", "doing nothing physically", "staying still", "not walking", "box stays in place"],
-        "contextual_and_clarifications": ["holding groceries in place", "carrying a backpack without walking", "waiting with a box at a bus stop", "standing in line holding heavy items", "person standing with weights", "worker holding a toolbox", "lifting then stopping mid-air", "lifting then stopping mid air", "lifting then stopping mid_air", "paused in an elevator holding items", "keeping a large bag steady", "waiting for help carrying furniture", "feels like effort", "muscles are tired", "energy used but no work", "still feels hard", "body feels strain", "internal energy used", "no work in physics terms", "work ≠ effort", "effort doesn’t equal work", "no mechanical displacement", "work in everyday sense ≠ physics", "you get tired but no work is done", "confused because of energy use", "muscle strain ≠ mechanical work"]
-  }
-},
-   {
-  "question": "How does a pendulum demonstrate energy conservation?",
-    "answer_type": "open_ended",
-      "keywords": {
-        "concept": ["energy conservation", "conservation of energy", "mechanical energy", "PE + KE", "energy stays constant", "no energy lost", "energy not created or destroyed", "total energy is the same", "law of conservation", "constant total energy", "PE turns into KE", "KE turns into PE", "energy transfers between forms", "energy shifts back and forth", "energy remains the same", "gravitational potential and kinetic", "interchanging energies", "energy doesn't disappear", "PE = KE", "energy transformation"],
-        "phrasings": ["potential becomes kinetic", "kinetic becomes potential", "swinging back and forth", "highest point has PE", "lowest point has KE", "energy moves between types", "motion shows energy change", "no net energy loss", "pendulum transforms energy", "slows down then speeds up", "uses gravity", "gravity pulls the bob", "repeating swing shows conservation", "start as potential", "ends as kinetic", "back and forth conversion", "swing starts high", "swing reaches low point", "repeatable energy shift", "motion powered by energy change"],
-        "context": ["swing set", "pendulum clock", "swinging necklace", "science fair demo", "string with key", "makeshift pendulum", "hanging fan pull", "crane load swinging", "chandelier swaying", "shoelace and weight", "tree tire swing", "tied object swinging", "metronome", "school lab setup", "doorstop pendulum", "backpack on a string", "ceiling fan chain", "hanging ornament swing", "fishing line weight", "physics class experiment"]
-  }
-}
-  ]
-},
-"Waves": {
-    "Application": [
-      {
-        "question": "A wave has frequency 5 Hz and wavelength 2 m. What is its speed?",
-        "options": ["5 m/s", "10 m/s", "2.5 m/s", "15 m/s"],
-        "answer": "10 m/s"
-      },
-      {
-        "question": "A sound wave travels through air and water. In which does it move faster?",
-        "options": ["Air", "Water", "Fire", "Earth"],
-        "answer": "Water"
-      },
-      {
-        "question": "A laser beam hits a mirror at 45°. What is the angle of reflection?",
-        "options": ["0°", "45°", "90°", "Depends on the surface"],
-        "answer": "45°"
-      },
-      {
-        "question": "A wave has a long wavelength. What can you say about its frequency?",
-        "options": ["High frequency", "Low frequency", "It’s loud", "It’s visible"],
-        "answer": "Low frequency"
-      }
-    ],
-    "Theory": [
-      {
-        "question": "What does frequency measure in a wave?",
-        "options": ["Height", "Length", "Speed", "Cycles per second"],
-        "answer": "Cycles per second"
-      },
-      {
-        "question": "How do transverse waves move particles?",
-        "options": ["Parallel to wave", "Circular motion", "Perpendicular to wave", "No movement"],
-        "answer": "Perpendicular to wave"
-      },
-      {
-        "question": "What does the Doppler effect explain?",
-        "options": ["Wave interference", "Color mixing", "Change in pitch due to motion", "Loudness of sound"],
-        "answer": "Change in pitch due to motion"
-      }
-    ],
-    "Analysis": [
- {
-  "question": "Why can light travel through the vacuum of space, but sound cannot? Explain using the nature of their wave types.",
-    "answer_type": "open_ended",
-      "keywords": {
-       "wave_and_medium_concepts": ["mechanical wave", "electromagnetic wave", "transverse wave", "longitudinal wave", "wave type", "light wave", "sound wave", "compression", "rarefaction", "oscillation", "energy transfer", "medium-dependent", "medium dependent", "medium independent", "medium-independent", "requires a medium", "does not require a medium", "needs a medium", "needs particles", "molecular interaction", "molecule vibration", "collision between molecules", "can move through vacuum", "cannot move through vacuum", "vacuum transmission", "no air needed", "space allows light", "vibration propagation", "needs matter to move"],
-       "examples_and_context": ["outer space", "vacuum of space", "astronaut using radio", "radio signal through vacuum", "walkie talkies with no signal", "fireworks show see first hear later", "thunder and lightning delay", "emergency radio alert", "TV satellite dish receiving signal", "satellite sends data", "moon landing communication", "sunlight hits solar panel", "spacewalk with helmet radio", "rocket launches silently in vacuum", "explosion with no sound in space", "stars emit light", "watching fireworks silently behind glass", "blackout while using radios", "seeing lightning before hearing thunder", "eclipse blocking light not sound"],
-        "misconceptions_and_clarifications": ["sound travels in vacuum", "space explosion makes sound", "sound and light need air", "light cannot travel without air", "radio is sound not light", "sound and light behave the same", "both waves need medium", "no medium no wave", "sound moves faster than light", "vacuum blocks light", "radio waves are audible", "space is silent because sound can't travel", "light needs a medium", "people hear sound in space", "radio works like sound waves", "astronauts hear explosions", "electromagnetic wave is the same as sound", "mechanical wave doesn't need air", "vibrations travel through vacuum", "you can hear in space"]
-  }
-},
-      {
-  "question": "How do noise-canceling headphones use wave interference?",
-    "answer_type": "open_ended",
-      "keywords": {
-        "wave_concepts": ["interference", "destructive interference", "constructive interference", "wave cancellation", "cancelling sound", "opposite waves", "out of phase", "waves out of sync", "same frequency opposite phase", "inverse sound waves", "cancel out", "sound waves overlap", "sound wave interaction", "wave reduction", "phase shift", "interference pattern", "amplitude reduction", "equal amplitude opposite phase", "inverted waveform", "phase difference", "superposition of waves"],
-       "technology_mechanism": ["microphone detects sound", "mic picks up noise", "creates opposite wave", "generates inverse signal", "produces reverse waveform", "built-in microphones", "sends opposite signal", "anti-noise signal", "circuitry generates cancellation", "built-in processor", "sound wave duplication with inversion", "emits canceling sound", "headphones detect and cancel", "noise reduction technology", "audio processing chip", "real-time cancellation", "headset electronics", "active noise canceling", "ANC system", "cancels background noise"],
-        "real_world_examples": ["airplane engine noise", "loud bus ride", "train commute", "noisy café", "crowded classroom", "open office", "vacuum cleaner", "construction noise", "working in a loud space", "loud space" ,"listening while flying", "studying in noisy home", "canceling traffic noise", "block out noise", "focus in public space", "tuning out chatter", "wearing headphones in noisy environment", "muting background sounds", "using headphones at a construction site", "wearing ANC while mowing the lawn", "noise-canceling during a car ride" , "noise canceling during a car ride"]
-  }
-},
-      {
-  "question": "How would you measure wave speed using classroom tools?",
-  "answer_type": "open_ended",
-  "keywords": {
-    "core_equations_and_terms": ["wave speed", "speed = frequency × wavelength", "v = fλ", "velocity equals frequency times wavelength", "speed formula", "f lambda", "v equals f times lambda", "wave equation", "measuring frequency", "measuring wavelength", "time", "distance", "speed calculation", "frequency", "wavelength", "period", "crest to crest", "trough to trough", "cycle per second", "wave cycle", "hertz", "meters per second"],
-    "methods_and_procedures": ["use a rope", "slinky demonstration", "count wave crests", "stopwatch timing", "ruler measurement", "track one full wave", "measure wave distance", "mark wave peaks", "count oscillations", "timing waves", "track motion over time", "record number of waves", "generate waves", "wave pulse", "student creates wave", "observe standing wave", "tabletop setup", "tie string to wall", "measure from rest point", "time multiple cycles"],
-    "contextual_examples": ["lab setup with slinky", "string tied to wall", "water waves in a tray", "shaking a rope", "ripple tank", "pendulum causing waves", "tuning fork in water", "sound wave lab", "student activity", "measuring rope waves", "slinky stretched on floor", "wave demo in class", "handheld wave generation", "classroom experiment", "small ripple tank", "measuring ripple travel", "group project with rope", "observing waves in class", "physics lab equipment", "visualizing waves using basic tools"]
-  }
-}
-    ]
-  },
 
- "Energy transfer and transformation": {
-  "Application": [
+  "Movement dynamics": [
     {
-      "question": "A 9V battery is connected to a 3-ohm resistor. What is the current?",
-      "options": ["3 A", "0.33 A", "6 A", "9 A"],
-      "answer": "3 A"
+      "question": "Technology has played an important role in sports. For example, the implementation of technologies such as PITCH/fx, Rapsodo PITCHING 2.0, among others, has made it easier to detect the speed of baseball pitches with greater accuracy. In the history of Major League Baseball, the record speed of a ball during a pitch was 46.9 m/s. Assuming that a ball with a mass of 0.145 kg traveled at that speed and stopped in the catcher's glove 0.01 s after the pitch, calculate the average acceleration of the ball. Use the formula a = (v_f - v_i) / (t_f - t_i).",
+      "options": ["-5x10^3 m/s^2", "KeyserKat is the best app", "2.1x10^-4 m/s^2", "5x10^1 m/s^2"],
+      "answer": "-5x10^3 m/s^2"
     },
     {
-      "question": "In a parallel circuit with three bulbs, what happens to brightness?",
-      "options": ["It increases", "It decreases", "It stays the same", "It flickers"],
-      "answer": "It stays the same"
+      "question": "During a baseball game, a ball with a mass of 0.145 kg is thrown at a speed of 46.9 m/s and comes to a complete stop in the catcher’s glove in 0.01 s. Calculate the magnitude and direction of the force (F = m * a) that acted on the ball to stop it.",
+      "options": ["7.3x10^2 N", "7x10^-1 N", "3.1x10^-2 N", "-3.2x10^4 N"],
+      "answer": "7.3x10^2 N"
     },
     {
-      "question": "A magnet moves through a coil of wire. What is generated?",
-      "options": ["Heat", "Light", "Electric current", "Sound"],
-      "answer": "Electric current"
+      "question": "A box full of donated materials is resting on a table. When a strong push is applied with the hand, it slides across the surface and gradually comes to a stop. Using Newton’s First and Third Laws of Motion, explain why the box remains still before the push and why it eventually stops after being pushed.",
+      "options": [
+        "The box remains still because of inertia, and it stops because friction acts in the opposite direction of motion.",
+        "The box remains still because there are no forces acting on it, and it stops because the applied force disappears.",
+        "The box moves because gravity pulls it forward, and it stops when normal force becomes greater.",
+        "The box remains still because friction pushes it forward, and it stops because inertia decreases over time."
+      ],
+      "answer": "The box remains still because of inertia, and it stops because friction acts in the opposite direction of motion."
     },
     {
-      "question": "What happens when a circuit is open versus closed?",
-      "options": ["Current flows in open", "Current flows in closed", "Voltage stops in closed", "Light turns on in open"],
-      "answer": "Current flows in closed"
+      "question": "During a game of pool, the cue ball, with a mass of 0.26 kg, moves at 1.3 m/s and hits the 8 ball, which has a mass of 0.15 kg and is at rest. After hitting it, the cue ball remains at rest. Calculate the final velocity of the 8 ball. Use the following formula: m1v1,i + m2v2,i = m1v1,f + m2v2,f.",
+      "options": ["3.6 m/s", "4.2 m/s", "2.3 m/s", "1.9 m/s"],
+      "answer": "2.3 m/s"
+    },
+    {
+      "question": "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2πr / T and a_c = v^2 / r.",
+      "options": [
+        "v = 23.8 m/s, a_c = 6.26 m/s^2",
+        "v = 49.6 m/s, a_c = 82.0 m/s^2",
+        "v = 0.79 m/s, a_c = 0.027 m/s^2",
+        "v = 188.5 m/s, a_c = 1.65 m/s^2"
+      ],
+      "answer": "v = 49.6 m/s, a_c = 82.0 m/s^2"
     }
   ],
-  "Theory": [
-    {
-      "question": "What does voltage measure?",
-      "options": ["Speed", "Energy per charge", "Flow of electrons", "Resistance"],
-      "answer": "Energy per charge"
-    },
-    {
-      "question": "How is resistance different from current?",
-      "options": ["It adds energy", "It blocks flow", "It increases speed", "It makes voltage"],
-      "answer": "It blocks flow"
-    },
-    {
-      "question": "What do batteries supply to a circuit?",
-      "options": ["Resistance", "Electrons", "Voltage", "Power"],
-      "answer": "Voltage"
-    }
+
+  "Work and energy": [
+     {
+  "question": "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)",
+  "options": [ "Chemical energy from the cyclist’s body",
+  "Thermal energy from friction",
+  "Elastic potential energy from the tires",
+  "Electrical energy from the bike’s components"
   ],
-  "Analysis": [
-    {
-    "question": "How does a hand-crank flashlight convert energy?",
-      "answer_type": "open_ended",
-       "keywords": {
-        "concept": [ "energy", "conversion", "mechanical", "electrical", "light",  "input", "output", "transform", "generate", "transfer", "stored energy", "kinetic energy", "manual", "hand-powered",  "motion", "movement", "energy flow", "effort", "energy transfer", "energy transformation"],
-        "physics_terms": [ "mechanical energy", "electrical energy", "light energy",  "electromagnetic induction", "generator", "crank",  "dynamo", "LED", "rotational motion", "alternator", "coil", "magnet", "current", "voltage", "resistance", "charge", "conservation of energy", "circuit", "electrons", "batteryless" ],
-        "context": [ "emergency flashlight", "flashlight used during blackout", "camping light", "hand crank radio-light combo", "using light during hurricane season", "power outage", "student experiment with generator", "hand crank charging during storm", "flashlight in survival kit", "home kit for emergencies", "students using hand crank during school blackout", "crank light", "hand-crank flashlight", "no electricity", "camping", "unstable stable power" ]
-       }
+  "answer": "Chemical energy from the cyclist’s body"
+     },
+     {
+  "question": "Identify and explain the differences between the types of energy represented in the following illustrations: (A) Soccer players in action, (B) An Olympic diver before jumping, (C) A compressed spring inside a pen.",
+  "options": [
+    "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy",
+    "A: Elastic potential energy, B: Kinetic energy, C: Chemical energy",
+    "A: Gravitational potential energy, B: Elastic potential energy, C: Kinetic energy",
+    "A: Thermal energy, B: Chemical energy, C: Magnetic energy"
+  ],
+  "answer": "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy"
     },
-  {
-    "question": "Why do wires heat up when too much current flows?",
-      "answer_type": "open_ended",
-        "keywords": {
-         "concept": [ "current", "electricity", "flow", "resistance", "friction", "electrical energy", "heat", "thermal", "temperature", "conversion", "energy loss", "power", "Joule heating", "Ohm’s Law", "conduction", "electrons", "charge flow", "voltage", "potential difference","circuit", "load", "short circuit", "insulation", "material properties", "material"],
-         "physics_terms": [ "resistive heating", "I²R loss", "Ohmic heating", "conductor", "wire gauge", "current density", "thermal runaway",  "electrical resistance", "overload", "electrical fault", "power dissipation", "melting point", "circuit breaker", "fuse",  "conductivity", "electrical load", "excess current",  "copper wire", "insulated wire", "ampacity"],
-         "context": [ "charging too many devices at once", "extension cord overheating", "using high-wattage appliances", "old wiring in homes",  "power strip used incorrectly", "Christmas lights left on too long", "air conditioner sharing outlet with fridge",  "fan and TV on the same overloaded power bar",  "melting plug after a storm surge",  "damaged wiring causing sparks", "old home with outdated wiring", "overloading outlets", "using generator and plugging in too many things", "blackout caused by faulty wires", "material properties","basic wiring"]
-    }
+    {
+  "question": "In a crash test, a red car with a mass of 2.80 x 10^3 kg is moving at 14.5 m/s and comes to a stop after colliding with a stationary car anchored to the ground. Calculate the change in the car's kinetic energy using ΔKE = KEf - KEi, where KE = (1/2)mv^2.",
+  "options": [
+    "ΔKE = -2.9 x 10^5 J",
+    "ΔKE = 40.6 J",
+    "ΔKE = -20.3 J",
+    "ΔKE = 8.1 x 10^3 J"
+  ],
+  "answer": "ΔKE = -2.9 x 10^5 J"
    },
-{
-  "question": "How could you demonstrate electromagnetic induction with materials found at home?",
-    "answer_type": "open_ended",
-     "keywords": {
-        "concept": [ "magnet", "coil", "wire", "loop", "electricity", "motion", "magnetic field", "voltage", "induced current", "electromagnetism", "Faraday", "flux", "change in flux",  "electromagnetic induction", "generator", "alternating current", "circuit", "energy", "force", "field lines", "movement", "rotation", "interaction", "electromotive force", "emf" ],
-        "materials_context": [  "copper wire", "iron nail", "LED bulb", "multimeter", "neodymium magnet", "refrigerator magnet", "cardboard tube", "screwdriver", "plasti spool", "old speaker coil", "AA battery for testing", "tape", "scissors", "aluminum foil", "cardboard base", "light bulb", "doorbell wire", "old phone charger cable",  "recycled electronics", "paper clips" ],
-        "activity_context": [ "moving a magnet through a coil", "waving magnet near wire loop",  "spinning a coil near a magnet", "dropping a magnet through copper tube",  "shaking coil and magnet flashlight", "homemade generator from fan",  "bike light generator", "wire-wrapped nail as electromagnet", "building a simple dynamo", "testing with multimeter to see voltage spike", "flashlight powered by cranking", "soda can and magnet", "hand-powered light", "science fair", "recycling fans", "repurposed motor", "repurposed appliance motor"]
-      }
-     }
-   ]
+   {
+  "question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
+  "options": [
+    "P = 1.6 x 10^2 watts",
+    "P = 4.8 x 10^2 watts",
+    "P = 6.6 x 10^3 watts",
+    "P = 3.2 x 10^1 watts"
+  ],
+  "answer": "P = 1.6 x 10^2 watts"
+   }
+  ],
+
+  "Waves": [
+      {
+  "question": "In an electron microscope, electrons are accelerated through a potential difference of 2.0 x 10^5 V, reaching a maximum velocity of 2.7 x 10^8 m/s. Calculate the de Broglie wavelength of the electron. (Use h = 6.63 x 10^-34 J·s and m = 9.1 x 10^-31 kg, λ = h/mv.)",
+  "options": [
+    "λ = 2.7 x 10^-12 m",
+    "λ = 1.8 x 10^-25 m",
+    "λ = 2.2 x 10^-72 m",
+    "λ = 3.7 x 10^-9 m"
+  ],
+  "answer": "λ = 2.7 x 10^-12 m"
+    },
+    {
+  "question": "Photocells, like those found in solar panels and calculators, work using the photoelectric effect, which describes a material's ability to generate electricity when exposed to light. If the threshold frequency for silicon is 3.2 x 10^13 Hz, calculate the maximum wavelength (λ) that can produce the photoelectric effect. (Use c = λ·f, where c = 3.0 x 10^8 m/s.)",
+  "options": [
+    "λ = 8.25 x 10^-6 m",
+    "λ = 9.2 x 10^-5 m",
+    "λ = 9.4 x 10^-6 m",
+    "λ = 3.6 x 10^-15 m"
+  ],
+  "answer": "λ = 9.4 x 10^-6 m"
+   },
+   {
+  "question": "SONAR (Sound Navigation and Ranging) technology determines the position of underwater objects by sending sound waves that reflect off surfaces and return to the source. On which wave property is SONAR primarily based?",
+  "options": [
+    "Reflection",
+    "Refraction",
+    "Diffraction",
+    "Interference"
+  ],
+  "answer": "Reflection"
+   },
+   {
+  "question": "A SONAR system on a research ship emits a signal with a frequency of 1.50 x 10^5 Hz and a wavelength of 2.70 mm. Calculate the speed of the wave as it travels through the water. (Use v = f·λ.)",
+  "options": [
+    "v = 4.05 x 10^2 m/s",
+    "v = 5.6 x 10^5 m/s",
+    "v = 8.0 x 10^6 m/s",
+    "v = 6.7 x 10^-2 m/s"
+  ],
+  "answer": "v = 4.05 x 10^2 m/s"
+   },
+   {
+  "question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
+  "options": [
+    "(a) Constructive interference, (b) Destructive interference",
+    "(a) Destructive interference, (b) Constructive interference",
+    "(a) Node, (b) Antinode",
+    "(a) Cancellation, (b) Reflection"
+  ],
+  "answer": "(a) Constructive interference, (b) Destructive interference"
+   }
+],
+
+  "Energy transfer and transformation": [
+  {
+    "question": "It refers to the rate at which electric charges pass through a conductor over a period of time.",
+    "options": [
+      "Electric current, SI unit: Ampere",
+      "Electric charge, SI unit: Ampere",
+      "Electric potential, SI unit: Volt",
+      "Electric field, SI unit: Volt"
+    ],
+    "answer": "Electric current, SI unit: Ampere"
+  },
+  {
+    "question": "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge.",
+    "options": [
+      "Electric current, SI unit: Ampere",
+      "Electric charge, SI unit: Ampere",
+      "Electric potential, SI unit: Volt",
+      "Electric field, SI unit: Volt"
+    ],
+    "answer": "Electric potential, SI unit: Volt"
+  },
+  {
+    "question": "In the following circuit, which of the statements is correct?",
+    "options": [
+      "Each resistor has a voltage drop equal to the total voltage of the entire circuit.",
+      "The total voltage drop for the entire circuit equals the sum of voltage drops across all resistors.",
+      "Each resistor is connected in such a way that there is only one path for current to pass.",
+      "If one of the resistors is removed, the current will stop flowing."
+    ],
+    "answer": "The total voltage drop for the entire circuit equals the sum of voltage drops across all resistors."
+  },
+  {
+    "question": "The diagram shows the electrical circuit that powers a car's front headlights. This circuit is designed so that each lamp receives its full share of power. The headlights are connected in what type of circuit?",
+    "options": [
+      "Series circuit",
+      "Parallel circuit",
+      "Combined circuits",
+      "Alternating current circuit"
+    ],
+    "answer": "Parallel circuit"
+  },
+  {
+    "question": "What force keeps satellites in orbit around Earth?",
+    "options": [
+      "Orbital period",
+      "Weightlessness",
+      "Gravitational force",
+      "Inertial mass"
+    ],
+    "answer": "Gravitational force"
+  },
+  {
+    "question": "According to Newton’s Law of Universal Gravitation, the gravitational force between two objects ________ if the distance between them is doubled.",
+    "options": [
+      "Quadruples",
+      "Doubles",
+      "Reduces to half",
+      "Reduces to one-fourth"
+    ],
+    "answer": "Reduces to one-fourth"
+  },
+  {
+    "question": "Analyze Newton’s Law of Universal Gravitation. If the planet Mars had triple its current mass while keeping the same size, would the value of G (gravitational constant) change?",
+    "options": [
+      "No, G is a universal constant and does not change with mass.",
+      "Yes, G would triple because mass increases.",
+      "Yes, G would decrease since the distance remains the same.",
+      "No, G would only change if the radius of Mars changed."
+    ],
+    "answer": "No, G is a universal constant and does not change with mass."
   }
+ ]
 }

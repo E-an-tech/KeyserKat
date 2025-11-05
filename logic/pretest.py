@@ -33,45 +33,31 @@ else:
     used_ids = set()
 
 # === Select Questions ===
-target_counts = {"Application": 2, "Theory": 2, "Analysis": 2}
-current_counts = {"Application": 0, "Theory": 0, "Analysis": 0}
+target_per_unit = 2  # questions per unit
 selected_questions = []
 
 units = list(pool.keys())
 random.shuffle(units)
 
 for unit in units:
-    categories = pool[unit]
-    possible_cats = list(categories.keys())
-    random.shuffle(possible_cats)
+    questions = pool[unit]
+    random.shuffle(questions)
+    count = 0
+    for i, q in enumerate(questions):
+        q_id = f"{unit}|{i}"  # simple ID
+        if q_id not in used_ids:
+            q["unit"] = unit
+            q["id"] = q_id
+            selected_questions.append(q)
+            used_ids.add(q_id)
+            count += 1
+        if count >= target_per_unit:
+            break
 
-    for cat in possible_cats:
-        if current_counts[cat] >= target_counts[cat]:
-            continue
-        questions = categories[cat]
-        q_indexes = list(range(len(questions)))
-        random.shuffle(q_indexes)
-
-        for i in q_indexes:
-            q_id = make_id(unit, cat, i)
-            if q_id not in used_ids:
-                question = questions[i]
-                question["unit"] = unit
-                question["category"] = cat
-                question["id"] = q_id
-                selected_questions.append(question)
-                used_ids.add(q_id)
-                current_counts[cat] += 1
-                break
-        break
-    if all(current_counts[c] == target_counts[c] for c in target_counts):
-        break
-
-if len(selected_questions) < 6:
-    raise Exception("Not enough questions. Restart the app.")
+if len(selected_questions) < len(units) * target_per_unit:
+    raise Exception("Not enough questions. Restart the app. Keyser is fixing this.")
 
 random.shuffle(selected_questions)
-
 
 # === Kivy Screens ===
 
