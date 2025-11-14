@@ -15,8 +15,10 @@ from kivy.uix.popup import Popup
 
 # === File setup ===
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-JSON_PATH = os.path.abspath(os.path.join(SCRIPT_DIR, "..", "data", "pretest_physics.json"))
+JSON_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "data", "pretest_physics.json")
 USED_QUESTIONS_FILE = os.path.join(SCRIPT_DIR, "used_questions.json")
+
+
 
 # === Load question pool ===
 with open(JSON_PATH, "r", encoding="utf-8") as f:

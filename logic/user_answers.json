@@ -1,0 +1,93 @@
+[
+  {
+    "question_id": "Work and energy|1",
+    "user_answer": "P = 4.8 x 10^2 watts",
+    "correct": false,
+    "unit_hidden": "Work and energy",
+    "original_question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)"
+  },
+  {
+    "question_id": "Waves|1",
+    "user_answer": "(a) Constructive interference, (b) Destructive interference",
+    "correct": true,
+    "unit_hidden": "Waves",
+    "original_question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?"
+  },
+  {
+    "question_id": "Energy transfer and transformation|0",
+    "user_answer": "No, G is a universal constant and does not change with mass.",
+    "correct": true,
+    "unit_hidden": "Energy transfer and transformation",
+    "original_question": "Analyze Newton\u2019s Law of Universal Gravitation. If the planet Mars had triple its current mass while keeping the same size, would the value of G (gravitational constant) change?"
+  },
+  {
+    "question_id": "Movement dynamics|1",
+    "user_answer": "v = 23.8 m/s, a_c = 6.26 m/s^2",
+    "correct": false,
+    "unit_hidden": "Movement dynamics",
+    "original_question": "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2\u03c0r / T and a_c = v^2 / r."
+  },
+  {
+    "question_id": "Science and engineering and practices|0",
+    "user_answer": "You get highly accurate readings",
+    "correct": false,
+    "unit_hidden": "Science and engineering and practices",
+    "original_question": "What is most likely to happen if a scale is not calibrated before use?"
+  },
+  {
+    "question_id": "Movement dynamics|0",
+    "user_answer": "3.1x10^-2 N",
+    "correct": false,
+    "unit_hidden": "Movement dynamics",
+    "original_question": "During a baseball game, a ball with a mass of 0.145 kg is thrown at a speed of 46.9 m/s and comes to a complete stop in the catcher\u2019s glove in 0.01 s. Calculate the magnitude and direction of the force (F = m * a) that acted on the ball to stop it."
+  },
+  {
+    "question_id": "Kinematics of movement|1",
+    "user_answer": "0.23s; 5.3m",
+    "correct": false,
+    "unit_hidden": "Kinematics of movement",
+    "original_question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: \u0394y = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)"
+  },
+  {
+    "question_id": "Kinematics of movement|0",
+    "user_answer": "25 meters east of the starting position",
+    "correct": false,
+    "unit_hidden": "Kinematics of movement",
+    "original_question": "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey."
+  },
+  {
+    "question_id": "Science and engineering and practices|1",
+    "user_answer": "How close a measurement is to the true value",
+    "correct": false,
+    "unit_hidden": "Science and engineering and practices",
+    "original_question": "What does precision refer to?"
+  },
+  {
+    "question_id": "Energy transfer and transformation|1",
+    "user_answer": "Combined circuits",
+    "correct": false,
+    "unit_hidden": "Energy transfer and transformation",
+    "original_question": "The diagram shows the electrical circuit that powers a car's front headlights. This circuit is designed so that each lamp receives its full share of power. The headlights are connected in what type of circuit?"
+  },
+  {
+    "question_id": "Waves|0",
+    "user_answer": "\u03bb = 3.6 x 10^-15 m",
+    "correct": false,
+    "unit_hidden": "Waves",
+    "original_question": "Photocells, like those found in solar panels and calculators, work using the photoelectric effect, which describes a material's ability to generate electricity when exposed to light. If the threshold frequency for silicon is 3.2 x 10^13 Hz, calculate the maximum wavelength (\u03bb) that can produce the photoelectric effect. (Use c = \u03bb\u00b7f, where c = 3.0 x 10^8 m/s.)"
+  },
+  {
+    "question_id": "Work and energy|0",
+    "user_answer": "Thermal energy from friction",
+    "correct": false,
+    "unit_hidden": "Work and energy",
+    "original_question": "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)"
+  },
+  {
+    "question_id": "Work and energy|0",
+    "user_answer": "Chemical energy from the cyclist\u2019s body",
+    "correct": true,
+    "unit_hidden": "Work and energy",
+    "original_question": "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)"
+  }
+]
