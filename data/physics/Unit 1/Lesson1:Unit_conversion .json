@@ -67,23 +67,23 @@
       "problems": [
         {
           "problem": "Convert 42.3 cm to meters",
-          "work": "42.3 cm × (0.01 m / 1 cm) = 0.423 m"
+          "answer": "42.3 cm × (0.01 m / 1 cm) = 0.423 m"
         },
         {
           "problem": "Convert 6.2 pm to meters",
-          "work": "6.2 pm × (1e-12 m / 1 pm) = 6.2e-12 m"
+          "answer": "6.2 pm × (1e-12 m / 1 pm) = 6.2e-12 m"
         },
         {
           "problem": "Convert 21 km to meters",
-          "work": "21 km × (1000 m / 1 km) = 21000 m"
+          "answer": "21 km × (1000 m / 1 km) = 21000 m"
         },
         {
           "problem": "Convert 0.023 mm to meters",
-          "work": "0.023 mm × (0.001 m / 1 mm) = 0.000023 m"
+          "answer": "0.023 mm × (0.001 m / 1 mm) = 0.000023 m"
         },
         {
           "problem": "Convert 57 nm to meters",
-          "work": "57 nm × (1e-9 m / 1 nm) = 5.7e-8 m"
+          "answer": "57 nm × (1e-9 m / 1 nm) = 5.7e-8 m"
         }
       ],
       "source": {
