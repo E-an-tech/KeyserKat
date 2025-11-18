@@ -1,0 +1,36 @@
+{
+  "statistics_probability": {
+    "title": "Statistics & Probability",
+    "units": [
+      {
+        "id": 1,
+        "title": "Descriptive Statistics",
+        "lessons": [
+          {
+            "id": 1,
+            "title": "Measures of Central Tendency",
+            "time_estimate": "5 min",
+            "content": "<b>Mean</b>: average of numbers...\n\nMode: most frequent value"
+          }
+        ]
+      }
+    ]
+  },
+  "physics": {
+    "title": "Physics",
+    "units": [
+      {
+        "id": 1,
+        "title": "Motion",
+        "lessons": [
+          {
+            "id": 1,
+            "title": "Kinematics",
+            "time_estimate": "7 min",
+            "content": "Displacement, velocity, acceleration..."
+          }
+        ]
+      }
+    ]
+  }
+}
