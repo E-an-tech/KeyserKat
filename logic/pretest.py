@@ -57,7 +57,7 @@ for unit in units:
             break
 
 if len(selected_questions) < len(units) * target_per_unit:
-    raise Exception("Not enough questions. Restart the app. Keyser is fixing this.")
+    raise Exception("Not enough questions. Restart the app. Keyser is fixing this!")
 
 random.shuffle(selected_questions)
 
@@ -102,18 +102,21 @@ class QuestionScreen(Screen):
         user_input = self.selected_answer
         correct = False
 
-        # Check multiple-choice
-        if "options" in q:
-            if isinstance(q["answer"], list):
-                correct = user_input.lower() in [a.lower() for a in q["answer"]]
-            else:
-                correct = user_input.lower() == q["answer"].lower()
-        # Check open-ended with keywords
-        elif isinstance(q.get("answer"), list):
-            for keyword in q["answer"]:
-                if keyword.strip().lower() in user_input.lower():
-                    correct = True
-                    break
+    def normalize(s):
+        return "".join(s.strip().lower().split())
+
+# Check multiple-choice
+    if "options" in q and q["options"]:
+        user_norm = normalize(user_input)
+    
+        # Support multiple acceptable answers
+        if isinstance(q["answer"], list):
+            correct = user_norm in [normalize(a) for a in q["answer"]]
+        else:
+            correct = user_norm == normalize(q["answer"])
+    else:
+        correct = False
+    #Later shall add open ended questions for now just multiple choices 
 
         # Save answer
         app = App.get_running_app()
