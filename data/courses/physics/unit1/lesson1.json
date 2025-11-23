@@ -1,1 +1,102 @@
-
+{
+  "lesson_id": "L1",
+  "title": "Physics Around Us",
+  "read_time": "5 min",
+  "sections": [
+    {
+      "heading": "What is physics?",
+      "content": "Physics (from the Greek 'physikos') is the science that deals with the structure of matter and the interactions between the fundamental constituents of the observable universe. It's main branches are:",
+      "sources": [
+        {
+          "name": "Weidner, R. T., & Brown, L. M.",
+          "date": "2019",
+          "title": "Physics",
+          "link": "https://www.britannica.com/science/physics-science"
+        }
+      ],
+      "bullet_points": [
+        "Mechanics: Studies motion and forces acting on objects. Divided into classical mechanics (macroscopic objects) and quantum mechanics (subatomic particles).",
+        "Thermodynamics: Focuses on heat, temperature, and energy transfer within systems.",
+        "Electromagnetism: Studies electric and magnetic fields, forces, and their interactions.",
+        "Optics: Concerned with the behavior and properties of light.",
+        "Acoustics: Studies sound and vibrations.",
+        "Relativity: Deals with space, time, and gravity, based on Einstein's theories of special and general relativity.",
+        "Quantum Physics: Examines the behavior of particles at atomic and subatomic scales."
+      ],
+      "sources_additional": [
+        {
+          "name": "Wikipedia editors",
+          "date": "2020, December 18",
+          "title": "Branches of physics",
+          "link": "https://en.wikipedia.org/wiki/Branches_of_physics"
+        },
+        {
+          "name": "EduQuest",
+          "date": "2025, March 3",
+          "title": "Every branch of physics explained in 6 minutes [Video]",
+          "link": "https://www.youtube.com/watch?v=jOhaY7U90d0"
+        }
+      ]
+    },
+    {
+      "heading": "Physics in Everyday Life",
+      "content": "Physics is present in almost every aspect of our daily life. Here are some examples:",
+      "examples": [
+        {
+          "title": "Ballpoint pens",
+          "description": "When using a ballpoint pen, principles of fluid dynamics and friction are involved. The small ball at the tip rotates as you write, picking up ink from the refill and transferring it onto paper, allowing smooth writing."
+        },
+        {
+          "title": "Fans",
+          "description": "Fans depend on fluid dynamics and electromagnetism. Rotating blades create a low-pressure zone that moves air from higher-pressure areas, circulating air for cooling and ventilation."
+        },
+        {
+          "title": "Smartphones",
+          "description": "Touchscreens use changes in electrical charge, while wireless communication relies on electromagnetic waves. Batteries and microchips operate based on electrical circuits and electromagnetism."
+        },
+        {
+          "title": "Roller Coasters",
+          "description": "Gravity, acceleration, and inertia are at play. Potential energy is stored when the coaster is dragged up a hill, then converted into kinetic energy during drops. Loops and curves affect forces like gravity and centripetal force, creating thrilling experiences."
+        }
+      ],
+      "sources": [
+        {
+          "name": "EuroSchool",
+          "date": "2023, June 6",
+          "title": "10 Examples of Physics in Everyday Life",
+          "link": "https://www.euroschoolindia.com/blogs/10-examples-of-physics-in-everyday-life/"
+        }
+      ]
+    },
+    {
+      "heading": "Practice Exercises",
+      "problems": [
+        {
+          "question": "What branch of physics is applied on a refrigerator?",
+          "options": ["Quantum Physics", "Thermodynamics", "Keyser Physics", "Acoustics"],
+          "answer": "Thermodynamics",
+          "source": "EuroSchool, 2023"
+        },
+        {
+          "question": "What branch of physics is applied on a running train?",
+          "options": ["Software", "Relativity", "Optics", "Mechanics"],
+          "answer": "Mechanics",
+          "source": "EuroSchool, 2023"
+        },
+        {
+          "question": "What branch of physics is applied on an air conditioner?",
+          "options": ["Thermodynamics", "Electromagnetism", "Felidae", "Optics"],
+          "answer": "Thermodynamics",
+          "source": "gmorgan, 2025"
+        }
+      ]
+    }
+  ],
+  "references": [
+    "Weidner, R. T., & Brown, L. M. (2019). Physics. In Encyclopædia Britannica. https://www.britannica.com/science/physics-science",
+    "Wikipedia editors. (2020, December 18). Branches of physics. https://en.wikipedia.org/wiki/Branches_of_physics",
+    "EuroSchool. (2023, June 6). 10 Examples of Physics in Everyday Life. https://www.euroschoolindia.com/blogs/10-examples-of-physics-in-everyday-life/",
+    "gmorgan. (2025, April 9). 5 Interesting Ways We Use Physics in Our Daily Lives - St Davids College. https://www.stdavidscollege.ac.uk/5-interesting-ways-we-use-physics-in-our-daily-lives/",
+    "EduQuest. (2025, March 3). Every branch of physics explained in 6 minutes [Video]. YouTube. https://www.youtube.com/watch?v=jOhaY7U90d0"
+  ]
+}
