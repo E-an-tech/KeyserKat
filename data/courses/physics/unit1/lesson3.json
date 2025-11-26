@@ -1,0 +1,231 @@
+{
+  "lesson_id": "L3",
+  "title": "Significant Digits/Significant Figures",
+  "read_time": "5 min",
+  "sections": [
+    {
+      "title": "Definition of Significant Digits",
+      "heading": "What are significant digits/significant figures?",
+      "content": "These are the valid digits in a measurement.",
+      "sources": [
+        {
+          "name": "Radeffy, T.",
+          "year": "2018",
+          "page": "7",
+          "title": "Physics Principles and Problems",
+          "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+        }
+      ]
+    },
+    {
+      "title": "Use of Significant Digits",
+      "heading": "What are significant digits used for?",
+      "content": "When performing any arithmetic operation, the result never can be more precise than the least precise measurement. Significant digits are used for showing the precision of measurements in chemistry, Math or other disciplines.",
+      "sources": [
+        {
+          "name": "Radeffy, T.",
+          "year": "2018",
+          "page": "7",
+          "title": "Physics Principles and Problems",
+          "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+        },
+        {
+          "name": "McAlister, D., Pierce, S., & Cardenas, R.",
+          "year": "2022",
+          "title": "Significant Figure | Definition, Importance & Examples",
+          "link": "https://study.com/learn/lesson/what-is-significant-figure-examples.html"
+        }
+      ]
+    },
+    {
+      "title": "Rules for Significant Digits",
+      "heading": "Rules for understanding significant digits",
+      "bullet_points": [
+        "All digits different to zero are significant",
+        "All non-zero digits are significant",
+        "The zeros between two significant digits are significant.",
+        "The zeros used to locate the decimal point are not significant."
+      ],
+      "sources": [
+        {
+          "name": "Radeffy, T.",
+          "year": "2018",
+          "page": "7",
+          "title": "Physics Principles and Problems",
+          "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+        }
+      ],
+      "additional_resources": [
+        {
+          "name": "MooMooMath",
+          "year": "2018",
+          "title": "Sig Fig Rules (Significant Figures)",
+          "link": "https://youtu.be/uZkYpvCK2pw?si=ZD-_oOz8_RUEnbbO"
+        }
+      ]
+    },
+    {
+      "title": "Practice Identifying Significant Digits",
+      "heading": "Practice exercises: Choose the amount  of significant digits/significant figures in each number.",
+      "problems": [
+        {
+          "question": "100 m",
+          "options": ["1", "2", "3", "4"],
+          "answer": "1",
+          "source": {
+            "name": "Radeffy, T.",
+            "year": "2018",
+            "page": "858",
+            "title": "Physics Principles and Problems",
+            "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+          }
+        },
+        {
+          "question": "0.0023 m/s",
+          "options": ["0", "2", "3", "4"],
+          "answer": "2",
+          "source": {
+            "name": "Radeffy, T.",
+            "year": "2018",
+            "page": "858",
+            "title": "Physics Principles and Problems",
+            "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+          }
+        },
+        {
+          "question": "100.1 m",
+          "options": ["1", "4", "2", "3"],
+          "answer": "4",
+          "source": {
+            "name": "Radeffy, T.",
+            "year": "2018",
+            "page": "858",
+            "title": "Physics Principles and Problems",
+            "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+          }
+        },
+        {
+          "question": "2.0023",
+          "options": ["1", "6", "5", "3"],
+          "answer": "5",
+          "source": {
+            "name": "Radeffy, T.",
+            "year": "2018",
+            "page": "858",
+            "title": "Physics Principles and Problems",
+            "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+          }
+        }
+      ]
+    },
+    {
+      "title": "Arithmetic Operations with Significant Digits",
+      "heading": "How to use it in mathematical operations",
+      "subsections": [
+        {
+          "title": "Addition or Subtraction",
+          "step_by_step": [
+            "Perform the operation",
+            "Round off the result to correspond to the least-precise value involved",
+            "Example: 3.86 m + 2.4 m = 6.3"
+          ],
+          "additional_resources": [
+            {
+              "name": "Tyler DeWitt",
+              "year": "2010",
+              "title": "Add and Substract with Significant Figure (1.6)",
+              "link": "https://youtu.be/2eXC6s9X6Wc?si=6KMWXEFWebFZkEnb"
+            }
+          ]
+        },
+        {
+          "title": "Multiplication or Division",
+          "step_by_step": [
+            "Perform the calculation",
+            "Round to the same number of significant digits as the least-precise measurement",
+            "Example: 409.2 km / 11.4 L = 35.9 km/L because the least-precise measure has three significant digits"
+          ],
+          "additional_resources": [
+            {
+              "name": "Robin Reaction",
+              "year": "2016",
+              "title": "Significant Figures: Multiplication and Division!",
+              "link": "https://youtu.be/wNEXN8z2GmA?si=IThQQpHiXRdWxRmf"
+            }
+          ]
+        }
+      ]
+    },
+    {
+  "title": "Practice Exercises for Arithmetic",
+  "heading": "Solve the following exercises",
+  "problems": [
+    {
+      "question": "2.3 kg + 0.23 g",
+      "answer": "2.3 kg",
+      "steps": [
+        "Step 1: Convert units: 0.23 g = 0.00023 kg",
+        "Step 2: Perform addition: 2.3 kg + 0.00023 kg = 2.30023 kg",
+        "Step 3: Apply significant figures: Round to 2 significant figures -> 2.3 kg"
+      ],
+      "source": {
+        "name": "Radeffy, T.",
+        "year": "2018",
+        "page": "858",
+        "title": "Physics Principles and Problems",
+        "link": "https://www.academia.edu/35616408/Physics_Principles_and_Problems"
+      }
+    },
+    {
+      "question": "15.5 cm × 12.1 cm",
+      "answer": "188 cm²",
+      "steps": [
+        "Step 1: Multiply: 15.5cm × 12.1cm = 187.55 cm²",
+        "Step 2: Apply significant figures: Round to 3 significant figures -> 188 cm²"
+      ]
+    },
+    {
+      "question": "14.678 m ÷ 3.2 m/s",
+      "answer": "4.6 s",
+      "steps": [
+        "Step 1: Divide: 14.678 ÷ 3.2 = 4.586875 s",
+        "Step 2: Apply significant figures: Round to 2 significant figures → 4.6 s",
+        "Step 3: Include correct unit: m ÷ (m/s) = s"
+      ]
+    },
+    {
+      "question": "4.75 m - 0.4168 m",
+      "answer": "4.33 m",
+      "steps": [
+        "Step 1: Subtract: 4.75 − 0.4168 = 4.3332 m",
+        "Step 2: Apply decimal rules: Round to 2 decimal places → 4.33 m"
+        ]
+        }
+    ]
+    }
+  ],
+  "references": [
+    "Radeffy, T. (2018). Physics principles and problems. https://www.academia.edu/35616408/Physics_Principles_and_Problems",
+    "McAlister, D., Pierce, S., & Cardenas, R. (2022). Significant Figure | Definition, Importance & Examples. https://study.com/learn/lesson/what-is-significant-figure-examples.html"
+  ],
+  "additional_resources": [
+    {
+      "name": "MooMooMath",
+      "year": "2018",
+      "title": "Sig Fig Rules (Significant Figures)",
+      "link": "https://youtu.be/uZkYpvCK2pw?si=ZD-_oOz8_RUEnbbO"
+    },
+    {
+      "name": "Tyler DeWitt",
+      "year": "2010",
+      "title": "Add and Substract with Significant Figure (1.6)",
+      "link": "https://youtu.be/2eXC6s9X6Wc?si=6KMWXEFWebFZkEnb"
+    },
+    {
+      "name": "Robin Reaction",
+      "year": "2016",
+      "title": "Significant Figures: Multiplication and Division!",
+      "link": "https://youtu.be/wNEXN8z2GmA?si=IThQQpHiXRdWxRmf"
+    }
+  ]
+}

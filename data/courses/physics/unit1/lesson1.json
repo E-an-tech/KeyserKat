@@ -23,7 +23,7 @@
         "Relativity: Deals with space, time, and gravity, based on Einstein's theories of special and general relativity.",
         "Quantum Physics: Examines the behavior of particles at atomic and subatomic scales."
       ],
-      "sources_additional": [
+      "additional_sources": [
         {
           "name": "Wikipedia editors",
           "date": "2020, December 18",
@@ -75,19 +75,34 @@
           "question": "What branch of physics is applied on a refrigerator?",
           "options": ["Quantum Physics", "Thermodynamics", "Keyser Physics", "Acoustics"],
           "answer": "Thermodynamics",
-          "source": "EuroSchool, 2023"
+          "source":{
+          "name": "EuroSchool",
+          "date": "2023, June 6",
+          "title": "10 Examples of Physics in Everyday Life",
+          "link": "https://www.euroschoolindia.com/blogs/10-examples-of-physics-in-everyday-life/"
+        }
         },
         {
           "question": "What branch of physics is applied on a running train?",
           "options": ["Software", "Relativity", "Optics", "Mechanics"],
           "answer": "Mechanics",
-          "source": "EuroSchool, 2023"
+          "source":{
+          "name": "EuroSchool",
+          "date": "2023, June 6",
+          "title": "10 Examples of Physics in Everyday Life",
+          "link": "https://www.euroschoolindia.com/blogs/10-examples-of-physics-in-everyday-life/"
+        }
         },
         {
           "question": "What branch of physics is applied on an air conditioner?",
           "options": ["Thermodynamics", "Electromagnetism", "Felidae", "Optics"],
           "answer": "Thermodynamics",
-          "source": "gmorgan, 2025"
+          "source":{
+          "name": "EuroSchool",
+          "date": "2023, June 6",
+          "title": "10 Examples of Physics in Everyday Life",
+          "link": "https://www.euroschoolindia.com/blogs/10-examples-of-physics-in-everyday-life/"
+        }
         }
       ]
     }
