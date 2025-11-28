@@ -1,0 +1,326 @@
+{
+  "lesson_id": "L4",
+  "title": "Scientific Notation",
+  "read_time": "8 mins",
+  "sections": [
+    {
+      "title": "What is scientific notation?",
+      "heading": "What is scientific notation?",
+      "content": [
+        "Scientific notation is a way of writing very large or very small numbers."
+      ],
+      "sources": [
+        {
+          "name": "Khan, S., & CK-12 Foundation",
+          "year": "n.d.",
+          "title": "Scientific notation examples (video). Khan Academy",
+          "link": "https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations/cc-8th-scientific-notation/v/scientific-notation"
+        }
+      ],
+      "additional_sources": [
+        {
+          "name": "Veritasium",
+          "year": "2011, February 2",
+          "title": "Scientific notation - explained! [Video]",
+          "link": "https://www.youtube.com/watch?v=WwmJ5nMmigQ"
+        }
+      ]
+    },
+    {
+      "title": "How to convert numbers into scientific notation",
+      "heading": "How to convert numbers into scientific notation",
+      "content": [
+        "Scientific notation means writing a number in terms of a product of something from 1 to 10 and something else that is a power of ten.",
+        "For instance,",
+        " 32 = 3.2 x 10^1 ",
+        " 320 = 3.2 x 10^2",
+        " 3200 = 3.2 x 10^3",
+        ",and so forth",
+        "Each number is ten times bigger than the previous one. Since 10^1 is ten times smaller than 10^2, it makes sense to use the notation 10^0 to stand for one, the number that is in turn ten times smaller than 10^1. Continuing on, it is possible write 10^−1 to stand for 0.1, the number ten times smaller than 10^0. Negative exponents are used for small numbers:",
+        "3.2 = 3.2 x 10^0",
+        "0.32=3.2 x 10^-1",
+        "0.032=3.2 x 10^-2",
+        "Scientific notation displayed calculators can take other shortened forms that mean the same thing. For example, 3.2x10^6(written notation) is the same as 3.2 x E+6 (notation on some calculators) and 3.2^6 (notation on some other calculators)."
+      ],
+      "sources": [
+        {
+          "name": "Boundless",
+          "year": "2020, July 16",
+          "title": "1.2: Scientific Notation and Order of Magnitude. Physics LibreTexts",
+          "link": "https://phys.libretexts.org/Courses/Tuskegee_University/Algebra_Based_Physics_I/01%3A_Nature_of_Physics/1.02%3A_Scientific_Notation_and_Order_of_Magnitude"
+        }
+      ],
+      "additional_sources": [
+        {
+          "name": "The Organic Chemistry Tutor",
+          "year": "2018, February 8",
+          "title": "Scientific notation - fast review! [Video]",
+          "link": "https://www.youtube.com/watch?v=ZtB0vJMGve4"
+        }
+      ],
+      "note": [
+        "Some tips from the editor(who is not a qualified professional just a student so take said advice with a grain of salt)  for easier understanding:",
+        "Each exponent just represents how many decimal places the decimal point is to be moved. If negative the placement of the decimal point will be to the right, if positive towards the left.",
+        "If the exponent is positive the number is therefore bigger than the one presented",
+        "Example, 3.2 x 10^2 = 320",
+        "If the exponent presented is negative the number is therefore smaller than the one presented.",
+        "Example 3.2 x 10^-2= 0.032"
+      ]
+    },
+    {
+      "title": "Practice converting numbers into scientific notation",
+      "heading": "Practice exercises converting numbers into scientific notation",
+      "content": [
+        "From the following array of numbers choose the right answer in the opposite notation. For example from standard notation to scientific notation and vice versa."
+      ],
+      "problems": [
+        {
+          "question": "923cm",
+          "options": [
+            "9.23 x 10^-2 cm",
+            "93.2 x 10^cat cm",
+            "(93.2 x 10^cat)^2",
+            "9.23 x 10^2 cm"],
+          "answer": "9.23 x 10^2 cm",
+          "source": {
+            "name": "Everett Community College",
+           "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        },
+        {
+          "question": "3.9240 x 10^5 kg",
+          "options": [
+            "3924.00kg",
+            "392400g",
+            "392400kg",
+            "3.92400kg"
+          ],
+          "answer": "392400kg",
+          "source": {
+            "name": "Everett Community College",
+            "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        },
+        {
+          "question": "7.80 x 10^0 mL",
+          "options": [
+            "7.80mL",
+            "780mL",
+            "1mL",
+            "78.0mL"
+          ],
+          "answer": "7.80mL",
+          "source": {
+            "name": "Everett Community College",
+            "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        },
+        {
+          "question": "0.00000032m",
+          "options": [
+            "32x10^-67m",
+            "3.2 x 10^-7m",
+            "0.32x10^-7m",
+            "0.32x10^-7mm"
+          ],
+          "answer": "3.2 x 10^-7m",
+          "source": {
+            "name": "Everett Community College",
+            "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        },
+        {
+          "question": "4523000lb",
+          "options": [
+            "4523 x 10^1lb",
+            "4.523 x 10^6lb ",
+            "45.23 x 10^6lb",
+            "4.352 x 10^6lb"
+          ],
+          "answer": "4.523 x 10^6lb",
+          "source": {
+            "name": "Everett Community College",
+            "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        },
+        {
+          "question": "8.8 x 10^2oz",
+          "options": [
+            "8.8oz",
+            "88oz",
+            "880oz",
+            "88mL"
+          ],
+          "answer": "880oz",
+          "source": {
+            "name": "Everett Community College",
+            "title": "Scientific Notation Worksheet",
+            "link": "https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf"
+          }
+        }
+      ]
+    },
+    {
+      "title": "How to use them in arithmetic (Addition/Subtraction)",
+      "heading": "How to use them in arithmetic? (Addition/Subtraction)",
+      "content": [
+        "Step 1: Rewrite the number to have the same power of 10.",
+        "Step 2: Add or subtract numbers.",
+        "Step 3: Rewrite in scientific notation.",
+        "Example",
+        "Step 0: 3.4 x 10^5 + 9.7 x 10^6",
+        "Step 1: 0.34 x 10^6 + 9.7 x 10^6",
+        "Step 2: 0.34 + 9.7 = 10.04",
+        "Step 3: 10.04 x 10^6 = 1.004 x 10^7"
+      ],
+      "sources": [
+        {
+          "name": "Online Math Learning",
+          "year": "2024",
+          "title": "Adding Scientific Notation (video lessons, examples and step-by-step solutions)",
+          "link": "https://www.onlinemathlearning.com/adding-scientific-notation.html#google_vignette"
+        }
+      ],
+      "additional_resources": []
+    },
+    {
+      "title": "How to use them in arithmetic (Multiplication/Division)",
+      "heading": "How to use them in arithmetic? (Multiplication/Division)",
+      "content": [
+        "Step 1: Group the numbers together.",
+        "Step 2: Multiply the numbers.",
+        "Step 3: Use the law of indices to simplify the powers of 10.",
+        "Step 4: Give the answer in scientific notation.",
+        "Example",
+        "Step 0: (8 x 10^3)(9 x 10^2)",
+        "Step 1: (8 x 9) x 10^3 x 10^2",
+        "Step 2: 72 x 10^3 x 10^2",
+        "Step 3: 72 x 10^(3+2)",
+        "Step 3: 72 x 10^5",
+        "Step 4: 7.2 x 10^6"
+      ],
+      "sources": [
+        {
+          "name": "Online Math Learning",
+          "year": "2025",
+          "title": "Multiplying Numbers in Scientific Notation (examples, solutions, videos)",
+          "link": "https://www.onlinemathlearning.com/multiplying-scientific-notation.html"
+        }
+      ],
+      "additional_sources": [
+        {
+          "name": "Mario’s Math Tutoring",
+          "year": "2024, December 17",
+          "title": "Operations with Scientific Notation (4 Examples) [Video]",
+          "link": "https://www.youtube.com/watch?v=3hCXFNKdXbM"
+        }
+      ]
+    },
+    {
+      "title": "Practice scientific notation and arithmetic",
+      "heading": "Practice exercises scientific notation and arithmetic",
+      "content": [
+        "Choose the correct answer for these exercises a pencil a paper sheet and a calculator is recommended."
+      ],
+      "problems": [
+        {
+          "question": "(6.91 x 10^-2) + (2.4 x 10^-3)",
+          "options": [
+            "8 x 10^-2",
+            "7.15 x 10^-2",
+            "007 x 10^-7",
+            "7.15 x 10^-3"
+          ],
+          "answer": "7.15 x 10^-2"
+        },
+        {
+          "question": "(8.14 x 10^5) – (7.8 x 10^2)",
+          "options": [
+            "KeyserKat",
+            "15 x 10^3",
+            "8.2222 x 10^5",
+            "8.1322 x 10^5"
+          ],
+          "answer": "8.1322 x 10^5"
+        },
+        {
+          "question": "(9.2 x 10^5)(4 x 10^-3)",
+          "options": [
+            "3.68 x 10^3",
+            "36.8 x 10^2",
+            "368 x 10^1",
+            "7.87 x 10^3"
+          ],
+          "answer": "3.68 x 10^3"
+        },
+        {
+          "question": "(4.6 x 10^2)/(5.01 x 10^-3)",
+          "options": [
+            "9.182 x 10^4 ",
+            "10 x 10^4",
+            "91.82 x 10^3",
+            "918.2 x 10^4"
+          ],
+          "answer": "9.182 x 10^4"
+        },
+        {
+          "question": "(3.4 x 10^2) + (4.57 x 10^3)",
+          "options": [
+            "4.5 x 10^3",
+            "5 x 10^3",
+            "4.91 x 10^3 ",
+            "491 x 10^0"
+          ],
+          "answer": "4.91 x 10^3"
+        },
+        {
+          "question": "(5.9 x 10^-2) – (0.0078 x 10^3)",
+          "options": [
+            "77.41 x 10^2",
+            "774.1 x 10^5",
+            "7741 x 10^-12",
+            "-7.741 x 10^1 "
+          ],
+          "answer": "-7.741 x 10^1"
+        },
+        {
+          "question": "(2.04 x 10^-1)/(2 x 10^-2)",
+          "options": [
+            "10.2 x 10^2",
+            "102 x 10^3",
+            "1.02 x 10^1 ",
+            "102 x 10^1"
+          ],
+          "answer": "1.02 x 10^1"
+        }
+      ],
+      "sources": [
+        {
+          "name": "Math Monks",
+          "year": "2023",
+          "title": "Adding Substracting Multiplying and Dividing in Scientific Notation",
+          "link": "https://mathmonks.com/wp-content/uploads/2023/02/Adding-Subtracting-Multiplying-and-Dividing-Scientific-Notation-Worksheet.pdf"
+        }
+      ]
+    },
+    {
+      "title": "References",
+      "heading": "References",
+      "content": [
+        "Khan, S., & CK-12 Foundation. (n.d.). Scientific notation examples (video). Khan Academy. https://www.khanacademy.org/math/cc-eighth-grade-math/cc-8th-numbers-operations/cc-8th-scientific-notation/v/scientific-notation",
+        "Online Math Learning . (2024). Adding Scientific Notation (video lessons, examples and step-by-step solutions). Www.onlinemathlearning.com. https://www.onlinemathlearning.com/adding-scientific-notation.html#google_vignette",
+        "Boundless. (2020, July 16). 1.2: Scientific Notation and Order of Magnitude. Physics LibreTexts. https://phys.libretexts.org/Courses/Tuskegee_University/Algebra_Based_Physics_I/01%3A_Nature_of_Physics/1.02%3A_Scientific_Notation_and_Order_of_Magnitude",
+        "Everett Community College. (n.d.). Scientific Notation Worksheet. Google.com. Retrieved November 28, 2025, from https://www.everettcc.edu/files/programs/arts/tutoring-center/chemistry/w313-scientific-notation-worksheet.pdf",
+        "Math Monks. (2023). Adding Substracting Multiplying and Dividing in Scientific Notation. Google.com. https://mathmonks.com/wp-content/uploads/2023/02/Adding-Subtracting-Multiplying-and-Dividing-Scientific-Notation-Worksheet.pdf",
+        "Mario’s Math Tutoring. (2024, December 17). Operations with Scientific Notation (4 Examples) [Video]. YouTube. https://www.youtube.com/watch?v=3hCXFNKdXbM",
+        "The Organic Chemistry Tutor. (2018, February 8). Scientific notation - fast review! [Video]. YouTube. https://www.youtube.com/watch?v=ZtB0vJMGve4",
+        "Veritasium. (2011, February 2). Scientific notation - explained! [Video]. YouTube. https://www.youtube.com/watch?v=WwmJ5nMmigQ"
+      ]
+    }
+  ]
+}
