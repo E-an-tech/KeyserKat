@@ -1,0 +1,37 @@
+{
+  "id": 4,
+  "title": "Scientific Notation",
+  "read_time": "8 min",
+
+  "sections": [
+    {
+      "title": "What is Scientific Notation?",
+      "content": [
+        "Scientific notation is a method of writing very large or very small numbers.",
+        "It has the form: a × 10ⁿ, where 1 ≤ a < 10."
+      ]
+    },
+    {
+      "title": "Examples",
+      "content": [
+        "3,000 → 3 × 10³",
+        "0.005 → 5 × 10⁻³"
+      ]
+    }
+  ],
+
+  "flashcards": [
+    {
+      "question": "What form does scientific notation use?",
+      "answer": "a × 10ⁿ where 1 ≤ a < 10."
+    }
+  ],
+
+  "quiz": [
+    {
+      "question": "Write 45,000 in scientific notation.",
+      "options": ["4.5 × 10³", "45 × 10²", "4.5 × 10⁴"],
+      "answer": "4.5 × 10⁴"
+    }
+  ]
+}

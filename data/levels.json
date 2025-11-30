@@ -1,34 +1,32 @@
 {
-  "statistics_probability": {
+  "statistics_probabilty": {
     "title": "Statistics & Probability",
     "units": [
       {
         "id": 1,
-        "title": "Descriptive Statistics",
+        "title": "Placeholder Unit",
         "lessons": [
           {
             "id": 1,
-            "title": "Measures of Central Tendency",
-            "time_estimate": "5 min",
-            "content": "<b>Mean</b>: average of numbers...\n\nMode: most frequent value"
+            "title": "Coming Soon",
+            "file": "placeholder_stats.json"
           }
         ]
       }
     ]
   },
+
   "physics": {
     "title": "Physics",
     "units": [
       {
         "id": 1,
-        "title": "Motion",
+        "title": "Introduction to Physics",
         "lessons": [
-          {
-            "id": 1,
-            "title": "Kinematics",
-            "time_estimate": "7 min",
-            "content": "Displacement, velocity, acceleration..."
-          }
+          { "id": 1, "title": "Physics Around Us", "file": "physics_l1.json" },
+          { "id": 2, "title": "Unit Conversion", "file": "physics_l2.json" },
+          { "id": 3, "title": "Significant Digits / Significant Figures", "file": "physics_l3.json" },
+          { "id": 4, "title": "Scientific Notation", "file": "physics_l4.json" }
         ]
       }
     ]

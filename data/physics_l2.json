@@ -1,0 +1,38 @@
+{
+  "id": 2,
+  "title": "Unit Conversion",
+  "read_time": "6 min",
+
+  "sections": [
+    {
+      "title": "What is a Conversion Factor?",
+      "content": [
+        "A conversion factor is a ratio that expresses how many of one unit equals another unit.",
+        "Example: 1 km = 1000 m"
+      ]
+    },
+    {
+      "title": "How to Convert Units",
+      "content": [
+        "Step 1: Identify the conversion factor.",
+        "Step 2: Multiply by the factor that cancels the old unit.",
+        "Example: 5 km × (1000 m / 1 km) = 5000 m"
+      ]
+    }
+  ],
+
+  "flashcards": [
+    {
+      "question": "What is a conversion factor?",
+      "answer": "A ratio that relates one unit to another."
+    }
+  ],
+
+  "quiz": [
+    {
+      "question": "Convert 2 km to meters.",
+      "options": ["200 m", "2000 m", "20 m"],
+      "answer": "2000 m"
+    }
+  ]
+}

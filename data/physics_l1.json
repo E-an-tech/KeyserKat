@@ -1,0 +1,29 @@
+{
+  "id": 1,
+  "title": "Physics Around Us",
+  "read_time": "5 min",
+
+  "content": [
+    "Physics studies matter, energy, motion, and the forces that affect them.",
+    "Everything around you involves physics: cars moving, phones charging, sound, light, electricity, and even walking."
+  ],
+
+  "flashcards": [
+    {
+      "question": "What does physics study?",
+      "answer": "Matter, energy, motion, and forces."
+    },
+    {
+      "question": "Example of physics in daily life?",
+      "answer": "Movement of cars, use of smartphones, sound and light."
+    }
+  ],
+
+  "quiz": [
+    {
+      "question": "Which of the following is an example of physics?",
+      "options": ["Writing an essay", "Riding a bicycle", "Painting a picture"],
+      "answer": "Riding a bicycle"
+    }
+  ]
+}

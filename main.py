@@ -85,7 +85,10 @@ if courses_index is None:
             "title": "Physics",
             "units": [
                 {"id": 1, "title": "Motion", "lessons": [
-                    {"id": 1, "title": "Kinematics", "time_estimate": "8 min", "content": "Displacement, velocity, acceleration..."}
+                    {"id": 1, "title": "Physics Around Us", "time_estimate": "5 min", "content": "Displacement, velocity, acceleration..."},
+                    {"id": 2, "title": "Unit Conversion", "time_estimate": "5 min", "content": "Content for lesson 3..."},
+                    {"id": 3, "title": "Significant Digits/Significant Figures", "time_estimate": "5 min", "content": "Content for lesson 4..."},
+                    {"id": 4, "title": "Scientific Notation", "time_estimate": "8 min", "content": "Content for lesson 3..."},
                 ]}
             ]
         }
@@ -514,11 +517,15 @@ class LessonDetailScreen(Screen):
         self._flashcards = []
         self._quiz = []
 
+    
     def load_lesson(self, lesson_obj):
         self.lesson_obj = lesson_obj
         self.header.text = lesson_obj.get("title", "Lesson")
         self.time_label.text = lesson_obj.get("time_estimate", "")
+
+        # try to get main content
         content = lesson_obj.get("content")
+
         # if content_file exists, try to load it relative to BASE_DIR
         cf = lesson_obj.get("content_file")
         if not content and cf:
@@ -532,11 +539,29 @@ class LessonDetailScreen(Screen):
                         content = f.read()
             else:
                 content = f"(missing content file: {cf})"
+
+        # handle "sections" if present
+        if not content and "sections" in lesson_obj:
+            sections = lesson_obj.get("sections", [])
+            content = "\n\n".join(str(sec.get("text", sec)) for sec in sections)
+
+        # fallback
         if not content:
             content = "No content available."
+
+        # ensure it's a string
+        if not isinstance(content, str):
+            import json
+            content = json.dumps(content, indent=2)
+
+        # ensure content is a string, even if it’s a list
+        if isinstance(content, list):
+            content = "\n\n".join(content)
         self.content_label.text = content
+
         self._flashcards = lesson_obj.get("flashcards", [])
         self._quiz = lesson_obj.get("quiz", [])
+
 
     def on_quiz(self, *a):
         if self._quiz:
