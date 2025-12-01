@@ -19,10 +19,10 @@ def test_lessons():
     print("\n=== TESTING INDIVIDUAL LESSON FILES ===")
 
     files = [
-        "data/physics_l1.json",
-        "data/physics_l2.json",
-        "data/physics_l3.json",
-        "data/physics_l4.json",
+        "data/courses/physics/unit1/lesson1.json",
+        "data/courses/physics/unit1/lesson2.json",
+        "data/courses/physics/unit1/lesson3.json",
+        "data/courses/physics/unit1/lesson4.json",
         "data/placeholder_stats.json"
     ]
 

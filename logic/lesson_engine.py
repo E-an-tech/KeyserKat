@@ -15,6 +15,36 @@ from kivy.uix.popup import Popup
 #It is finding the lesson our dear consumer choose
 COURSE_ROOT = "courses"
 
+
+# lesson_engine.py (or main.py)
+def parse_lesson_for_app(lesson_json):
+    """
+    Converts lesson JSON into quiz and flashcards lists for Kivy screens
+    """
+    flashcards = []
+    quiz = []
+
+    for section in lesson_json.get("sections", []):
+        # Collect problems for quiz
+        for prob in section.get("problems", []):
+            quiz.append({
+                "question": prob.get("question"),
+                "options": prob.get("options", []),
+                "answer": prob.get("answer")
+            })
+
+        # Optional: create flashcards from headings + content
+        heading = section.get("heading")
+        content = section.get("content")
+        if heading and content:
+            flashcards.append({
+                "front": heading,
+                "back": content
+            })
+
+    return quiz, flashcards
+
+
 def discover_all_lessons(root=COURSE_ROOT):
 
     courses = {}

@@ -1,32 +1,31 @@
 {
-  "statistics_probabilty": {
-    "title": "Statistics & Probability",
-    "units": [
-      {
-        "id": 1,
-        "title": "Placeholder Unit",
-        "lessons": [
-          {
-            "id": 1,
-            "title": "Coming Soon",
-            "file": "placeholder_stats.json"
-          }
-        ]
-      }
-    ]
-  },
-
   "physics": {
     "title": "Physics",
     "units": [
       {
         "id": 1,
-        "title": "Introduction to Physics",
+        "title": "Physics Basics",
         "lessons": [
-          { "id": 1, "title": "Physics Around Us", "file": "physics_l1.json" },
-          { "id": 2, "title": "Unit Conversion", "file": "physics_l2.json" },
-          { "id": 3, "title": "Significant Digits / Significant Figures", "file": "physics_l3.json" },
-          { "id": 4, "title": "Scientific Notation", "file": "physics_l4.json" }
+          {
+            "id": 1,
+            "title": "Physics Around Us",
+            "file": "data/courses/physics/unit1/lesson1.json"
+          },
+          {
+            "id": 2,
+            "title": "Motion and Forces",
+            "file": "data/courses/physics/unit1/lesson2.json"
+          },
+          {
+            "id": 3,
+            "title": "Energy and Work",
+            "file": "data/courses/physics/unit1/lesson3.json"
+          },
+          {
+            "id": 4,
+            "title": "Waves and Sound",
+            "file": "data/courses/physics/unit1/lesson4.json"
+          }
         ]
       }
     ]

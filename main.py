@@ -19,6 +19,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
+from logic.lesson_engine import parse_lesson_for_app  # add at top
 
 from level_loader import LEVELS
 
@@ -445,14 +446,18 @@ class LessonListScreen(Screen):
         self.layout = BoxLayout(orientation="vertical", padding=12, spacing=10)
         self.title_label = Label(text="Lessons", size_hint=(1,None), height=42)
         self.layout.add_widget(self.title_label)
+
         self.grid = GridLayout(cols=1, spacing=8, size_hint_y=None)
         self.grid.bind(minimum_height=self.grid.setter('height'))
+
         self.scroll = ScrollView()
         self.scroll.add_widget(self.grid)
         self.layout.add_widget(self.scroll)
+
         self.add_widget(self.layout)
 
     def load_lessons(self, unit_obj):
+        """Load lesson buttons for the selected unit"""
         self.title_label.text = f"{unit_obj.get('title','Unit')} — Lessons"
         self.grid.clear_widgets()
         for lesson in unit_obj.get("lessons", []):
@@ -465,11 +470,21 @@ class LessonListScreen(Screen):
             self.grid.add_widget(btn)
 
     def open_lesson(self, lesson_obj):
+        """Load JSON lesson file and go to LessonDetailScreen"""
+        lesson_path = lesson_obj.get("file")  # must exist in levels.json
+        if not lesson_path or not os.path.exists(lesson_path):
+            print(f"[Error] Lesson JSON not found: {lesson_path}")
+            return
+
+        with open(lesson_path, "r", encoding="utf-8") as f:
+            lesson_data = json.load(f)
+
         if "lesson_detail" in self.manager.screen_names:
             ld = self.manager.get_screen("lesson_detail")
-            ld.load_lesson(lesson_obj)
+            ld.load_lesson(lesson_data)
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "lesson_detail"
+
 
 # --- LESSON DETAIL SCREEN ---
 class LessonDetailScreen(Screen):
@@ -483,13 +498,17 @@ class LessonDetailScreen(Screen):
         self.time_label = Label(text="", size_hint=(1,None), height=28)
         self.root_layout.add_widget(self.time_label)
 
+        
         self.scroll = ScrollView(size_hint=(1,1))
         self.content_label = Label(
-            text="", size_hint_y=None, markup=True, halign="left", valign="top", text_size=(Window.width-24,None)
+            text="", size_hint_y=None, markup=True, halign="left", valign="top"
         )
-        self.content_label.bind(texture_size=lambda *a: setattr(self.content_label,"height",self.content_label.texture_size[1]))
         self.scroll.add_widget(self.content_label)
         self.root_layout.add_widget(self.scroll)
+
+        # Bind ScrollView width to update wrapping
+        self.scroll.bind(width=lambda instance, value: self.update_label_wrap())
+
 
         bottom = BoxLayout(size_hint=(1,None), height=64, spacing=8)
         self.btn_quiz = Button(text="Quiz")
@@ -509,18 +528,54 @@ class LessonDetailScreen(Screen):
         self.btn_flash.bind(on_release=self.on_flashcards)
         self.btn_pomo.bind(on_release=self.on_pomodoro)
 
+    def update_label_wrap(self):
+        self.content_label.text_size = (self.scroll.width - 20, None)
+        self.content_label.texture_update()
+        self.content_label.height = self.content_label.texture_size[1]
+
+
+    def parse_lesson(self, lesson_json):
+        """Extract quizzes and flashcards from lesson JSON"""
+        quiz = []
+        flashcards = []
+
+        for section in lesson_json.get("sections", []):
+            # Flashcards: heading -> content
+            heading = section.get("heading")
+            content = section.get("content")
+            if heading and content:
+                flashcards.append({"front": heading, "back": content})
+
+            # Quiz: problems
+            for prob in section.get("problems", []):
+                quiz.append({
+                    "question": prob.get("question"),
+                    "options": prob.get("options", []),
+                    "answer": prob.get("answer")
+                })
+        return quiz, flashcards
+
     def load_lesson(self, lesson_obj):
+        """Populate lesson detail screen"""
         self.header.text = lesson_obj.get("title","Lesson")
         self.time_label.text = f"Read Time: {lesson_obj.get('read_time','N/A')}"
 
+        # Combine all section text for display
         content_text = ""
-        for para in lesson_obj.get("content", []):
-            content_text += f"{para}\n\n"
+        for section in lesson_obj.get("sections", []):
+            heading = section.get("heading")
+            content = section.get("content")
+            if heading: content_text += f"[b]{heading}[/b]\n"
+            if content: content_text += f"{content}\n"
+            # optional: bullet points
+            for bp in section.get("bullet_points", []):
+                content_text += f"• {bp}\n"
+            content_text += "\n"
         self.content_label.text = content_text.strip()
+        self.update_label_wrap()
 
-        self._quiz = lesson_obj.get("quiz", [])
-        self._flashcards = lesson_obj.get("flashcards", [])
-
+        # Parse quizzes & flashcards
+        self._quiz, self._flashcards = self.parse_lesson(lesson_obj)
         self.btn_quiz.disabled = not bool(self._quiz)
         self.btn_flash.disabled = not bool(self._flashcards)
 
@@ -548,7 +603,7 @@ class LessonDetailScreen(Screen):
         popup_layout.add_widget(start_btn)
         popup = Popup(title="Pomodoro Timer", content=popup_layout, size_hint=(0.7,0.5))
         popup.open()
-
+    
 
 class QuizScreen(Screen):
     def load_quiz(self, questions):
