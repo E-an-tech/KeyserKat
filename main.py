@@ -20,6 +20,9 @@ from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
 
+from level_loader import LEVELS
+
+
 
 #Development convenience
 from kivy.core.window import Window
@@ -65,34 +68,11 @@ def save_json(path, data):
         json.dump(data, f, indent=2, ensure_ascii=False)
 
 # ---------- Load courses index (levels.json) ----------
-courses_index = load_json(COURSES_INDEX, default=None)
+courses_index = load_json(COURSES_INDEX)
 if courses_index is None:
-    # minimal fallback to keep app running; user should replace levels.json later
-    courses_index = {
-        "statistics_probability": {
-            "title": "Statistics & Probability",
-            "units": [
-                {"id": 1, "title": "Descriptive Statistics", "lessons": [
-                    {"id": 1, "title": "Measures of Central Tendency", "time_estimate": "5 min", "content": "<b>Mean</b> — the average...\n\nMode — the most frequent value..."},
-                    {"id": 2, "title": "Spread & Variability", "time_estimate": "6 min", "content": "Variance and standard deviation..."}
-                ]},
-                {"id": 2, "title": "Probability Basics", "lessons": [
-                    {"id": 1, "title": "Basic Probability", "time_estimate": "7 min", "content": "Events, sample spaces, P(A)..."}
-                ]}
-            ]
-        },
-        "physics": {
-            "title": "Physics",
-            "units": [
-                {"id": 1, "title": "Motion", "lessons": [
-                    {"id": 1, "title": "Physics Around Us", "time_estimate": "5 min", "content": "Displacement, velocity, acceleration..."},
-                    {"id": 2, "title": "Unit Conversion", "time_estimate": "5 min", "content": "Content for lesson 3..."},
-                    {"id": 3, "title": "Significant Digits/Significant Figures", "time_estimate": "5 min", "content": "Content for lesson 4..."},
-                    {"id": 4, "title": "Scientific Notation", "time_estimate": "8 min", "content": "Content for lesson 3..."},
-                ]}
-            ]
-        }
-    }
+    raise FileNotFoundError(f"Could not find {COURSES_INDEX}. Make sure your levels.json exists in the data folder.")
+
+
     # do NOT overwrite user's file automatically; just continue with fallback
 
 # ---------- Pretest question selection (single load, cleaned) ----------
@@ -419,6 +399,7 @@ class CourseSelectScreen(Screen):
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = "units"
 
+# --- UNIT SCREEN ---
 class UnitScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
@@ -431,179 +412,212 @@ class UnitScreen(Screen):
         self.scroll.add_widget(self.grid)
         self.content.add_widget(self.scroll)
         self.add_widget(self.content)
-        self._courses = courses_index
 
     def load_units(self, course_key):
-        course = self._courses.get(course_key)
+        course = courses_index.get(course_key)
         if not course:
             self.title_label.text = "Course not found"
             return
         self.title_label.text = f"{course.get('title','Course')} — Units"
         self.grid.clear_widgets()
         for unit in course.get("units", []):
-            btn = Button(text=f"Unit {unit.get('id')}: {unit.get('title')}", size_hint_y=None, height=64)
+            btn = Button(
+                text=f"Unit {unit.get('id')}: {unit.get('title')}",
+                size_hint_y=None,
+                height=64
+            )
             btn.bind(on_release=lambda inst, u=unit: self.open_unit(u))
             self.grid.add_widget(btn)
 
     def open_unit(self, unit_obj):
-        # store selection
         app = App.get_running_app()
         app.selected_unit = unit_obj.get("id")
-        self.manager.selected_unit_obj = unit_obj
-        # prepare LessonListScreen
         if "lessons" in self.manager.screen_names:
-            lessons = self.manager.get_screen("lessons")
-            if hasattr(lessons, "load_lessons"):
-                lessons.load_lessons(unit_obj, app.selected_course)
+            lesson_screen = self.manager.get_screen("lessons")
+            lesson_screen.load_lessons(unit_obj)
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = "lessons"
 
+# --- LESSON LIST SCREEN ---
 class LessonListScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
-        self.content = BoxLayout(orientation="vertical", padding=12, spacing=10)
+        self.layout = BoxLayout(orientation="vertical", padding=12, spacing=10)
         self.title_label = Label(text="Lessons", size_hint=(1,None), height=42)
-        self.content.add_widget(self.title_label)
+        self.layout.add_widget(self.title_label)
         self.grid = GridLayout(cols=1, spacing=8, size_hint_y=None)
         self.grid.bind(minimum_height=self.grid.setter('height'))
         self.scroll = ScrollView()
         self.scroll.add_widget(self.grid)
-        self.content.add_widget(self.scroll)
-        self.add_widget(self.content)
+        self.layout.add_widget(self.scroll)
+        self.add_widget(self.layout)
 
-    def load_lessons(self, unit_obj, course_key):
-        self.title_label.text = f"{courses_index.get(course_key,{}).get('title',course_key)} — {unit_obj.get('title')}"
+    def load_lessons(self, unit_obj):
+        self.title_label.text = f"{unit_obj.get('title','Unit')} — Lessons"
         self.grid.clear_widgets()
         for lesson in unit_obj.get("lessons", []):
-            btn = Button(text=f"Lesson {lesson.get('id')}: {lesson.get('title')}", size_hint_y=None, height=64)
+            btn = Button(
+                text=f"Lesson {lesson.get('id')}: {lesson.get('title')}",
+                size_hint_y=None,
+                height=64
+            )
             btn.bind(on_release=lambda inst, l=lesson: self.open_lesson(l))
             self.grid.add_widget(btn)
 
     def open_lesson(self, lesson_obj):
-        # set selection and navigate to detailed lesson view
-        self.manager.selected_lesson_obj = lesson_obj
         if "lesson_detail" in self.manager.screen_names:
             ld = self.manager.get_screen("lesson_detail")
-            if hasattr(ld, "load_lesson"):
-                ld.load_lesson(lesson_obj)
-        self.manager.transition = SlideTransition(direction="left")
-        self.manager.current = "lesson_detail"
+            ld.load_lesson(lesson_obj)
+            self.manager.transition = SlideTransition(direction="left")
+            self.manager.current = "lesson_detail"
 
+# --- LESSON DETAIL SCREEN ---
 class LessonDetailScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.root_layout = BoxLayout(orientation="vertical", padding=12, spacing=10)
-        self.header = Label(text="Lesson Title", size_hint=(1,None), height=48)
+
+        self.header = Label(text="Lesson Title", size_hint=(1,None), height=42)
         self.root_layout.add_widget(self.header)
+
         self.time_label = Label(text="", size_hint=(1,None), height=28)
         self.root_layout.add_widget(self.time_label)
-        self.scroll = ScrollView()
-        self.content_label = Label(text="", size_hint_y=None, markup=True)
-        self.content_label.bind(texture_size=lambda *a: setattr(self.content_label, "height", self.content_label.texture_size[1]))
+
+        self.scroll = ScrollView(size_hint=(1,1))
+        self.content_label = Label(
+            text="", size_hint_y=None, markup=True, halign="left", valign="top", text_size=(Window.width-24,None)
+        )
+        self.content_label.bind(texture_size=lambda *a: setattr(self.content_label,"height",self.content_label.texture_size[1]))
         self.scroll.add_widget(self.content_label)
         self.root_layout.add_widget(self.scroll)
-        # bottom buttons: Quiz / Flashcards / Pomodoro
+
         bottom = BoxLayout(size_hint=(1,None), height=64, spacing=8)
         self.btn_quiz = Button(text="Quiz")
         self.btn_flash = Button(text="Flashcards")
         self.btn_pomo = Button(text="Pomodoro")
+        bottom.add_widget(self.btn_quiz)
+        bottom.add_widget(self.btn_flash)
+        bottom.add_widget(self.btn_pomo)
+        self.root_layout.add_widget(bottom)
+
+        self.add_widget(self.root_layout)
+
+        self._quiz = []
+        self._flashcards = []
+
         self.btn_quiz.bind(on_release=self.on_quiz)
         self.btn_flash.bind(on_release=self.on_flashcards)
         self.btn_pomo.bind(on_release=self.on_pomodoro)
-        bottom.add_widget(self.btn_quiz); bottom.add_widget(self.btn_flash); bottom.add_widget(self.btn_pomo)
-        self.root_layout.add_widget(bottom)
-        self.add_widget(self.root_layout)
-        self.lesson_obj = None
-        self._flashcards = []
-        self._quiz = []
 
-    
     def load_lesson(self, lesson_obj):
-        self.lesson_obj = lesson_obj
-        self.header.text = lesson_obj.get("title", "Lesson")
-        self.time_label.text = lesson_obj.get("time_estimate", "")
+        self.header.text = lesson_obj.get("title","Lesson")
+        self.time_label.text = f"Read Time: {lesson_obj.get('read_time','N/A')}"
 
-        # try to get main content
-        content = lesson_obj.get("content")
+        content_text = ""
+        for para in lesson_obj.get("content", []):
+            content_text += f"{para}\n\n"
+        self.content_label.text = content_text.strip()
 
-        # if content_file exists, try to load it relative to BASE_DIR
-        cf = lesson_obj.get("content_file")
-        if not content and cf:
-            path = os.path.join(BASE_DIR, cf)
-            if os.path.exists(path):
-                try:
-                    item = load_json(path, default={})
-                    content = item.get("content") or json.dumps(item)
-                except Exception:
-                    with open(path, "r", encoding="utf-8") as f:
-                        content = f.read()
-            else:
-                content = f"(missing content file: {cf})"
-
-        # handle "sections" if present
-        if not content and "sections" in lesson_obj:
-            sections = lesson_obj.get("sections", [])
-            content = "\n\n".join(str(sec.get("text", sec)) for sec in sections)
-
-        # fallback
-        if not content:
-            content = "No content available."
-
-        # ensure it's a string
-        if not isinstance(content, str):
-            import json
-            content = json.dumps(content, indent=2)
-
-        # ensure content is a string, even if it’s a list
-        if isinstance(content, list):
-            content = "\n\n".join(content)
-        self.content_label.text = content
-
-        self._flashcards = lesson_obj.get("flashcards", [])
         self._quiz = lesson_obj.get("quiz", [])
+        self._flashcards = lesson_obj.get("flashcards", [])
 
+        self.btn_quiz.disabled = not bool(self._quiz)
+        self.btn_flash.disabled = not bool(self._flashcards)
 
-    def on_quiz(self, *a):
+    def on_quiz(self, instance):
         if self._quiz:
-            # placeholder: navigate to quiz screen if you build one
-            print("Starting quiz:", self._quiz)
-            popup = Popup(title="Quiz", content=Label(text="Quiz not implemented yet."), size_hint=(0.6,0.3))
-            popup.open()
-        else:
-            popup = Popup(title="Info", content=Label(text="No quiz available."), size_hint=(0.6,0.3)); popup.open()
+            self.manager.get_screen("quiz").load_quiz(self._quiz)
+            self.manager.current = "quiz"
 
-    def on_flashcards(self, *a):
+    def on_flashcards(self, instance):
         if self._flashcards:
-            print("Flashcards:", self._flashcards)
-            popup = Popup(title="Flashcards", content=Label(text="Flashcards not implemented yet."), size_hint=(0.6,0.3))
-            popup.open()
-        else:
-            popup = Popup(title="Info", content=Label(text="No flashcards."), size_hint=(0.6,0.3)); popup.open()
+            self.manager.get_screen("flashcards").load_flashcards(self._flashcards)
+            self.manager.current = "flashcards"
 
-    def on_pomodoro(self, *a):
-        content = BoxLayout(orientation="vertical", padding=8, spacing=8)
-        ti = TextInput(text="25", input_filter="int", multiline=False, size_hint=(1,None), height=44)
-        btn = Button(text="Set", size_hint=(1,None), height=44)
-        content.add_widget(Label(text="Minutes:"))
-        content.add_widget(ti)
-        content.add_widget(btn)
-        popup = Popup(title="Pomodoro", content=content, size_hint=(0.8,None), height=220)
-        def do_set(_):
-            v = ti.text.strip()
-            if v.isdigit():
-                app = App.get_running_app()
-                app.pomodoro_seconds = int(v)*60
-                popup.dismiss()
-                Popup(title="Set", content=Label(text=f"Pomodoro set: {v} min"), size_hint=(0.6,0.3)).open()
-            else:
-                Popup(title="Error", content=Label(text="Enter minutes (int)"), size_hint=(0.5,0.25)).open()
-        btn.bind(on_release=do_set)
+    def on_pomodoro(self, instance):
+        popup_layout = BoxLayout(orientation="vertical", padding=10, spacing=10)
+        popup_layout.add_widget(Label(text="Enter Pomodoro time (minutes):"))
+        time_input = TextInput(text="25", multiline=False, input_filter="int")
+        popup_layout.add_widget(time_input)
+        def start_timer(btn):
+            minutes = int(time_input.text) if time_input.text.isdigit() else 25
+            self.content_label.text = f"Pomodoro started for {minutes} minutes!"
+            popup.dismiss()
+        start_btn = Button(text="Start", size_hint=(1,None), height=50)
+        start_btn.bind(on_release=start_timer)
+        popup_layout.add_widget(start_btn)
+        popup = Popup(title="Pomodoro Timer", content=popup_layout, size_hint=(0.7,0.5))
         popup.open()
+
+
+class QuizScreen(Screen):
+    def load_quiz(self, questions):
+        self.clear_widgets()
+        self.questions = questions
+        self.current = 0
+        self.show_question()
+
+    def show_question(self):
+        self.clear_widgets()
+        if self.current >= len(self.questions):
+            self.add_widget(Label(text="Quiz complete!"))
+            return
+        q = self.questions[self.current]
+        layout = BoxLayout(orientation="vertical")
+        layout.add_widget(Label(text=q["question"]))
+        for opt in q["options"]:
+            btn = Button(text=opt)
+            btn.bind(on_release=lambda x, opt=opt: self.check_answer(opt))
+            layout.add_widget(btn)
+        self.add_widget(layout)
+
+    def check_answer(self, selected):
+        q = self.questions[self.current]
+        if selected == q["answer"]:
+            print("Correct!")  # can add feedback label
+        else:
+            print("Wrong")
+        self.current += 1
+        self.show_question()
+
+
+
+class FlashcardScreen(Screen):
+    def load_flashcards(self, cards):
+        self.clear_widgets()
+        self.cards = cards
+        self.index = 0
+        self.show_card()
+
+    def show_card(self):
+        self.clear_widgets()
+        if self.index >= len(self.cards):
+            self.add_widget(Label(text="No more flashcards"))
+            return
+        card = self.cards[self.index]
+        layout = BoxLayout(orientation="vertical")
+        front = Label(text=card["front"], font_size=24)
+        layout.add_widget(front)
+        flip_btn = Button(text="Show Answer", size_hint_y=None, height=50)
+        flip_btn.bind(on_release=lambda x: setattr(front, "text", card["back"]))
+        next_btn = Button(text="Next", size_hint_y=None, height=50)
+        next_btn.bind(on_release=lambda x: self.next_card())
+        layout.add_widget(flip_btn)
+        layout.add_widget(next_btn)
+        self.add_widget(layout)
+
+    def next_card(self):
+        self.index += 1
+        self.show_card()
+
+
 
 # ---------- Application ----------
 class MyApp(App):
     def build(self):
         sm = ScreenManager()
+        
+
         # pretest screens
         sm.add_widget(PreTestScreen(name="pretest"))
         for i, q in enumerate(selected_questions):
@@ -618,7 +632,17 @@ class MyApp(App):
         sm.add_widget(CourseSelectScreen(name="courses"))
         sm.add_widget(UnitScreen(name="units"))
         sm.add_widget(LessonListScreen(name="lessons"))
+
+
         sm.add_widget(LessonDetailScreen(name="lesson_detail"))
+
+        sm.add_widget(QuizScreen(name="quiz"))
+        sm.add_widget(FlashcardScreen(name="flashcards"))
+      
+        lesson_screen = sm.get_screen("lessons")
+
+
+                        
 
         # start on pretest (or "main" if you prefer)
         sm.current = "pretest"
@@ -632,6 +656,7 @@ class MyApp(App):
         Window.bind(on_key_down=self.skip_pretest)
 
         return sm
+
 
     def skip_pretest(self, window, key, *args):
         if key == ord('q'):  # press Q to skip pretest
