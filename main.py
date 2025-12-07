@@ -1,5 +1,5 @@
 #Our son <3
-
+#main.py
 import os
 import json
 import random
@@ -80,21 +80,38 @@ if courses_index is None:
 question_pool = load_json(PRETEST_FILE, default={})  # expected dict: unit_name -> [questions]
 used_questions = load_json(USED_QUESTIONS_FILE, default=[])
 
+import random
+
+MAX_TOTAL_QUESTIONS = 12
+MAX_PER_UNIT = 2
+
 selected_questions = []
-if question_pool:
-    # For each key in pool, pick up to 2 random unused questions
-    for unit_key, questions in question_pool.items():
-        remaining = [q for q in questions if q.get("question") not in used_questions]
-        if len(remaining) < 2:
-            # reset used list for fairness (simple policy)
-            used_questions = []
-            remaining = questions[:]
-        chosen = random.sample(remaining, min(2, len(remaining)))
-        for q in chosen:
-            q["unit"] = unit_key
-            selected_questions.append(q)
-            used_questions.append(q.get("question"))
-    save_json(USED_QUESTIONS_FILE, used_questions)
+all_candidates = []
+
+# Step 1: collect candidates per unit
+for unit_key, questions in question_pool.items():
+    remaining = [q for q in questions if q.get("question") not in used_questions]
+    if len(remaining) < MAX_PER_UNIT:
+        used_questions = []
+        remaining = questions[:]
+    # pick up to MAX_PER_UNIT for this unit
+    chosen = random.sample(remaining, min(MAX_PER_UNIT, len(remaining)))
+    for q in chosen:
+        q["unit"] = unit_key
+    all_candidates.extend(chosen)
+
+# Step 2: limit total to MAX_TOTAL_QUESTIONS
+if len(all_candidates) > MAX_TOTAL_QUESTIONS:
+    selected_questions = random.sample(all_candidates, MAX_TOTAL_QUESTIONS)
+else:
+    selected_questions = all_candidates[:]
+
+# Step 3: save used questions
+for q in selected_questions:
+    used_questions.append(q.get("question"))
+
+save_json(USED_QUESTIONS_FILE, used_questions)
+
 
 # ---------- App state storages ----------
 user_answers = {}  # question_text -> answer
@@ -112,33 +129,59 @@ class PreTestScreen(Screen):
         self.add_widget(layout)
 
     def start_quiz(self):
-        # go to first question
+        app = App.get_running_app()
+        app.start_quiz_timer()   # <- start timer here
         if selected_questions:
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "question_0"
-        else:
-            popup = Popup(title="No questions", content=Label(text="No pretest questions found."), size_hint=(0.6,0.3))
-            popup.open()
 
 class QuestionScreen(Screen):
     def __init__(self, question_data, index, **kwargs):
         super().__init__(**kwargs)
         self.question_data = question_data
         self.index = index
-        self.correct_keywords = [w.lower() for w in (question_data.get("answer") or [])]
+        # prepare canonical answers as a list of normalized answers
+        raw_answer = question_data.get("answer")
+        if isinstance(raw_answer, list):
+            self.canonical_answers = [self._norm(a) for a in raw_answer]
+        elif raw_answer is None:
+            self.canonical_answers = []
+        else:
+            # single string answer -> keep one entry
+            self.canonical_answers = [self._norm(raw_answer)]
         self.answer_input = None
         self.build_ui()
+
+    def _norm(self, s: str) -> str:
+        """Normalize strings for safe comparison:
+           - lowercase
+           - strip leading/trailing whitespace
+           - collapse internal whitespace
+           - remove common punctuation that often differs (optional)
+        """
+        if s is None:
+            return ""
+        s = str(s).lower().strip()
+        # collapse whitespace
+        s = " ".join(s.split())
+        # remove punctuation commonly causing mismatch but keep % and - and decimal digits
+        # keep digits, letters, space, percent sign, decimal point, minus, and slash
+        import re
+        s = re.sub(r"[^0-9a-z %\.\-\/]", "", s)
+        return s
 
     def build_ui(self):
         layout = BoxLayout(orientation="vertical", padding=16, spacing=12)
         scroll = ScrollView(size_hint=(1, 0.6))
-        self.question_label = Label(text=f"Q{self.index+1}: {self.question_data.get('question','')}",
-                                    halign="left", valign="top", size_hint_y=None, font_size=20)
+        self.question_label = Label(
+            text=f"Q{self.index+1}: {self.question_data.get('question','')}",
+            halign="left", valign="top", size_hint_y=None, font_size=20
+        )
         self.question_label.bind(texture_size=lambda instance, value: setattr(instance, "height", value[1]))
         scroll.add_widget(self.question_label)
         layout.add_widget(scroll)
 
-        if "options" in self.question_data:
+        if "options" in self.question_data and self.question_data.get("options"):
             for opt in self.question_data.get("options", []):
                 btn = Button(text=opt, size_hint_y=None, height=50)
                 btn.bind(on_release=self.check_multiple_choice)
@@ -155,12 +198,19 @@ class QuestionScreen(Screen):
     def check_multiple_choice(self, instance):
         global score
         user_answer = instance.text.strip()
-        correct = [a.lower() for a in (self.question_data.get("answer") or [])]
-        if user_answer.lower() in correct:
+        user_norm = self._norm(user_answer)
+
+        # Accept if any canonical answer matches
+        correct = user_norm in self.canonical_answers
+
+        if correct:
             score += 1
             self.show_popup("Correct!")
         else:
-            self.show_popup("Wrong!")
+            # show correct answer(s)
+            correct_text = self.question_data.get("answer")
+            self.show_popup(f"Wrong!\nAnswer: {correct_text}")
+
         user_answers[self.question_data.get("question")] = user_answer
         Clock.schedule_once(lambda dt: self.go_next(), 1.2)
 
@@ -168,12 +218,37 @@ class QuestionScreen(Screen):
         global score
         if not self.answer_input:
             return
-        text = self.answer_input.text.strip().lower()
-        if any(k in text for k in self.correct_keywords):
+        user_answer = self.answer_input.text.strip()
+        user_norm = self._norm(user_answer)
+
+        # Strategy:
+        # 1) exact normalized match (best)
+        # 2) if canonical answer contains multiple words, allow 'in' matching for short synonyms
+        correct = False
+        if user_norm in self.canonical_answers:
+            correct = True
+        else:
+            # allow partial match: any canonical answer token appears in user input OR vice versa
+            for canon in self.canonical_answers:
+                # if numeric-ish, require exact match (avoid accidental substring matches)
+                if any(ch.isdigit() for ch in canon):
+                    if user_norm == canon:
+                        correct = True
+                        break
+                else:
+                    # check tokens
+                    canon_tokens = [t for t in canon.split() if len(t) > 1]
+                    if any(tok in user_norm for tok in canon_tokens):
+                        correct = True
+                        break
+
+        if correct:
             score += 1
             self.show_popup("Correct!")
         else:
-            self.show_popup("Wrong!")
+            correct_text = self.question_data.get("answer")
+            self.show_popup(f"Wrong!\nAnswer: {correct_text}")
+
         user_answers[self.question_data.get("question")] = self.answer_input.text
         Clock.schedule_once(lambda dt: self.go_next(), 1.2)
 
@@ -191,13 +266,29 @@ class QuestionScreen(Screen):
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "done"
 
+
 class DoneScreen(Screen):
     def on_enter(self):
+        self.clear_widgets()
+        app = App.get_running_app()
+        total_time = app.finish_quiz_timer()
+        minutes, seconds = divmod(int(total_time), 60)
+
         layout = BoxLayout(orientation="vertical", padding=16, spacing=12)
-        layout.add_widget(Label(text=f"Quiz Complete!\nScore: {score}/{len(selected_questions)}", halign="center"))
+        total = len(app.answers)
+        correct_count = sum(1 for a in app.answers if a.get("correct"))
+
+        label = Label(
+            text=f"Quiz Complete!\nScore: {correct_count}/{total}\nTime: {minutes}m {seconds}s",
+            font_size=22,
+            halign="center",
+            valign="middle"
+        )
+        label.text_size = (self.width - 40, None)
+        layout.add_widget(label)
         self.add_widget(layout)
-        # return to main after short delay
-        Clock.schedule_once(lambda dt: setattr(self.manager, "current", "main"), 2.0)
+
+        Clock.schedule_once(lambda dt: setattr(self.manager, "current", "main"), 5.0)
 
 # ---------- Main UI screens ----------
 class MainScreen(Screen):
@@ -670,54 +761,61 @@ class FlashcardScreen(Screen):
 # ---------- Application ----------
 class MyApp(App):
     def build(self):
-        sm = ScreenManager()
-        
 
-        # pretest screens
+        self.start_time = None      # start of pretest/quiz
+        self.answers = []           # track user answers
+
+        sm = ScreenManager()
+
+        # ADD ALL SCREENS FIRST
         sm.add_widget(PreTestScreen(name="pretest"))
         for i, q in enumerate(selected_questions):
             sm.add_widget(QuestionScreen(name=f"question_{i}", question_data=q, index=i))
         sm.add_widget(DoneScreen(name="done"))
+
         # main UI
         sm.add_widget(MainScreen(name="main"))
         sm.add_widget(SettingsScreen(name="settings"))
         sm.add_widget(LeaderboardScreen(name="leaderboard"))
         sm.add_widget(SupportScreen(name="support"))
+
         # course flow
         sm.add_widget(CourseSelectScreen(name="courses"))
         sm.add_widget(UnitScreen(name="units"))
         sm.add_widget(LessonListScreen(name="lessons"))
-
-
         sm.add_widget(LessonDetailScreen(name="lesson_detail"))
-
         sm.add_widget(QuizScreen(name="quiz"))
         sm.add_widget(FlashcardScreen(name="flashcards"))
-      
-        lesson_screen = sm.get_screen("lessons")
 
-
-                        
-
-        # start on pretest (or "main" if you prefer)
+        # THIS MUST COME AFTER ALL SCREENS ARE ADDED
         sm.current = "pretest"
 
-        # store selected items
+        # store selections
         self.selected_course = None
         self.selected_unit = None
         self.pomodoro_seconds = None
 
-        # bind key to skip pretest
         Window.bind(on_key_down=self.skip_pretest)
 
         return sm
 
+ # --- TIMER HELPERS ---
+    def start_quiz_timer(self):
+        from time import time
+        self.start_time = time()
+
+    def finish_quiz_timer(self):
+        from time import time
+        if not self.start_time:
+            return 0
+        return time() - self.start_time
 
     def skip_pretest(self, window, key, *args):
-        if key == ord('q'):  # press Q to skip pretest
+        if key == ord('q'):
             self.root.current = "main"
-            return True  # consume the key event
+            return True
         return False
-
+    
+    
 if __name__ == "__main__":
     MyApp().run()

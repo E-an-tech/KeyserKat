@@ -131,7 +131,7 @@
   ],
 
   "Waves": [
-      {
+    {
   "question": "In an electron microscope, electrons are accelerated through a potential difference of 2.0 x 10^5 V, reaching a maximum velocity of 2.7 x 10^8 m/s. Calculate the de Broglie wavelength of the electron. (Use h = 6.63 x 10^-34 J·s and m = 9.1 x 10^-31 kg, λ = h/mv.)",
   "options": [
     "λ = 2.7 x 10^-12 m",
