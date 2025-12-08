@@ -1,5 +1,6 @@
 #Our son <3
 #main.py
+from logic.lesson_engine import parse_lesson_for_app  # add at top
 import os
 import json
 import random
@@ -19,7 +20,7 @@ from kivy.uix.gridlayout import GridLayout
 from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
-from logic.lesson_engine import parse_lesson_for_app  # add at top
+from time import time
 
 from level_loader import LEVELS
 
@@ -172,47 +173,86 @@ class QuestionScreen(Screen):
 
     def build_ui(self):
         layout = BoxLayout(orientation="vertical", padding=16, spacing=12)
-        scroll = ScrollView(size_hint=(1, 0.6))
+
+        # keep scroll reference so update uses its width
+        self.scroll = ScrollView(size_hint=(1, 0.6))
         self.question_label = Label(
             text=f"Q{self.index+1}: {self.question_data.get('question','')}",
-            halign="left", valign="top", size_hint_y=None, font_size=20
+            halign="left",
+            valign="top",
+            size_hint_y=None,
+            font_size=20,
         )
-        self.question_label.bind(texture_size=lambda instance, value: setattr(instance, "height", value[1]))
-        scroll.add_widget(self.question_label)
-        layout.add_widget(scroll)
+        # don't bind height directly to texture_size yet; we update in update_question_wrap
+        self.scroll.add_widget(self.question_label)
+        layout.add_widget(self.scroll)
 
+
+        # update function uses self.scroll.width so wrapping matches the lesson screen behavior
+        def update_question_wrap(*args):
+            try:
+                w = max(10, self.scroll.width - 20)  # subtract padding similar to lesson screen
+                self.question_label.text_size = (w, None)
+                self.question_label.texture_update()
+                self.question_label.height = self.question_label.texture_size[1]
+            except Exception:
+                pass
+
+        # Bind to scroll width changes and label texture_size changes
+        self.scroll.bind(width=update_question_wrap)
+        self.question_label.bind(texture_size=lambda inst, val: update_question_wrap())
+
+        # run once after layout settles
+        Clock.schedule_once(lambda dt: update_question_wrap(), 0.05)
+
+        # Options or input
         if "options" in self.question_data and self.question_data.get("options"):
             for opt in self.question_data.get("options", []):
                 btn = Button(text=opt, size_hint_y=None, height=50)
                 btn.bind(on_release=self.check_multiple_choice)
                 layout.add_widget(btn)
         else:
-            self.answer_input = TextInput(hint_text="Type your answer...", multiline=False, size_hint_y=None, height=50)
+            self.answer_input = TextInput(
+                hint_text="Type your answer...",
+                multiline=False,
+                size_hint_y=None,
+                height=50,
+            )
             layout.add_widget(self.answer_input)
+
             submit = Button(text="Submit Answer", size_hint_y=None, height=44)
             submit.bind(on_release=self.check_open_ended)
             layout.add_widget(submit)
 
         self.add_widget(layout)
 
+
     def check_multiple_choice(self, instance):
-        global score
+        app = App.get_running_app()
         user_answer = instance.text.strip()
         user_norm = self._norm(user_answer)
 
-        # Accept if any canonical answer matches
+        # debug print (optional)
+        # print("MULTIPLE CHOICE:", user_answer, "Canonical:", self.canonical_answers)
+
         correct = user_norm in self.canonical_answers
 
+        # store into the central app.answers list
+        app.answers.append({
+            "question": self.question_data.get("question"),
+            "user_answer": user_answer,
+            "correct": bool(correct),
+            "unit": self.question_data.get("unit")
+        })
+
         if correct:
-            score += 1
             self.show_popup("Correct!")
         else:
-            # show correct answer(s)
             correct_text = self.question_data.get("answer")
             self.show_popup(f"Wrong!\nAnswer: {correct_text}")
 
-        user_answers[self.question_data.get("question")] = user_answer
         Clock.schedule_once(lambda dt: self.go_next(), 1.2)
+
 
     def check_open_ended(self, instance):
         global score
@@ -261,11 +301,16 @@ class QuestionScreen(Screen):
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = f"question_{self.index+1}"
         else:
-            # save answers
-            save_json(USER_ANSWERS_FILE, user_answers)
+            # save answers (from app.answers) to file as list
+            app = App.get_running_app()
+            save_json(USER_ANSWERS_FILE, app.answers)
+            # Also update used_ids file if you maintain used_ids elsewhere
+            # used_ids.update([q["question"] for q in selected_questions])
+            # with open(USED_QUESTIONS_FILE, "w") as f:
+            #     json.dump(list(used_ids), f)
+
             self.manager.transition = SlideTransition(direction="left")
             self.manager.current = "done"
-
 
 class DoneScreen(Screen):
     def on_enter(self):
@@ -799,16 +844,20 @@ class MyApp(App):
 
         return sm
 
- # --- TIMER HELPERS ---
+
+# Timers and debug convenience
+
+
     def start_quiz_timer(self):
-        from time import time
         self.start_time = time()
 
     def finish_quiz_timer(self):
-        from time import time
-        if not self.start_time:
+        # safely get start_time without crashing
+        start = getattr(self, "start_time", None)
+        if start is None:
             return 0
-        return time() - self.start_time
+        return time() - start
+
 
     def skip_pretest(self, window, key, *args):
         if key == ord('q'):

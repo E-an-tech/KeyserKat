@@ -163,19 +163,24 @@ class QuestionScreen(Screen):
             submit.bind(on_release=self.check_answer)
             layout.add_widget(submit)
 
+        print("OPTIONS FOUND:", self.question_data.get("options"))
+
         self.add_widget(layout)
 
 
-
     def check_answer(self, instance):
+ 
+        print(">>> check_answer triggered")
+
         app = App.get_running_app()
+
         user_answer = instance.text.strip() if hasattr(instance, "text") else self.answer_input.text.strip()
         correct_answer = self.question_data.get("answer")
 
-        # Compare normalized
         correct = normalize(user_answer) == normalize(correct_answer)
 
-        # Save answer
+        print("CHECK_ANSWER RAN:", user_answer, correct)
+
         app.answers.append({
             "question": self.question_data.get("question"),
             "user_answer": user_answer,
@@ -183,13 +188,15 @@ class QuestionScreen(Screen):
             "unit": self.question_data.get("unit")
         })
 
-        # Popup
-        popup = Popup(title="Result", content=Label(text="Correct!" if correct else f"Wrong!\nAnswer: {correct_answer}"),
-                      size_hint=(0.6, 0.3))
+        popup = Popup(
+            title="Result",
+            content=Label(text="Correct!" if correct else f"Wrong!\nAnswer: {correct_answer}"),
+            size_hint=(0.6, 0.3)
+        )
         popup.open()
 
-        # Go next after 1.5s
         Clock.schedule_once(lambda dt: self.next_screen(popup), 1.5)
+
 
     def next_screen(self, popup):
         popup.dismiss()
@@ -241,6 +248,7 @@ class DoneScreen(Screen):
 class PretestApp(App):
     def build(self):
         self.answers = []
+        self.score = 0 
         self.start_time = None
         self.end_time = None
 
