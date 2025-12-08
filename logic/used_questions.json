@@ -1,14 +1,14 @@
 [
-  "Why are SI (International system of measurements) units used in physics?",
+  "You measure a cat’s teeth to be 1 cm, but your partner measures 1.3 cm. What is the percent error?",
   "What is most likely to happen if a scale is not calibrated before use?",
-  "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
   "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey.",
+  "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
+  "During a game of pool, the cue ball, with a mass of 0.26 kg, moves at 1.3 m/s and hits the 8 ball, which has a mass of 0.15 kg and is at rest. After hitting it, the cue ball remains at rest. Calculate the final velocity of the 8 ball. Use the following formula: m1v1,i + m2v2,i = m1v1,f + m2v2,f.",
   "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2πr / T and a_c = v^2 / r.",
-  "A box full of donated materials is resting on a table. When a strong push is applied with the hand, it slides across the surface and gradually comes to a stop. Using Newton’s First and Third Laws of Motion, explain why the box remains still before the push and why it eventually stops after being pushed.",
-  "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)",
+  "In a crash test, a red car with a mass of 2.80 x 10^3 kg is moving at 14.5 m/s and comes to a stop after colliding with a stationary car anchored to the ground. Calculate the change in the car's kinetic energy using ΔKE = KEf - KEi, where KE = (1/2)mv^2.",
   "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
-  "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
+  "A SONAR system on a research ship emits a signal with a frequency of 1.50 x 10^5 Hz and a wavelength of 2.70 mm. Calculate the speed of the wave as it travels through the water. (Use v = f·λ.)",
   "SONAR (Sound Navigation and Ranging) technology determines the position of underwater objects by sending sound waves that reflect off surfaces and return to the source. On which wave property is SONAR primarily based?",
   "It refers to the rate at which electric charges pass through a conductor over a period of time.",
-  "In the following circuit, which of the statements is correct?"
+  "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge."
 ]
