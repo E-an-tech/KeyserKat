@@ -21,6 +21,9 @@ from kivy.uix.popup import Popup
 from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
 from time import time
+from kivy.uix.switch import Switch
+
+
 
 from level_loader import LEVELS
 
@@ -117,6 +120,15 @@ save_json(USED_QUESTIONS_FILE, used_questions)
 # ---------- App state storages ----------
 user_answers = {}  # question_text -> answer
 score = 0
+
+# ---------- Pomodoro Globals ----------
+pomodoro_active = False          # Whether pomodoro is running
+pomodoro_focus_minutes = 0       # Length of study phase
+pomodoro_break_minutes = 0       # Length of break phase
+pomodoro_seconds_left = 0        # Countdown seconds
+pomodoro_in_break = False        # False = studying, True = break
+
+
 
 # ---------- Screens ----------
 class PreTestScreen(Screen):
@@ -316,24 +328,56 @@ class DoneScreen(Screen):
     def on_enter(self):
         self.clear_widgets()
         app = App.get_running_app()
-        total_time = app.finish_quiz_timer()
+        total_time = app.finish_quiz_timer()  # in seconds
         minutes, seconds = divmod(int(total_time), 60)
 
         layout = BoxLayout(orientation="vertical", padding=16, spacing=12)
-        total = len(app.answers)
-        correct_count = sum(1 for a in app.answers if a.get("correct"))
 
-        label = Label(
+        # Summary: score and time
+        total = len(app.answers)
+        correct_count = sum(1 for a in app.answers if a["correct"])
+        summary_label = Label(
             text=f"Quiz Complete!\nScore: {correct_count}/{total}\nTime: {minutes}m {seconds}s",
             font_size=22,
             halign="center",
             valign="middle"
         )
-        label.text_size = (self.width - 40, None)
-        layout.add_widget(label)
+        summary_label.text_size = (self.width - 40, None)
+        layout.add_widget(summary_label)
+
+        # Analyze performance per unit
+        unit_scores = {}
+        unit_totals = {}
+
+        for ans in app.answers:
+            unit = ans["unit"]
+            unit_scores[unit] = unit_scores.get(unit, 0) + (1 if ans["correct"] else 0)
+            unit_totals[unit] = unit_totals.get(unit, 0) + 1
+
+        # Find units where the user scored <50%
+        weak_units = [unit for unit in unit_scores if unit_scores[unit]/unit_totals[unit] < 0.5]
+
+        if weak_units:
+            weak_text = "You need improvement in:\n" + "\n".join(weak_units)
+        else:
+            weak_text = "Great job! No weak areas detected."
+
+        weak_label = Label(
+            text=weak_text,
+            font_size=18,
+            halign="center",
+            valign="middle"
+        )
+        weak_label.text_size = (self.width - 40, None)
+        layout.add_widget(weak_label)
+
+        # Add button to return to main menu manually
+        btn = Button(text="Return to Main Menu", size_hint=(1, 0.15))
+        btn.bind(on_release=lambda x: setattr(self.manager, "current", "main"))
+        layout.add_widget(btn)
+
         self.add_widget(layout)
 
-        Clock.schedule_once(lambda dt: setattr(self.manager, "current", "main"), 5.0)
 
 # ---------- Main UI screens ----------
 class MainScreen(Screen):
@@ -541,14 +585,34 @@ class UnitScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.content = BoxLayout(orientation="vertical", padding=12, spacing=10)
-        self.title_label = Label(text="Units", size_hint=(1,None), height=42)
-        self.content.add_widget(self.title_label)
+        
+        # Top bar with back button + centered title
+        top_bar = FloatLayout(size_hint=(1,None), height=42)
+
+        self.back_btn = Button(text="Back", size_hint=(None,1), width=120, pos_hint={"x":0, "y":0})
+        self.back_btn.bind(on_release=self.go_back)
+        top_bar.add_widget(self.back_btn)
+
+        self.title_label = Label(text="Units", size_hint=(None,1), width=200, halign="center", valign="middle",
+                                pos_hint={"center_x":0.5, "center_y":0.5})
+        self.title_label.bind(size=self.title_label.setter('text_size'))
+        top_bar.add_widget(self.title_label)
+
+        self.content.add_widget(top_bar)
+
+        
         self.grid = GridLayout(cols=1, spacing=8, size_hint_y=None)
         self.grid.bind(minimum_height=self.grid.setter('height'))
         self.scroll = ScrollView()
         self.scroll.add_widget(self.grid)
         self.content.add_widget(self.scroll)
         self.add_widget(self.content)
+
+    def go_back(self, instance):
+        """Return to MainScreen"""
+        if "main" in self.manager.screen_names:
+            self.manager.transition = SlideTransition(direction="right")
+            self.manager.current = "main" 
 
     def load_units(self, course_key):
         course = courses_index.get(course_key)
@@ -575,14 +639,76 @@ class UnitScreen(Screen):
         self.manager.transition = SlideTransition(direction="left")
         self.manager.current = "lessons"
 
+
+def finish_session(screen, score_msg="Session complete!"):
+    """Stop Pomodoro and return to lesson detail with optional score message."""
+    global pomodoro_active, pomodoro_popup, pomodoro_label, pomodoro_break_popup_open, pomodoro_current_screen
+
+    # Stop Pomodoro timer
+    pomodoro_active = False
+    pomodoro_break_popup_open = False
+
+    if pomodoro_popup:
+        pomodoro_popup.dismiss()
+        pomodoro_popup = None
+        pomodoro_label = None
+        pomodoro_current_screen = None
+
+    # Show score popup
+    content = BoxLayout(orientation="vertical", padding=8, spacing=8)
+    content.add_widget(Label(text=score_msg, font_size=18))
+    btn_ok = Button(text="OK", size_hint=(1, None), height=50)
+    content.add_widget(btn_ok)
+
+    popup = Popup(
+        title="Session Finished",
+        content=content,
+        size_hint=(0.7, None),
+        height=200,
+        auto_dismiss=False
+    )
+
+    btn_ok.bind(on_release=lambda *_: (
+        popup.dismiss(),
+        setattr(screen.manager, 'current', "lesson_detail")  # go back to lesson
+    ))
+
+    popup.open()
+
 # --- LESSON LIST SCREEN ---
 class LessonListScreen(Screen):
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
         self.layout = BoxLayout(orientation="vertical", padding=12, spacing=10)
-        self.title_label = Label(text="Lessons", size_hint=(1,None), height=42)
-        self.layout.add_widget(self.title_label)
 
+        # --- Top bar with back button + centered title ---
+        top_bar = FloatLayout(size_hint=(1, None), height=42)
+
+        # Back button on the left
+        self.back_btn = Button(
+            text="Back",
+            size_hint=(None, 1),
+            width=120,
+            pos_hint={"x": 0, "y": 0}
+        )
+        self.back_btn.bind(on_release=self.go_back)
+        top_bar.add_widget(self.back_btn)
+
+        # Centered title
+        self.title_label = Label(
+            text="Lessons",
+            size_hint=(None, 1),
+            width=250,
+            halign="center",
+            valign="middle",
+            pos_hint={"center_x": 0.5, "center_y": 0.5}
+        )
+        self.title_label.bind(size=self.title_label.setter('text_size'))
+        top_bar.add_widget(self.title_label)
+
+        self.layout.add_widget(top_bar)
+
+        # --- Grid of lessons ---
         self.grid = GridLayout(cols=1, spacing=8, size_hint_y=None)
         self.grid.bind(minimum_height=self.grid.setter('height'))
 
@@ -591,6 +717,13 @@ class LessonListScreen(Screen):
         self.layout.add_widget(self.scroll)
 
         self.add_widget(self.layout)
+
+    def go_back(self, instance):
+        """Return to UnitScreen"""
+        if "units" in self.manager.screen_names:
+            self.manager.transition = SlideTransition(direction="right")
+            self.manager.current = "units"
+
 
     def load_lessons(self, unit_obj):
         """Load lesson buttons for the selected unit"""
@@ -628,13 +761,15 @@ class LessonDetailScreen(Screen):
         super().__init__(**kwargs)
         self.root_layout = BoxLayout(orientation="vertical", padding=12, spacing=10)
 
+        # Header
         self.header = Label(text="Lesson Title", size_hint=(1,None), height=42)
         self.root_layout.add_widget(self.header)
 
+        # Time label
         self.time_label = Label(text="", size_hint=(1,None), height=28)
         self.root_layout.add_widget(self.time_label)
 
-        
+        # Scrollable content
         self.scroll = ScrollView(size_hint=(1,1))
         self.content_label = Label(
             text="", size_hint_y=None, markup=True, halign="left", valign="top"
@@ -645,24 +780,37 @@ class LessonDetailScreen(Screen):
         # Bind ScrollView width to update wrapping
         self.scroll.bind(width=lambda instance, value: self.update_label_wrap())
 
-
+        # Bottom buttons layout
         bottom = BoxLayout(size_hint=(1,None), height=64, spacing=8)
         self.btn_quiz = Button(text="Quiz")
         self.btn_flash = Button(text="Flashcards")
         self.btn_pomo = Button(text="Pomodoro")
+        self.btn_back = Button(text="Back")  # <-- Back button
         bottom.add_widget(self.btn_quiz)
         bottom.add_widget(self.btn_flash)
         bottom.add_widget(self.btn_pomo)
+        bottom.add_widget(self.btn_back)  # add to layout
         self.root_layout.add_widget(bottom)
 
+        # Add the layout to the screen
         self.add_widget(self.root_layout)
 
+        # Internal storage
         self._quiz = []
         self._flashcards = []
 
+        # Bind button events
         self.btn_quiz.bind(on_release=self.on_quiz)
         self.btn_flash.bind(on_release=self.on_flashcards)
         self.btn_pomo.bind(on_release=self.on_pomodoro)
+        self.btn_back.bind(on_release=self.go_back)  # bind back button
+
+    # --- Outside __init__() ---
+    def go_back(self, instance):
+        """Return to the lessons list screen"""
+        if self.manager.has_screen("lessons"):
+            self.manager.current = "lessons"
+
 
     def update_label_wrap(self):
         self.content_label.text_size = (self.scroll.width - 20, None)
@@ -715,62 +863,128 @@ class LessonDetailScreen(Screen):
         self.btn_quiz.disabled = not bool(self._quiz)
         self.btn_flash.disabled = not bool(self._flashcards)
 
+    
+    
     def on_quiz(self, instance):
         if self._quiz:
+            app = App.get_running_app()
+            if app.pomodoro_enabled:
+                start_pomodoro(app.pomodoro_study_minutes, app.pomodoro_break_minutes, screen=self.manager.get_screen("quiz"))
             self.manager.get_screen("quiz").load_quiz(self._quiz)
             self.manager.current = "quiz"
 
     def on_flashcards(self, instance):
         if self._flashcards:
+            app = App.get_running_app()
+            if app.pomodoro_enabled:
+                start_pomodoro(app.pomodoro_study_minutes, app.pomodoro_break_minutes, screen=self.manager.get_screen("flashcards"))
             self.manager.get_screen("flashcards").load_flashcards(self._flashcards)
             self.manager.current = "flashcards"
 
-    def on_pomodoro(self, instance):
-        popup_layout = BoxLayout(orientation="vertical", padding=10, spacing=10)
-        popup_layout.add_widget(Label(text="Enter Pomodoro time (minutes):"))
-        time_input = TextInput(text="25", multiline=False, input_filter="int")
-        popup_layout.add_widget(time_input)
-        def start_timer(btn):
-            minutes = int(time_input.text) if time_input.text.isdigit() else 25
-            self.content_label.text = f"Pomodoro started for {minutes} minutes!"
+
+
+    def _show_msg(self, msg):
+            popup = Popup(
+                title="Notice",
+                content=Label(text=msg),
+                size_hint=(0.6, 0.3)
+            )
+            popup.open()
+
+        
+    def on_pomodoro(self, *a):
+        app = App.get_running_app()
+        
+        content = BoxLayout(orientation="vertical", padding=8, spacing=8)
+
+        focus_input = TextInput(
+            text=str(app.pomodoro_study_minutes),
+            input_filter="int", multiline=False,
+            size_hint=(1, None), height=40
+        )
+        break_input = TextInput(
+            text=str(app.pomodoro_break_minutes),
+            input_filter="int", multiline=False,
+            size_hint=(1, None), height=40
+        )
+
+        pomo_switch = Switch(active=app.pomodoro_enabled, size_hint=(1,None), height=40)
+        switch_label = Label(text="Enable Pomodoro", size_hint=(1,None), height=30)
+
+        btn_save = Button(text="Save Settings", size_hint=(1, None), height=44)
+
+        content.add_widget(Label(text="Focus minutes:"))
+        content.add_widget(focus_input)
+        content.add_widget(Label(text="Break minutes:"))
+        content.add_widget(break_input)
+        content.add_widget(switch_label)
+        content.add_widget(pomo_switch)
+        content.add_widget(btn_save)
+
+        popup = Popup(title="Pomodoro Settings", content=content, size_hint=(0.8, None), height=320)
+
+        def save_settings(_):
+            try:
+                fm = int(focus_input.text)
+                bm = int(break_input.text)
+            except ValueError:
+                popup.dismiss()
+                print("Invalid minutes")
+                return
+
+            app.pomodoro_study_minutes = fm
+            app.pomodoro_break_minutes = bm
+            app.pomodoro_enabled = pomo_switch.active
+
             popup.dismiss()
-        start_btn = Button(text="Start", size_hint=(1,None), height=50)
-        start_btn.bind(on_release=start_timer)
-        popup_layout.add_widget(start_btn)
-        popup = Popup(title="Pomodoro Timer", content=popup_layout, size_hint=(0.7,0.5))
+            print(f"Pomodoro saved: {fm}m focus / {bm}m break — Enabled: {app.pomodoro_enabled}")
+
+        btn_save.bind(on_release=save_settings)
         popup.open()
-    
+        
+
+
 
 class QuizScreen(Screen):
     def load_quiz(self, questions):
         self.clear_widgets()
         self.questions = questions
         self.current = 0
+        self.score = 0  # track correct answers
         self.show_question()
 
     def show_question(self):
         self.clear_widgets()
         if self.current >= len(self.questions):
-            self.add_widget(Label(text="Quiz complete!"))
+            # Quiz complete
+            total = len(self.questions)
+            score_msg = f"You scored {self.score}/{total}!"
+
+            # Stop Pomodoro and return to lesson
+            app = App.get_running_app()
+            finish_session(app.root.get_screen("quiz"), score_msg=score_msg)
             return
+
         q = self.questions[self.current]
-        layout = BoxLayout(orientation="vertical")
-        layout.add_widget(Label(text=q["question"]))
+        layout = BoxLayout(orientation="vertical", spacing=8, padding=8)
+        layout.add_widget(Label(text=q["question"], font_size=20, size_hint_y=None, height=60))
+
         for opt in q["options"]:
-            btn = Button(text=opt)
+            btn = Button(text=opt, size_hint_y=None, height=50)
             btn.bind(on_release=lambda x, opt=opt: self.check_answer(opt))
             layout.add_widget(btn)
+
         self.add_widget(layout)
 
     def check_answer(self, selected):
         q = self.questions[self.current]
         if selected == q["answer"]:
-            print("Correct!")  # can add feedback label
+            print("Correct!")
+            self.score += 1
         else:
             print("Wrong")
         self.current += 1
         self.show_question()
-
 
 
 class FlashcardScreen(Screen):
@@ -783,18 +997,24 @@ class FlashcardScreen(Screen):
     def show_card(self):
         self.clear_widgets()
         if self.index >= len(self.cards):
-            self.add_widget(Label(text="No more flashcards"))
+            # Flashcards complete
+            app = App.get_running_app()
+            finish_session(app.root.get_screen("flashcards"), score_msg="Flashcards complete!")
             return
+
         card = self.cards[self.index]
-        layout = BoxLayout(orientation="vertical")
-        front = Label(text=card["front"], font_size=24)
+        layout = BoxLayout(orientation="vertical", spacing=8, padding=8)
+        front = Label(text=card["front"], font_size=24, size_hint_y=None, height=60)
         layout.add_widget(front)
+
         flip_btn = Button(text="Show Answer", size_hint_y=None, height=50)
         flip_btn.bind(on_release=lambda x: setattr(front, "text", card["back"]))
         next_btn = Button(text="Next", size_hint_y=None, height=50)
         next_btn.bind(on_release=lambda x: self.next_card())
+
         layout.add_widget(flip_btn)
         layout.add_widget(next_btn)
+
         self.add_widget(layout)
 
     def next_card(self):
@@ -803,8 +1023,145 @@ class FlashcardScreen(Screen):
 
 
 
+pomodoro_popup = None
+pomodoro_label = None
+pomodoro_current_screen = None
+pomodoro_break_popup_open = False
+pomodoro_event = None  # global variable to track scheduled Clock
+
+def pomodoro_tick(dt):
+    global pomodoro_active, pomodoro_seconds_left, pomodoro_in_break
+    global pomodoro_popup, pomodoro_break_popup_open, pomodoro_current_screen, pomodoro_label
+
+    if not pomodoro_active:
+        return
+
+    pomodoro_seconds_left -= 1
+    minutes, seconds = divmod(max(pomodoro_seconds_left, 0), 60)
+    status = "Break" if pomodoro_in_break else "Focus"
+
+    # Update timer label if exists
+    if pomodoro_label:
+        pomodoro_label.text = f"{status} Time: {minutes:02d}:{seconds:02d}"
+
+    # End of current session
+    if pomodoro_seconds_left <= 0:
+        app = App.get_running_app()
+        pomodoro_in_break = not pomodoro_in_break
+
+        if pomodoro_in_break:
+            # Start break
+            pomodoro_seconds_left = app.pomodoro_break_minutes * 60
+
+            if pomodoro_current_screen and not pomodoro_break_popup_open:
+                pomodoro_break_popup_open = True
+
+                content = BoxLayout(orientation="vertical", padding=8, spacing=8)
+                pomodoro_label = Label(
+                    text=f"Break Time: {app.pomodoro_break_minutes:02d}:00",
+                    font_size=20
+                )
+                leave_btn = Button(text="Leave Quiz/Flashcards", size_hint=(1, None), height=50)
+                content.add_widget(pomodoro_label)
+                content.add_widget(leave_btn)
+
+                pomodoro_popup = Popup(
+                    title="Break Time",
+                    content=content,
+                    size_hint=(0.7, None),
+                    height=200,
+                    auto_dismiss=False
+                )
+
+                def leave_quiz(_):
+                    global pomodoro_active, pomodoro_break_popup_open
+                    pomodoro_active = False  # stop timer
+                    pomodoro_break_popup_open = False
+                    pomodoro_popup.dismiss()
+                    # Return to lesson detail screen
+                    app.root.get_screen("lesson_detail").manager.current = "lesson_detail"
+
+                leave_btn.bind(on_release=leave_quiz)
+                pomodoro_popup.open()
+        else:
+            # Start next focus session
+            pomodoro_seconds_left = app.pomodoro_study_minutes * 60
+            pomodoro_break_popup_open = False
+            if pomodoro_popup:
+                pomodoro_popup.dismiss()
+
+
+
+def show_break_popup(minutes, seconds):
+    """Display a blocking break popup"""
+    global pomodoro_popup, pomodoro_label
+
+    content = BoxLayout(orientation="vertical", padding=8, spacing=8)
+    pomodoro_label = Label(text=f"Break Time: {minutes:02d}:{seconds:02d}", font_size=20)
+    content.add_widget(pomodoro_label)
+
+    # Disable closing by clicking outside
+    pomodoro_popup = Popup(
+        title="Take a Break!",
+        content=content,
+        size_hint=(0.7, None),
+        height=200,
+        auto_dismiss=False
+    )
+    pomodoro_popup.open()
+
+
+def start_pomodoro(focus_minutes, break_minutes, screen=None):
+    global pomodoro_active, pomodoro_focus_minutes, pomodoro_break_minutes
+    global pomodoro_seconds_left, pomodoro_in_break
+    global pomodoro_popup, pomodoro_label, pomodoro_current_screen
+    global pomodoro_break_popup_open
+
+    # Initialize Pomodoro state
+    pomodoro_focus_minutes = focus_minutes
+    pomodoro_break_minutes = break_minutes
+    pomodoro_seconds_left = focus_minutes * 60
+    pomodoro_in_break = False
+    pomodoro_active = True
+    pomodoro_break_popup_open = False
+    pomodoro_current_screen = screen
+    pomodoro_popup = None
+    pomodoro_label = None
+
+    # Terminal feedback for focus session
+    minutes, seconds = divmod(pomodoro_seconds_left, 60)
+    print(f"[Pomodoro] Focus session started: {minutes:02d}:{seconds:02d} remaining")
+
+    # Start the ticking function
+    Clock.schedule_interval(pomodoro_tick, 1)
+
+    
+
+def leave_quiz(screen):
+    global pomodoro_active, pomodoro_popup, pomodoro_label, pomodoro_current_screen
+    global pomodoro_break_popup_open
+
+    pomodoro_active = False  # stop the timer
+    pomodoro_break_popup_open = False
+
+    if pomodoro_popup:
+        pomodoro_popup.dismiss()
+        pomodoro_popup = None
+        pomodoro_label = None
+
+    # Navigate back to lesson details
+    if screen:
+        screen.manager.current = "lesson_detail"
+        pomodoro_current_screen = None
+
+
 # ---------- Application ----------
 class MyApp(App):
+
+    pomodoro_enabled = False
+    pomodoro_study_minutes = 25
+    pomodoro_break_minutes = 5
+
     def build(self):
 
         self.start_time = None      # start of pretest/quiz
