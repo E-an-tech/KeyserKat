@@ -305,8 +305,36 @@ class QuestionScreen(Screen):
         Clock.schedule_once(lambda dt: self.go_next(), 1.2)
 
     def show_popup(self, msg):
-        p = Popup(title="Result", content=Label(text=msg), size_hint=(0.5,0.3))
+        content = Label(
+            text=msg,
+            text_size=(400, None),  # max width for wrapping
+            halign="center",
+            valign="middle"
+        )
+
+        # Let the label expand height automatically
+        content.bind(
+            texture_size=lambda inst, val: setattr(inst, 'height', val[1])
+        )
+
+        # Create popup without fixed height yet
+        p = Popup(
+            title="Result",
+            content=content,
+            size_hint=(None, None),
+            width=450,  # adjust as needed
+            auto_dismiss=True
+        )
+
+        # Once the label texture updates, set the popup height
+        def adjust_popup_height(*args):
+            p.height = content.texture_size[1] + 100  # 100 for title + padding
+        content.bind(texture_size=adjust_popup_height)
+
+        # Open popup
         p.open()
+
+
 
     def go_next(self):
         if self.index + 1 < len(selected_questions):

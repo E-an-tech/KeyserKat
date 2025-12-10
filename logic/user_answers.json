@@ -1,13 +1,13 @@
 [
   {
-    "question": "What is the function of a dependent variable?",
-    "user_answer": "It causes the change",
+    "question": "Why are SI (International system of measurements) units used in physics?",
+    "user_answer": "They are based on English tradition",
     "correct": false,
     "unit": "Science and engineering practices"
   },
   {
-    "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
-    "user_answer": "Descriptive",
+    "question": "What is most likely to happen if a scale is not calibrated before use?",
+    "user_answer": "You get highly accurate readings",
     "correct": false,
     "unit": "Science and engineering practices"
   },
@@ -24,9 +24,9 @@
     "unit": "Kinematics of movement"
   },
   {
-    "question": "During a baseball game, a ball with a mass of 0.145 kg is thrown at a speed of 46.9 m/s and comes to a complete stop in the catcher’s glove in 0.01 s. Calculate the magnitude and direction of the force (F = m * a) that acted on the ball to stop it.",
-    "user_answer": "7.3x10^2 N",
-    "correct": true,
+    "question": "A box full of donated materials is resting on a table. When a strong push is applied with the hand, it slides across the surface and gradually comes to a stop. Using Newton’s First and Third Laws of Motion, explain why the box remains still before the push and why it eventually stops after being pushed.",
+    "user_answer": "The box moves because gravity pulls it forward, and it stops when normal force becomes greater.",
+    "correct": false,
     "unit": "Movement dynamics"
   },
   {
@@ -36,39 +36,39 @@
     "unit": "Movement dynamics"
   },
   {
-    "question": "Identify and explain the differences between the types of energy represented in the following illustrations: (A) Soccer players in action, (B) An Olympic diver before jumping, (C) A compressed spring inside a pen.",
-    "user_answer": "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy",
-    "correct": true,
+    "question": "In a crash test, a red car with a mass of 2.80 x 10^3 kg is moving at 14.5 m/s and comes to a stop after colliding with a stationary car anchored to the ground. Calculate the change in the car's kinetic energy using ΔKE = KEf - KEi, where KE = (1/2)mv^2.",
+    "user_answer": "ΔKE = 40.6 J",
+    "correct": false,
     "unit": "Work and energy"
   },
   {
     "question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
-    "user_answer": "P = 1.6 x 10^2 watts",
-    "correct": true,
+    "user_answer": "P = 6.6 x 10^3 watts",
+    "correct": false,
     "unit": "Work and energy"
   },
   {
-    "question": "In an electron microscope, electrons are accelerated through a potential difference of 2.0 x 10^5 V, reaching a maximum velocity of 2.7 x 10^8 m/s. Calculate the de Broglie wavelength of the electron. (Use h = 6.63 x 10^-34 J·s and m = 9.1 x 10^-31 kg, λ = h/mv.)",
-    "user_answer": "λ = 2.7 x 10^-12 m",
-    "correct": true,
+    "question": "SONAR (Sound Navigation and Ranging) technology determines the position of underwater objects by sending sound waves that reflect off surfaces and return to the source. On which wave property is SONAR primarily based?",
+    "user_answer": "Interference",
+    "correct": false,
     "unit": "Waves"
   },
   {
-    "question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
-    "user_answer": "(a) Constructive interference, (b) Destructive interference",
-    "correct": true,
+    "question": "In an electron microscope, electrons are accelerated through a potential difference of 2.0 x 10^5 V, reaching a maximum velocity of 2.7 x 10^8 m/s. Calculate the de Broglie wavelength of the electron. (Use h = 6.63 x 10^-34 J·s and m = 9.1 x 10^-31 kg, λ = h/mv.)",
+    "user_answer": "λ = 2.2 x 10^-72 m",
+    "correct": false,
     "unit": "Waves"
   },
   {
     "question": "In the following circuit, which of the statements is correct?",
-    "user_answer": "Each resistor has a voltage drop equal to the total voltage of the entire circuit.",
-    "correct": false,
+    "user_answer": "The total voltage drop for the entire circuit equals the sum of voltage drops across all resistors.",
+    "correct": true,
     "unit": "Energy transfer and transformation"
   },
   {
-    "question": "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge.",
+    "question": "It refers to the rate at which electric charges pass through a conductor over a period of time.",
     "user_answer": "Electric current, SI unit: Ampere",
-    "correct": false,
+    "correct": true,
     "unit": "Energy transfer and transformation"
   }
 ]
