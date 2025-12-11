@@ -293,7 +293,7 @@ class QuestionScreen(Screen):
                     if any(tok in user_norm for tok in canon_tokens):
                         correct = True
                         break
-
+#E-an was here
         if correct:
             score += 1
             self.show_popup("Correct!")
