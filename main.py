@@ -912,16 +912,16 @@ class LessonDetailScreen(Screen):
         # 1. Create the container (Vertical BoxLayout)
         pomo_container = BoxLayout(
             orientation='vertical',
-            size_hint_x=None,  # <-- CRITICAL: Tell BoxLayout NOT to stretch it horizontally
-            width=100           # <-- CRITICAL: Set its width to match its height (64px)
+            size_hint_x=None,  
+            width=100           
         )
 
-        # 2. Create the Icon Button (Takes most of the 64 height, e.g., 48px)
+
         self.btn_pomo = Button(
             background_normal="assets/Pomodoro_icon.png",
             text="",
             size_hint_y=None,
-            height=90,
+            height=100,
             size_hint_x=1 # Now it stretches to fill the 64px width of its parent container
         )
 
