@@ -1,21 +1,15 @@
 [
   {
-    "question": "What is the function of a dependent variable?",
-    "user_answer": "It is changed by the independent variable",
+    "question": "What is most likely to happen if a scale is not calibrated before use?",
+    "user_answer": "You get systematic errors",
     "correct": true,
     "unit": "Science and engineering practices"
   },
   {
     "question": "Why are SI (International system of measurements) units used in physics?",
-    "user_answer": "They ensure universal understanding",
-    "correct": true,
+    "user_answer": "They are easy to memorize",
+    "correct": false,
     "unit": "Science and engineering practices"
-  },
-  {
-    "question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
-    "user_answer": "0.64s; 3.2m",
-    "correct": true,
-    "unit": "Kinematics of movement"
   },
   {
     "question": "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey.",
@@ -24,8 +18,14 @@
     "unit": "Kinematics of movement"
   },
   {
-    "question": "Technology has played an important role in sports. For example, the implementation of technologies such as PITCH/fx, Rapsodo PITCHING 2.0, among others, has made it easier to detect the speed of baseball pitches with greater accuracy. In the history of Major League Baseball, the record speed of a ball during a pitch was 46.9 m/s. Assuming that a ball with a mass of 0.145 kg traveled at that speed and stopped in the catcher's glove 0.01 s after the pitch, calculate the average acceleration of the ball. Use the formula a = (v_f - v_i) / (t_f - t_i).",
-    "user_answer": "KeyserKat is the best app",
+    "question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
+    "user_answer": "0.41s; 2.0m",
+    "correct": false,
+    "unit": "Kinematics of movement"
+  },
+  {
+    "question": "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2πr / T and a_c = v^2 / r.",
+    "user_answer": "v = 0.79 m/s, a_c = 0.027 m/s^2",
     "correct": false,
     "unit": "Movement dynamics"
   },
@@ -37,38 +37,38 @@
   },
   {
     "question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
-    "user_answer": "P = 6.6 x 10^3 watts",
-    "correct": false,
-    "unit": "Work and energy"
-  },
-  {
-    "question": "In a crash test, a red car with a mass of 2.80 x 10^3 kg is moving at 14.5 m/s and comes to a stop after colliding with a stationary car anchored to the ground. Calculate the change in the car's kinetic energy using ΔKE = KEf - KEi, where KE = (1/2)mv^2.",
-    "user_answer": "ΔKE = 8.1 x 10^3 J",
-    "correct": false,
-    "unit": "Work and energy"
-  },
-  {
-    "question": "SONAR (Sound Navigation and Ranging) technology determines the position of underwater objects by sending sound waves that reflect off surfaces and return to the source. On which wave property is SONAR primarily based?",
-    "user_answer": "Reflection",
+    "user_answer": "P = 1.6 x 10^2 watts",
     "correct": true,
-    "unit": "Waves"
+    "unit": "Work and energy"
+  },
+  {
+    "question": "Identify and explain the differences between the types of energy represented in the following illustrations: (A) Soccer players in action, (B) An Olympic diver before jumping, (C) A compressed spring inside a pen.",
+    "user_answer": "A: Kinetic energy, B: Gravitational potential energy, C: Elastic potential energy",
+    "correct": true,
+    "unit": "Work and energy"
   },
   {
     "question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
-    "user_answer": "(a) Node, (b) Antinode",
+    "user_answer": "(a) Constructive interference, (b) Destructive interference",
+    "correct": true,
+    "unit": "Waves"
+  },
+  {
+    "question": "Photocells, like those found in solar panels and calculators, work using the photoelectric effect, which describes a material's ability to generate electricity when exposed to light. If the threshold frequency for silicon is 3.2 x 10^13 Hz, calculate the maximum wavelength (λ) that can produce the photoelectric effect. (Use c = λ·f, where c = 3.0 x 10^8 m/s.)",
+    "user_answer": "λ = 8.25 x 10^-6 m",
     "correct": false,
     "unit": "Waves"
   },
   {
-    "question": "What force keeps satellites in orbit around Earth?",
-    "user_answer": "Orbital period",
-    "correct": false,
+    "question": "The diagram shows the electrical circuit that powers a car's front headlights. This circuit is designed so that each lamp receives its full share of power. The headlights are connected in what type of circuit?",
+    "user_answer": "Parallel circuit",
+    "correct": true,
     "unit": "Energy transfer and transformation"
   },
   {
-    "question": "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge.",
-    "user_answer": "Electric potential, SI unit: Volt",
-    "correct": true,
+    "question": "In the following circuit, which of the statements is correct?",
+    "user_answer": "Each resistor has a voltage drop equal to the total voltage of the entire circuit.",
+    "correct": false,
     "unit": "Energy transfer and transformation"
   }
 ]

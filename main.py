@@ -475,32 +475,73 @@ class MainScreen(Screen):
 
         layout.add_widget(self.cat_area)
 
+
         # ---------------- BUTTON BAR ----------------
         buttons = BoxLayout(
-            size_hint=(1, 0.12),
+            # Keep the width hint (1) but remove the height hint (0.12)
+            # and use size_hint_y=None instead.
+            size_hint=(1, None),
+            # Set the fixed height of the entire button bar to 120px + title space
+            # Let's use 140 to give the title enough room.
+            height=140, 
             pos_hint={"x": 0, "y": 0},
-            padding=[10,0,10,0],
+            padding=[10, 0, 10, 0],
             spacing=8
         )
-        btn_settings = Button(background_normal="assets/settings.png", size_hint=(None,None), size=(120,120))
-        btn_crown = Button(background_normal="assets/crown.png", size_hint=(None,None), size=(120,120))
-        btn_support = Button(background_normal="assets/support.png", size_hint=(None,None), size=(120,120))
 
-        btn_settings.bind(on_release=lambda *a: setattr(self.manager,'current','settings'))
-        btn_crown.bind(on_release=lambda *a: setattr(self.manager,'current','leaderboard'))
-        btn_support.bind(on_release=lambda *a: setattr(self.manager,'current','support'))
+        # --- 1. Settings Button Container ---
+        settings_container = BoxLayout(
+            orientation='vertical', 
+            size_hint=(None, 1), 
+            width=120
+        )
+        # We now use size_hint_y=None and a fixed height for the Button
+        btn_settings = Button(
+            background_normal="assets/settings.png", 
+            size_hint_y=None, 
+            height=120
+        ) 
+        # The Label will take up the remaining space (140 - 120 = 20px)
+        lbl_settings = Label(
+            text="Settings", 
+            size_hint_y=None, 
+            height=20, 
+            font_size='14sp'
+        ) 
 
-        buttons.add_widget(Widget())
-        buttons.add_widget(btn_settings)
-        buttons.add_widget(Widget())
-        buttons.add_widget(btn_crown)
-        buttons.add_widget(Widget())
-        buttons.add_widget(btn_support)
-        buttons.add_widget(Widget())
+        btn_settings.bind(on_release=lambda *a: setattr(self.manager, 'current', 'settings'))
+        settings_container.add_widget(btn_settings)
+        settings_container.add_widget(lbl_settings)
+
+        # --- Apply the same pattern to the Crown and Support containers ---
+
+        # 2. Crown Button Container
+        crown_container = BoxLayout(orientation='vertical', size_hint=(None, 1), width=120)
+        btn_crown = Button(background_normal="assets/crown.png", size_hint_y=None, height=120)
+        lbl_crown = Label(text="Leaderboard", size_hint_y=None, height=20, font_size='14sp')
+        btn_crown.bind(on_release=lambda *a: setattr(self.manager, 'current', 'leaderboard'))
+        crown_container.add_widget(btn_crown)
+        crown_container.add_widget(lbl_crown)
+
+        # 3. Support Button Container
+        support_container = BoxLayout(orientation='vertical', size_hint=(None, 1), width=120)
+        btn_support = Button(background_normal="assets/support.png", size_hint_y=None, height=120)
+        lbl_support = Label(text="Support", size_hint_y=None, height=20, font_size='14sp')
+        btn_support.bind(on_release=lambda *a: setattr(self.manager, 'current', 'support'))
+        support_container.add_widget(btn_support)
+        support_container.add_widget(lbl_support)
+
+        # --- Add the containers to the main buttons BoxLayout ---
+        buttons.add_widget(Widget()) # Spacer
+        buttons.add_widget(settings_container)
+        buttons.add_widget(Widget()) # Spacer
+        buttons.add_widget(crown_container)
+        buttons.add_widget(Widget()) # Spacer
+        buttons.add_widget(support_container)
+        buttons.add_widget(Widget()) # Spacer
+
         layout.add_widget(buttons)
-
         self.add_widget(layout)
-
 
 
     def on_touch_down(self, touch):
