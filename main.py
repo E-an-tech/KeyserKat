@@ -902,15 +902,47 @@ class LessonDetailScreen(Screen):
         self.scroll.bind(width=lambda instance, value: self.update_label_wrap())
 
         # Bottom buttons layout
-        bottom = BoxLayout(size_hint=(1,None), height=64, spacing=8)
+        bottom = BoxLayout(size_hint=(1,None), height=100, spacing=8)
         self.btn_quiz = Button(text="Quiz")
         self.btn_flash = Button(text="Flashcards")
-        self.btn_pomo = Button(text="Pomodoro")
+     
+
+        # ---------------- POMODORO ICON BUTTON (FIXED WIDTH) ----------------
+
+        # 1. Create the container (Vertical BoxLayout)
+        pomo_container = BoxLayout(
+            orientation='vertical',
+            size_hint_x=None,  # <-- CRITICAL: Tell BoxLayout NOT to stretch it horizontally
+            width=100           # <-- CRITICAL: Set its width to match its height (64px)
+        )
+
+        # 2. Create the Icon Button (Takes most of the 64 height, e.g., 48px)
+        self.btn_pomo = Button(
+            background_normal="assets/Pomodoro_icon.png",
+            text="",
+            size_hint_y=None,
+            height=90,
+            size_hint_x=1 # Now it stretches to fill the 64px width of its parent container
+        )
+
+        # 3. Create the Title Label (Takes the remaining 16px of height)
+        self.lbl_pomo = Label(
+            text="Pomodoro",
+            size_hint_y=None,
+            height=16,
+            font_size='12sp'
+        )
+
+        # 4. Add button and label to the container
+        pomo_container.add_widget(self.btn_pomo)
+        pomo_container.add_widget(self.lbl_pomo)
+
+     
         self.btn_back = Button(text="Back")  # <-- Back button
         bottom.add_widget(self.btn_quiz)
         bottom.add_widget(self.btn_flash)
-        bottom.add_widget(self.btn_pomo)
-        bottom.add_widget(self.btn_back)  # add to layout
+        bottom.add_widget(pomo_container) # <-- Add the new container here
+        bottom.add_widget(self.btn_back) # add to layout
         self.root_layout.add_widget(bottom)
 
         # Add the layout to the screen
