@@ -22,7 +22,7 @@ from kivy.uix.textinput import TextInput
 from kivy.uix.anchorlayout import AnchorLayout
 from time import time
 from kivy.uix.switch import Switch
-
+from kivy.animation import Animation
 
 
 from level_loader import LEVELS
@@ -544,6 +544,55 @@ class MainScreen(Screen):
         self.add_widget(layout)
 
 
+        # ---------------- SLIDING INDICATORS ----------------
+
+        # Create the right indicator (Swipe_indicator.png)
+        indicator_right = Image(
+            source="assets/Swipe_indicator.png",
+            # Position on the far right (x=1.0) and stretch from top to bottom (y=0, height=1.0)
+            pos_hint={'right': 1, 'y': 0},
+            size_hint=(None, 1), # None for width, 1 for height (full screen height)
+            width=Window.width * 0.05, 
+            opacity=0.3 # Initial semi-transparent state
+        )
+
+        # Create the left indicator (Swipe_indicator_left.png)
+        indicator_left = Image(
+            source="assets/Swipe_indicator_left.png",
+            # Position on the far left (x=0) and stretch from top to bottom
+            pos_hint={'x': 0, 'y': 0},
+            size_hint=(None, 1), # None for width, 1 for height (full screen height)
+            width=Window.width * 0.05, # Example: 5% of screen width (must match right indicator)
+            opacity=0.3 # Initial semi-transparent state
+        )
+
+        # --- Pulsating Animation Setup ---
+
+        # 1. Define the animation for the indicator to pulse (go from 0.3 opacity to 0.7 and back)
+        # Note: repeat=True makes it loop indefinitely
+        anim_in = Animation(opacity=0.7, duration=1.3)
+        anim_out = Animation(opacity=0.3, duration=1.3)
+        pulse_animation = anim_in + anim_out 
+        pulse_animation.repeat = True
+
+        # 2. Start the animation on both indicators
+        pulse_animation.start(indicator_right)
+        pulse_animation.start(indicator_left)
+
+
+        # --- Adding Indicators to the Layout ---
+
+        # Since you want them "on top of everything," they must be added to the main
+        # layout *after* all other elements (like the button bar).
+        # If 'layout' is a FloatLayout, you can just add them. If 'layout' is a different 
+        # type (like BoxLayout), you may need to ensure your Screen's main widget is a FloatLayout.
+
+        # Assuming 'layout' is the main container (e.g., FloatLayout):
+        layout.add_widget(indicator_right)
+        layout.add_widget(indicator_left)
+
+
+
     def on_touch_down(self, touch):
         self.start_x = touch.x
         return super().on_touch_down(touch)
@@ -585,6 +634,9 @@ class MainScreen(Screen):
         self.clothes_index = (self.clothes_index - 1) % len(self.clothes_images)
         self.clothes.source = self.clothes_images[self.clothes_index]
         self.switch_title()
+
+
+    
 
 class SettingsScreen(Screen):
     def __init__(self, **kwargs):
