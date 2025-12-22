@@ -907,9 +907,6 @@ class LessonDetailScreen(Screen):
         self.btn_flash = Button(text="Flashcards")
      
 
-        # ---------------- POMODORO ICON BUTTON (FIXED WIDTH) ----------------
-
-        # 1. Create the container (Vertical BoxLayout)
         pomo_container = BoxLayout(
             orientation='vertical',
             size_hint_x=None,  
@@ -1150,18 +1147,32 @@ class FlashcardScreen(Screen):
     def show_card(self):
         self.clear_widgets()
         if self.index >= len(self.cards):
-            # Flashcards complete
             app = App.get_running_app()
             finish_session(app.root.get_screen("flashcards"), score_msg="Flashcards complete!")
             return
 
         card = self.cards[self.index]
         layout = BoxLayout(orientation="vertical", spacing=8, padding=8)
-        front = Label(text=card["front"], font_size=24, size_hint_y=None, height=60)
+        
+        # 1. Update the Label for wrapping
+        front = Label(
+            text=card["front"], 
+            font_size=24, 
+            size_hint_y=None, 
+            height=200,          # Increased height to accommodate multiple lines
+            halign="center",     # Horizontal alignment
+            valign="middle"      # Vertical alignment
+        )
+        
+        # 2. Bind the text_size to the layout width so it knows where to wrap
+        # This makes the "box" for the text match the width of the label
+        front.bind(width=lambda instance, value: setattr(instance, 'text_size', (value, None)))
+
         layout.add_widget(front)
 
         flip_btn = Button(text="Show Answer", size_hint_y=None, height=50)
         flip_btn.bind(on_release=lambda x: setattr(front, "text", card["back"]))
+        
         next_btn = Button(text="Next", size_hint_y=None, height=50)
         next_btn.bind(on_release=lambda x: self.next_card())
 
@@ -1169,7 +1180,7 @@ class FlashcardScreen(Screen):
         layout.add_widget(next_btn)
 
         self.add_widget(layout)
-
+        
     def next_card(self):
         self.index += 1
         self.show_card()

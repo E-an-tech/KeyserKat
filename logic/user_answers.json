@@ -1,21 +1,15 @@
 [
   {
-    "question": "What is most likely to happen if a scale is not calibrated before use?",
-    "user_answer": "You get systematic errors",
-    "correct": true,
-    "unit": "Science and engineering practices"
-  },
-  {
     "question": "Why are SI (International system of measurements) units used in physics?",
-    "user_answer": "They are easy to memorize",
+    "user_answer": "They are based on English tradition",
     "correct": false,
     "unit": "Science and engineering practices"
   },
   {
-    "question": "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey.",
-    "user_answer": "25 meters east of the starting position",
+    "question": "Bubbling observed during a chemical reaction is an example of what type of data?",
+    "user_answer": "Quantitative",
     "correct": false,
-    "unit": "Kinematics of movement"
+    "unit": "Science and engineering practices"
   },
   {
     "question": "A skateboarder performs a horizontal jump at 5.0 m/s from a height of 2.0 m. How far horizontally will he fall? Calculate the flight time by solving the first equation. Then determine the distance by solving the second formula. (First equation: Δy = v_iy * t + 1/2 * g * t^2; Second equation: v = d / t)",
@@ -24,22 +18,22 @@
     "unit": "Kinematics of movement"
   },
   {
-    "question": "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2πr / T and a_c = v^2 / r.",
-    "user_answer": "v = 0.79 m/s, a_c = 0.027 m/s^2",
+    "question": "Observe the position-time graph of a vehicle that initially begins moving eastward and travels along a straight road. Indicate the total displacement of the vehicle at the end of the journey.",
+    "user_answer": "25 meters east of the starting position",
     "correct": false,
-    "unit": "Movement dynamics"
+    "unit": "Kinematics of movement"
   },
   {
-    "question": "A box full of donated materials is resting on a table. When a strong push is applied with the hand, it slides across the surface and gradually comes to a stop. Using Newton’s First and Third Laws of Motion, explain why the box remains still before the push and why it eventually stops after being pushed.",
-    "user_answer": "The box remains still because there are no forces acting on it, and it stops because the applied force disappears.",
-    "correct": false,
-    "unit": "Movement dynamics"
-  },
-  {
-    "question": "A customer hurriedly pushes a shopping cart with a horizontal force of 120.0 N over a distance of 4.0 m in 3.0 s at a constant speed. How much power did the customer produce? (Use P = W/t, where work is the force applied over a distance.)",
-    "user_answer": "P = 1.6 x 10^2 watts",
+    "question": "During a baseball game, a ball with a mass of 0.145 kg is thrown at a speed of 46.9 m/s and comes to a complete stop in the catcher’s glove in 0.01 s. Calculate the magnitude and direction of the force (F = m * a) that acted on the ball to stop it.",
+    "user_answer": "7.3x10^2 N",
     "correct": true,
-    "unit": "Work and energy"
+    "unit": "Movement dynamics"
+  },
+  {
+    "question": "During a stability test on a track, the maneuverability of a prototype race car with a mass of 1.6 x 10^3 kg was evaluated. On a curve with a radius of 30.0 m, the travel time was 3.8 s at a constant speed. Use the following formulas to calculate the speed and centripetal acceleration of the race car on the described path: v = 2πr / T and a_c = v^2 / r.",
+    "user_answer": "v = 23.8 m/s, a_c = 6.26 m/s^2",
+    "correct": false,
+    "unit": "Movement dynamics"
   },
   {
     "question": "Identify and explain the differences between the types of energy represented in the following illustrations: (A) Soccer players in action, (B) An Olympic diver before jumping, (C) A compressed spring inside a pen.",
@@ -48,26 +42,32 @@
     "unit": "Work and energy"
   },
   {
-    "question": "When two wave pulses meet and overlap, what results are observed in cases (a) and (b)?",
-    "user_answer": "(a) Constructive interference, (b) Destructive interference",
+    "question": "A cyclist rides uphill without stopping. From which type of energy does the bicycle gain mechanical energy? (Adapted from Zitzewitz, 2004. Physics Principles and Problems. McGraw-Hill, p. 262.)",
+    "user_answer": "Elastic potential energy from the tires",
+    "correct": false,
+    "unit": "Work and energy"
+  },
+  {
+    "question": "A SONAR system on a research ship emits a signal with a frequency of 1.50 x 10^5 Hz and a wavelength of 2.70 mm. Calculate the speed of the wave as it travels through the water. (Use v = f·λ.)",
+    "user_answer": "v = 4.05 x 10^2 m/s",
     "correct": true,
     "unit": "Waves"
   },
   {
     "question": "Photocells, like those found in solar panels and calculators, work using the photoelectric effect, which describes a material's ability to generate electricity when exposed to light. If the threshold frequency for silicon is 3.2 x 10^13 Hz, calculate the maximum wavelength (λ) that can produce the photoelectric effect. (Use c = λ·f, where c = 3.0 x 10^8 m/s.)",
-    "user_answer": "λ = 8.25 x 10^-6 m",
+    "user_answer": "λ = 3.6 x 10^-15 m",
     "correct": false,
     "unit": "Waves"
   },
   {
-    "question": "The diagram shows the electrical circuit that powers a car's front headlights. This circuit is designed so that each lamp receives its full share of power. The headlights are connected in what type of circuit?",
-    "user_answer": "Parallel circuit",
-    "correct": true,
+    "question": "According to Newton’s Law of Universal Gravitation, the gravitational force between two objects ________ if the distance between them is doubled.",
+    "user_answer": "Reduces to half",
+    "correct": false,
     "unit": "Energy transfer and transformation"
   },
   {
-    "question": "In the following circuit, which of the statements is correct?",
-    "user_answer": "Each resistor has a voltage drop equal to the total voltage of the entire circuit.",
+    "question": "It is the work that must be done against electric forces to move a charge from a reference point to another point, divided by the charge.",
+    "user_answer": "Electric field, SI unit: Volt",
     "correct": false,
     "unit": "Energy transfer and transformation"
   }
