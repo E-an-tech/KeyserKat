@@ -168,7 +168,7 @@
     {
       "title": "How to use them in arithmetic (Addition/Subtraction)",
       "heading": "How to use them in arithmetic? (Addition/Subtraction)",
-      "content": [
+      "bullet_points": [
         "Step 1: Rewrite the number to have the same power of 10.",
         "Step 2: Add or subtract numbers.",
         "Step 3: Rewrite in scientific notation.",
@@ -191,7 +191,7 @@
     {
       "title": "How to use them in arithmetic (Multiplication/Division)",
       "heading": "How to use them in arithmetic? (Multiplication/Division)",
-      "content": [
+      "bullet_points": [
         "Step 1: Group the numbers together.",
         "Step 2: Multiply the numbers.",
         "Step 3: Use the law of indices to simplify the powers of 10.",

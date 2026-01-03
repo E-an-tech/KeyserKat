@@ -70,7 +70,7 @@
       "subsections": [
         {
           "title": "Addition or Subtraction",
-          "step_by_step": [
+          "bullet_points": [
             "Perform the operation",
             "Round off the result to correspond to the least-precise value involved",
             "Example: 3.86 m + 2.4 m = 6.3"
@@ -78,7 +78,7 @@
         },
         {
           "title": "Multiplication or Division",
-          "step_by_step": [
+          "bullet_points": [
             "Perform the calculation",
             "Round to the same number of significant digits as the least-precise measurement",
             "Example: 409.2 km / 11.4 L = 35.9 km/L because the least-precise measure has three significant digits"
